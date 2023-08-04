@@ -1,8 +1,11 @@
+import HeroSection from "./HomeComponents/HeroSection";
+import OurServices from "./HomeComponents/OurServices";
 
 const Home = () => {
     return (
         <div>
-            Home
+            <HeroSection/>
+            <OurServices/>
             
         </div>
     );
