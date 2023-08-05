@@ -5,13 +5,13 @@ const Contacts = () => {
         <div>
              <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-20">
+          <div className="grid md:grid-cols-3 grid-cols-1 text-center w-full mb-20">
 
             {/* <h2 className="text-xs text-green-500 tracking-widest font-medium title-font mb-1">ROOF PARTY POLAROID</h2> */}
             {/* <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">Master Cleanse Reliac Heirloom</h1> */}
           </div>
-          <div className="flex flex-wrap -m-4">
-            <div className="p-4 md:w-1/3">
+          <div className="grid md:grid-cols-3 grid-cols-1 -m-4">
+            <div className="p-4 ">
 
               <div className="flex rounded-lg h-full bg-[#07332F] text-white p-8 flex-col">
 
@@ -35,13 +35,13 @@ const Contacts = () => {
               </div>
 
             </div>
-            <div className="p-4 md:w-1/3">
+            <div className="p-4 ">
 
               <div className="flex rounded-lg h-full text-white bg-[#F7A582] p-8 flex-col">
                 <div className="flex items-center mb-3">
                   <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full  text-white flex-shrink-0">
                 
-                    <img className="text-white" src="../../../../doc-house Assets/location-outline.png" alt="" />
+                    <img className="text-white" src="../../../../doc-house Assets/location-white.png" alt="" />
                   </div>
                   <h2 className=" text-xl title-font font-semibold">Our Location</h2>
                 </div>
@@ -57,7 +57,7 @@ const Contacts = () => {
               </div>
 
             </div>
-            <div className="p-4 md:w-1/3">
+            <div className="p-4 ">
 
               <div className="flex rounded-lg h-full text-white bg-[#07332F] p-8 flex-col">
                 <div className="flex items-center mb-3">
