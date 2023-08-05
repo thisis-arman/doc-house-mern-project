@@ -1,3 +1,4 @@
+import ContactForm from "./HomeComponents/ContactForm";
 import Contacts from "./HomeComponents/Contacts";
 import ExpertDoctors from "./HomeComponents/ExpertDoctors";
 import HeroSection from "./HomeComponents/HeroSection";
@@ -12,6 +13,7 @@ const Home = () => {
             <Contacts/>
             <Testimonials/>
             <ExpertDoctors/>
+            <ContactForm/>
             
         </div>
     );
