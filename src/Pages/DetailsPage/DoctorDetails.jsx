@@ -244,9 +244,11 @@ const DoctorDetails = () => {
                 
                 <TabPanel>
                   <div>
+                    {/* About me */}
                     <h2 className="text-xl py-2 font-bold">About Me</h2>
                     <p className="pb-2">{overview?.aboutMe}</p>
                     <div>
+                      {/* Education */}
                       <div>
                         <h2 className="text-xl py-2 font-bold">Education</h2>
                         <p>
@@ -260,6 +262,17 @@ const DoctorDetails = () => {
                           <p className="pl-6">{education[1]?.Duration}</p>
                         </p>
                       </div>
+                      {/* Services */}
+                      <div>
+                        <h2 className="text-xl py-2 font-bold">Services</h2>
+                        <ol className="pl-6 py-2">
+                          {
+                            services.map((data,i) =><li className="list-disc " key={i}>{data}</li>)
+                          }
+                        </ol>
+                      </div>
+
+                      
                     </div>
                   </div>
                   <p className="leading-relaxed mb-4">
