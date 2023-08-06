@@ -1,47 +1,47 @@
 import react, { useState } from "react";
 
 const ContactForm = () => {
-  const [Name, setName] = useState("");
-  const [Mobile, setMobile] = useState("");
-  const [Doctor, setDoctor] = useState("");
-  const [Email, setEmail] = useState("");
-  const [Time, setTime] = useState("");
-  const [Date, setDate] = useState("");
+  const [name, setName] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [doctor, setDoctor] = useState("");
+  const [email, setEmail] = useState("");
+  const [time, setTime] = useState("");
+  const [date, setDate] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = {
-      Name,
-      Mobile,
-      Doctor,
-      Email,
-      Time,
-      Date,
-    };
+    const formData = new FormData(event.target);
+    console.log(formData);
 
     const url =
-      "https://script.google.com/macros/s/AKfycbziRFLsIcPXBArqMsMXcsjfbiRzZLxxKEo1qPhwkv_CY89e_zjNmuMuFnwhdG6cqd1L/exec";
+      "https://script.google.com/macros/s/AKfycby5nRdDBaCX1qpxDWa6DHQeYKMwBW9Ec2gaJ9dFF8xFmMKmttgYS70rbadJ3QNIx5UM/exec";
 
     try {
       const response = await fetch(url, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        body: formData,
       });
 
       if (response.ok) {
-        console.log("Data added to Google Sheets successfully!");
+        setName('')
+        setMobile('')
+        setDoctor('')
+        setEmail('')
+        setTime('')
+        setDate('')
+        alert("Data added to Google Sheets successfully!");
+
         // Do something after successful submission, e.g., clear the form fields
       } else {
-        console.error("Error adding data to Google Sheets:", response.statusText);
+        console.error(
+          "Error adding data to Google Sheets:",
+          response.statusText
+        );
       }
     } catch (error) {
       console.error("Error adding data to Google Sheets:", error);
     }
   };
-
 
   return (
     <div className="container mx-auto relative top-20 md:mb-28 px-4">
@@ -69,7 +69,6 @@ const ContactForm = () => {
           </div>
 
           <div className="card flex-shrink-0 md:w-3/5 w-full  shadow-2xl ">
-
             <form onSubmit={handleSubmit}>
               <div className="card-body grid grid-cols-1 md:grid-cols-2">
                 <div className="form-control">
@@ -80,8 +79,8 @@ const ContactForm = () => {
                     type="text"
                     placeholder="Name"
                     name="Name"
-                    value={Name}
-                    onChange={(e)=>setName(e.target.value)}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     className="input input-bordered text-black bg-[#18433f]"
                   />
                 </div>
@@ -93,8 +92,8 @@ const ContactForm = () => {
                     type="text"
                     placeholder="email"
                     name="Email"
-                    value={Email}
-                    onChange={(e)=>setEmail(e.target.value)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="input input-bordered text-black bg-[#18433f]"
                   />
                 </div>
@@ -107,8 +106,8 @@ const ContactForm = () => {
                     type="number"
                     placeholder="Number"
                     name="Mobile"
-                    value={Mobile}
-                    onChange={(e)=>setMobile(e.target.value)}
+                    value={mobile}
+                    onChange={(e) => setMobile(e.target.value)}
                     className="input input-bordered bg-[#18433f] text-black"
                   />
                 </div>
@@ -121,8 +120,8 @@ const ContactForm = () => {
                     type="text"
                     placeholder="Doctor name"
                     name="Doctor"
-                    value={Doctor}
-                    onChange={(e)=>setDoctor(e.target.value)}
+                    value={doctor}
+                    onChange={(e) => setDoctor(e.target.value)}
                     className="input input-bordered text-white bg-[#18433f]"
                   />
                 </div>
@@ -134,8 +133,8 @@ const ContactForm = () => {
                     type="date"
                     placeholder="date"
                     name="Date"
-                    value={Date}
-                    onChange={(e)=>setDate(e.target.value)}
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
                     className="input input-bordered text-white bg-[#18433f]"
                   />
                 </div>
@@ -148,8 +147,8 @@ const ContactForm = () => {
                     type="time"
                     placeholder="time"
                     name="Time"
-                    value={Time}
-                    onChange={(e)=>setTime(e.target.value)}
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
                     className="input input-bordered text-white bg-[#18433f]"
                   />
                 </div>
