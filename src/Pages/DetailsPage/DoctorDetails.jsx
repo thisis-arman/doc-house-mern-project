@@ -246,6 +246,21 @@ const DoctorDetails = () => {
                   <div>
                     <h2 className="text-xl py-2 font-bold">About Me</h2>
                     <p className="pb-2">{overview?.aboutMe}</p>
+                    <div>
+                      <div>
+                        <h2 className="text-xl py-2 font-bold">Education</h2>
+                        <p>
+                          <li className="text-md font-bold ">{education[0]?.institution}</li>
+                          <p className="pl-6">{education[0]?.nameOfDegree}</p>
+                          <p className="pl-6">{education[0]?.Duration}</p>
+                        </p>
+                        <p className="py-4">
+                          <li className="text-md font-bold ">{education[1]?.institution}</li>
+                          <p className="pl-6">{education[1]?.nameOfDegree}</p>
+                          <p className="pl-6">{education[1]?.Duration}</p>
+                        </p>
+                      </div>
+                    </div>
                   </div>
                   <p className="leading-relaxed mb-4">
                     Fam locavore kickstarter distillery. Mixtape chillwave
@@ -254,6 +269,7 @@ const DoctorDetails = () => {
                     Everyday carry +1 seitan poutine tumeric. Gastropub blue
                     bottle austin listicle pour-over, neutra jean.
                   </p>
+
                 </TabPanel>
                 <TabPanel>
                   <p className="leading-relaxed mb-4">
