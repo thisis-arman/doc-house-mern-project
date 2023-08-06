@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const DoctorCard = ({brief}) => {
@@ -7,7 +8,7 @@ const DoctorCard = ({brief}) => {
         <div>
             <div className="card md:w-96 border rounded-lg bg-base-100 shadow-sm">
   <figure className="px-4  py-4">
-    <img src="../../../../doc-house Assets/doctor-1.png" alt="Shoes" className="rounded-xl w-full" />
+    <img src={profile.drImage} alt="Shoes" className="rounded-xl w-full" />
   </figure>
   <div className="px-4 py-4 ">
     <h2 className="card-title text-2xl py-1 font-bold">{profile?.name}</h2>
@@ -27,7 +28,9 @@ const DoctorCard = ({brief}) => {
         <p className="text-[#877e7e]"> ${profile.consultFee}</p>
     </div>
     <div className="card-actions py-4">
-      <button className="btn w-full btn-outline text-[#F7A582] hover:bg-[#F7A582] hover:text-white">Book Appointment</button>
+     <Link to={`/doctor/${profile._id}`} className="btn w-full btn-outline text-[#F7A582] hover:bg-[#F7A582] hover:text-white"
+    >Book Appointment
+     </Link>
     </div>
   </div>
 </div>
