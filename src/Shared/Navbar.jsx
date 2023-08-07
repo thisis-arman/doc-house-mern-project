@@ -18,7 +18,7 @@ const Navbar = () => {
    <Link to='/' className="mr-4 hover:bg-red-300">Login</Link>
     </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-white text-xl"><img src="../../doc-house Assets/logo01.png" alt="" /></a>
+    <a className="btn btn-ghost normal-case text-white text-xl"><img src="../../doc-house Assets/menu-logo.png" alt="" /></a>
   </div>
   {/* <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
