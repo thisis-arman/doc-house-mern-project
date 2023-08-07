@@ -24,7 +24,7 @@
   }
   
   .react-tabs__tab--selected {
-    background: #fff;
+    background: red;
     border-color: #aaa;
     color: black;
     border-radius: 5px 5px 0 0;

@@ -7,6 +7,15 @@ const DoctorDetails = () => {
   const data = useLoaderData();
   console.log(data);
   const { profile, overview, education, awards, services } = data;
+
+const updatedAbout =()=>{
+ const currentAbout = document.getElementById('about-text')
+ const updatedAbout = currentAbout.innerText;
+ console.log(updatedAbout)
+
+}
+  
+
   return (
     <section>
       <PageCover pageName="Doctor Profile" />
@@ -189,7 +198,8 @@ const DoctorDetails = () => {
                     <div>
                       {/* About me */}
                       <h2 className="text-xl py-2 font-bold">About Me</h2>
-                      <p className="pb-2">{overview?.aboutMe}</p>
+                      <div suppressContentEditableWarning={true} contentEditable id="about-text"  className="pb-2">{overview?.aboutMe}</div>
+                      <button onClick={updatedAbout}   className="btn btn-primary">save changes</button>
                       <div className="grid grid-cols-2  ">
                         {/* Education */}
                         <div>
