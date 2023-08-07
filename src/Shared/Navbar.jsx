@@ -14,7 +14,7 @@ const Navbar = () => {
       
    <Link to='/' className="mr-4 hover:bg-red-300">Home</Link>
    <Link to='/' className="mr-4 hover:bg-red-300">About</Link>
-   <Link to='/' className="mr-4 hover:bg-red-300">Appointment</Link>
+   <Link to='/appointment' className="mr-4 hover:bg-red-300">Appointment</Link>
    <Link to='/' className="mr-4 hover:bg-red-300">Login</Link>
     </ul>
     </div>
@@ -32,7 +32,7 @@ const Navbar = () => {
   <ul className="menu menu-horizontal px-1 hidden md:block">
    <Link to='/' className="mr-4">Home</Link>
    <Link to='/' className="mr-4">About</Link>
-   <Link to='/' className="mr-4">Appointment</Link>
+   <Link to='/appointment' className="mr-4">Appointment</Link>
    <Link to='/' className="mr-4">Login</Link>
     </ul>
   </div>

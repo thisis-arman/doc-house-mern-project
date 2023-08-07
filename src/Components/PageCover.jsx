@@ -9,7 +9,7 @@ const PageCover = ({ pageName }) => {
             <div className="text-sm text-white breadcrumbs">
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a>Doctor Profile</a></li>
+                    <li><a>{pageName}</a></li>
                  
                 </ul>
             </div>

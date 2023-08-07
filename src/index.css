@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.background-image-chair{
+    background-image: url("https://i.ibb.co/mFrBTY1/chair-bg.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    padding: 0 60px;
+    
+}
