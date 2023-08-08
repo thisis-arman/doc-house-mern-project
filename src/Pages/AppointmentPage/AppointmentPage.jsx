@@ -23,7 +23,7 @@ const AppointmentPage = () => {
       <PageCover pageName={"Appointment"} />
       <section className="background-image-chair relative md:top-[400px]  top-6 min-h-screen md:mb-[400px]">
         {/* Calender */}
-        <div className="md:w-5/6 mx-auto md:flex flex flex-col-reverse justify-center gap-16  items-center">
+        <div className="md:w-5/6  mx-auto md:flex flex flex-col-reverse justify-center gap-16  items-center">
           <div className="w-3/5 mx-auto">
             <Calendar className='w-96' value={value} onChange={(d) => setValue(d)} />
           </div>
