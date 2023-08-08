@@ -13,9 +13,9 @@ import { createContext, useEffect } from "react";
 import { useState } from "react";
 
 const auth = getAuth(app);
-const AuthContext = createContext(null);
+export const AuthContext = createContext(null);
 
-const AuthProvider = () => {
+const AuthProvider = ({children}) => {
   const [user, setUser] = useState(true);
   const [loading, setLoading] = useState(true);
 
@@ -69,7 +69,9 @@ const AuthProvider = () => {
   };
   return (
     <div>
-      <AuthContext.Provider value={authInfo}></AuthContext.Provider>
+      <AuthContext.Provider value={authInfo}>
+        {children}
+      </AuthContext.Provider>
     </div>
   );
 };
