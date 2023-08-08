@@ -7,6 +7,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AppointmentPage from "../Pages/AppointmentPage/AppointmentPage";
 import HomeDashboard from "../Layouts/Dashboard/Homedashboard";
 import AdminHome from "../Layouts/Dashboard/AdminDashboard/AdminHome";
+import SignIn from "../Pages/SignInPage/SignIn";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
     {
       path:'/sign-up',
       element:<SignUp/>
+    },
+    {
+      path:'/sign-in',
+      element:<SignIn/>
     },
     {
       path:'/dashboard',
