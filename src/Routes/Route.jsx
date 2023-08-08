@@ -5,6 +5,7 @@ import DoctorDetails from "../Pages/DetailsPage/DoctorDetails";
 import SignUp from "../Pages/SignUpPage/SignUp";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AppointmentPage from "../Pages/AppointmentPage/AppointmentPage";
+import HomeDashboard from "../Layouts/Dashboard/Homedashboard";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
     {
       path:'/sign-up',
       element:<SignUp/>
+    },
+    {
+      path:'/dashboard',
+      element:<HomeDashboard/>
     }
    
   ]);
