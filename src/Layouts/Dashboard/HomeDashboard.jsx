@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const HomeDashboard = () => {
+    const isAdmin =true;
 
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -13,34 +14,67 @@ const HomeDashboard = () => {
       setIsDrawerOpen(false);
     };
 
+
+const sidebarMenu =(
+    
+    <div className="p-4">
+    <h2 className="text-xl font-bold mb-4">
+    <img src="../../../doc-house Assets/logo.png" alt="" />
+    </h2>
+
+    {isAdmin?<ul className="space-y-2 flex flex-col my-8">
+      <Link to='admin'>
+        <a  className="text-blue-500 hover:underline">
+          Dashboard
+        </a>
+      </Link>
+      <Link>
+        <a href="#" className="text-blue-500 hover:underline">
+          All User
+        </a>
+      </Link>
+      <Link>
+        <a href="#" className="text-blue-500 hover:underline">
+          Add a Doctor
+        </a>
+      </Link>
+      <Link>
+        <a href="#" className="text-blue-500 hover:underline">
+         Manage Doctor
+        </a>
+      </Link>
+    </ul>
+    :
+    <ul className="space-y-2 flex flex-col my-8">
+      <Link>
+        <a href="#" className="text-blue-500 hover:underline">
+          Dashboard
+        </a>
+      </Link>
+      <Link>
+        <a href="#" className="text-blue-500 hover:underline">
+          Profile
+        </a>
+      </Link>
+      <Link>
+        <a href="#" className="text-blue-500 hover:underline">
+          Settings
+        </a>
+      </Link>
+    </ul>
+    
+    }
+
+  </div>
+)
+
   return (
     <div>
   <div className="flex h-screen bg-gray-100">
       {/* Sidebar for medium and large screens */}
       <div className="hidden md:block lg:block w-64 bg-white shadow-lg">
         {/* Sidebar content */}
-        <div className="p-4">
-          <h2 className="text-xl font-bold mb-4">
-          <img src="../../../doc-house Assets/logo.png" alt="" />
-          </h2>
-          <ul className="space-y-2 flex flex-col my-8">
-            <Link>
-              <a href="#" className="text-blue-500 hover:underline">
-                Dashboard
-              </a>
-            </Link>
-            <Link>
-              <a href="#" className="text-blue-500 hover:underline">
-                Profile
-              </a>
-            </Link>
-            <Link>
-              <a href="#" className="text-blue-500 hover:underline">
-                Settings
-              </a>
-            </Link>
-          </ul>
-        </div>
+      {sidebarMenu}
       </div>
 
       {/* Main content */}
@@ -55,6 +89,9 @@ const HomeDashboard = () => {
           </button>
         </div>
         {/* Content */}
+        <div>
+            <Outlet/>
+        </div>
         <p>This is the main content area.</p>
       </div>
 
@@ -69,26 +106,7 @@ const HomeDashboard = () => {
       {/* Mobile Drawer */}
       {isDrawerOpen && (
         <div className="md:hidden lg:hidden fixed inset-y-0 right-0 w-64 bg-white shadow-lg transform transition-transform duration-300">
-          <div className="p-4">
-            <h2 className="text-xl font-bold mb-4">Drawer Title</h2>
-            <ul className="space-y-2">
-              <Link>
-                <a href="#" className="text-blue-500 hover:underline">
-                  Dashboard
-                </a>
-              </Link>
-              <Link>
-                <a href="#" className="text-blue-500 hover:underline">
-                  Profile
-                </a>
-              </Link>
-              <Link>
-                <a href="#" className="text-blue-500 hover:underline">
-                  Settings
-                </a>
-              </Link>
-            </ul>
-          </div>
+             {sidebarMenu}
         </div>
       )}
     </div>
