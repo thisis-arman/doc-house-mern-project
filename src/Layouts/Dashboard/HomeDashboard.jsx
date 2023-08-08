@@ -24,22 +24,22 @@ const sidebarMenu =(
 
     {isAdmin?<ul className="space-y-2 flex flex-col my-8">
       <Link to='admin'>
-        <a  className="text-blue-500 hover:underline">
+        <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
           Dashboard
         </a>
       </Link>
       <Link>
-        <a href="#" className="text-blue-500 hover:underline">
+        <a href="#" className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
           All User
         </a>
       </Link>
       <Link>
-        <a href="#" className="text-blue-500 hover:underline">
+        <a href="#" className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
           Add a Doctor
         </a>
       </Link>
       <Link>
-        <a href="#" className="text-blue-500 hover:underline">
+        <a href="#" className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
          Manage Doctor
         </a>
       </Link>
@@ -47,17 +47,17 @@ const sidebarMenu =(
     :
     <ul className="space-y-2 flex flex-col my-8">
       <Link>
-        <a href="#" className="text-blue-500 hover:underline">
+        <a href="#" className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
           Dashboard
         </a>
       </Link>
       <Link>
-        <a href="#" className="text-blue-500 hover:underline">
+        <a href="#" className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
           Profile
         </a>
       </Link>
       <Link>
-        <a href="#" className="text-blue-500 hover:underline">
+        <a href="#" className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
           Settings
         </a>
       </Link>
@@ -70,7 +70,7 @@ const sidebarMenu =(
 
   return (
     <div>
-  <div className="flex h-screen bg-gray-100">
+  <div className="flex h-screen hover:bg-gray-100">
       {/* Sidebar for medium and large screens */}
       <div className="hidden md:block lg:block w-64 bg-white shadow-lg">
         {/* Sidebar content */}
@@ -110,6 +110,9 @@ const sidebarMenu =(
         </div>
       )}
     </div>
+
+
+
 
 </div>
   );
