@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const SignIn = () => {
   const {signIn} =useContext(AuthContext)
 
-
+const navigate = useNavigate()
 
   const handleSubmit =(event)=>{
     event.preventDefault()
@@ -14,15 +14,16 @@ const SignIn = () => {
     console.log(formData)  */
 
     const form = event.target;
-    const name = form.name.value;
-    const photo = form.photo.value;
+    // const name = form.name.value;
+    // const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name,photo,email,password)
+    console.log(email,password)
     signIn(email,password)
     .then((result)=>{
       const loggedUser = result.user;
       console.log(loggedUser)
+      navigate('/')
       alert("Signed In Successfully")
     
     })
