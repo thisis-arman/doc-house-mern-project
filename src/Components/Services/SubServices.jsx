@@ -20,7 +20,7 @@ const SubServices = ({ category }) => {
   }, [category]);
   return (
     <section>
-      <div className="grid grid-cols-3 gap-4 justify-between">
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-4 w-full justify-between">
         {services.map((data, i) => (
           <div
             className="border bg-base-100 flex items-center justify-center p-4 shadow rounded"

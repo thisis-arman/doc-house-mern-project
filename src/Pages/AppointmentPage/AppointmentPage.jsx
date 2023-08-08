@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import PageCover from "../../Components/PageCover";
 import Calendar from "moedim";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import TeethService from "../../Components/Services/TeethService";
 import CosmeticService from "../../Components/Services/CosmeticService";
 import SubServices from "../../Components/Services/SubServices";
 // import "react-tabs/style/react-tabs.css";
@@ -24,9 +23,9 @@ const AppointmentPage = () => {
       <PageCover pageName={"Appointment"} />
       <section className="background-image-chair relative md:top-[400px]  top-6 min-h-screen md:mb-[400px]">
         {/* Calender */}
-        <div className="md:w-5/6 mx-auto md:flex justify-center gap-16  items-center">
-          <div>
-            <Calendar value={value} onChange={(d) => setValue(d)} />
+        <div className="md:w-5/6 mx-auto md:flex flex flex-col-reverse justify-center gap-16  items-center">
+          <div className="w-3/5 mx-auto">
+            <Calendar className='w-96' value={value} onChange={(d) => setValue(d)} />
           </div>
           <div>
             <img
@@ -49,7 +48,7 @@ const AppointmentPage = () => {
               <div className="container px-5 py-16 mx-auto ">
                 <Tabs>
                   <TabList>
-                  <div className="grid md:grid-cols-3 grid-cols-2  -m-2">
+                  <div className="grid md:grid-cols-3 grid-cols-1  -m-2">
 
                     {services.map((data) => (
                       <Tab className=' p-2 '  key={data._id}>
@@ -78,13 +77,13 @@ const AppointmentPage = () => {
                   </TabList>
                       <h2 className="text-3xl py-12 font-bold text-center">Available slots for Appointment</h2>
                   <TabPanel>
-                    <TeethService/>
+                  <SubServices category="Cavity%20Orthodontics"/>
                   </TabPanel>
                   <TabPanel>
                     <CosmeticService/>
                   </TabPanel>
                   <TabPanel>
-                    <TeethService/>
+                  <SubServices category="Cosmetic-Orthodontics"/>
                   </TabPanel>
                   <TabPanel>
                     <SubServices category="Cavity%20Orthodontics"/>
