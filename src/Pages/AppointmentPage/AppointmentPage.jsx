@@ -4,6 +4,7 @@ import Calendar from "moedim";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import TeethService from "../../Components/Services/TeethService";
 import CosmeticService from "../../Components/Services/CosmeticService";
+import SubServices from "../../Components/Services/SubServices";
 // import "react-tabs/style/react-tabs.css";
 
 const AppointmentPage = () => {
@@ -86,7 +87,7 @@ const AppointmentPage = () => {
                     <TeethService/>
                   </TabPanel>
                   <TabPanel>
-                    <TeethService/>
+                    <SubServices category="Cavity%20Orthodontics"/>
                   </TabPanel>
                 </Tabs>
               </div>
