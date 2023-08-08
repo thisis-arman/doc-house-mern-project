@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import toast, { Toaster } from 'react-hot-toast';
 
 const SignIn = () => {
   const {signIn} =useContext(AuthContext)
@@ -24,7 +25,7 @@ const navigate = useNavigate()
       const loggedUser = result.user;
       console.log(loggedUser)
       navigate('/')
-      alert("Signed In Successfully")
+      toast.success("Signed In Successfully")
     
     })
     .catch(err=>console.log(err))
@@ -37,6 +38,10 @@ const navigate = useNavigate()
 
   return (
     <section className="md:flex  md:h-screen ">
+      <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
       <div className="bg-[#07332F] flex justify-center items-center md:w-1/2">
         <img className="w-1/2 mx-auto" src="../../../doc-house Assets/sign-up-page.png" alt="" />
       </div>

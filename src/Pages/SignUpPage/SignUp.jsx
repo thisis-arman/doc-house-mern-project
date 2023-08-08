@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import toast, { Toaster } from 'react-hot-toast';
 
 const SignUp = () => {
   const {createUser,updateUserProfile} =useContext(AuthContext)
@@ -22,7 +23,7 @@ const SignUp = () => {
     .then((result)=>{
       const createdUser = result.user;
       console.log(createdUser)
-      alert("User Created Successfully")
+      toast.success("User Created Successfully")
       updateUserProfile(name,photo)
       .then(()=>{
         console.log("Updated User Details")
@@ -39,6 +40,10 @@ const SignUp = () => {
 
   return (
     <section className="md:flex  md:h-screen ">
+      <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
       <div className="bg-[#07332F] flex justify-center items-center md:w-1/2">
         <img className="w-1/2 mx-auto" src="../../../doc-house Assets/sign-up-page.png" alt="" />
       </div>
