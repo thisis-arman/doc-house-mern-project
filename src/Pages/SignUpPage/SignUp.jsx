@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast';
+import Swal from "sweetalert2";
 
 const SignUp = () => {
   const {createUser,updateUserProfile} =useContext(AuthContext)
@@ -26,8 +27,25 @@ const SignUp = () => {
       toast.success("User Created Successfully")
       updateUserProfile(name,photo)
       .then(()=>{
-        console.log("Updated User Details")
-        
+        const saveUser = {name,email,photo,role:"user"}
+        fetch('http://localhost:5000/users',{
+          method:"POST",
+          headers:{
+            "content-type":"application/json"
+          },
+          body:JSON.stringify(saveUser)
+        })
+        .then(res=> res.json())
+        .then(data =>{
+          if(data.insertedId)
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Sign up successfully',
+            showConfirmButton: false,
+            timer: 2000
+          })
+        })
       })
     })
     .catch(err=>console.log(err))
