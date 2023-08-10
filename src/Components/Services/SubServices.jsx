@@ -28,7 +28,7 @@ const SubServices = ({ category }) => {
     const email = form.email.value;
 
     const appointmentInfo = {name,email,number,time,date ,category ,userEmail :user.email}
-    fetch('http://localhost:5000/appointment',{
+    fetch('http://localhost:5000/appointments',{
       method:"POST",
       headers:{
         'content-type':'application/json'
@@ -97,7 +97,7 @@ const SubServices = ({ category }) => {
                       type="text"
                       name="time"
                       defaultValue={data?.time}
-                      placeholder="Enter your name"
+                      placeholder=""
                       className="input my-4 input-bordered w-full max-w-sm"
                     />
                   </div>
