@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const SubServices = ({ category }) => {
+  const {user} = useContext(AuthContext)
   const [services, setServices] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const Navigate = useNavigate()
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -24,7 +27,7 @@ const SubServices = ({ category }) => {
     const number = form.number.value;
     const email = form.email.value;
 
-    const appointmentInfo = {name,email,number,time,date}
+    const appointmentInfo = {name,email,number,time,date ,category ,userEmail :user.email}
     fetch('http://localhost:5000/appointment',{
       method:"POST",
       headers:{
@@ -35,6 +38,7 @@ const SubServices = ({ category }) => {
     .then((data)=>{
       if(data.insertedId){
         toast.success(" Appointment Booked Successfully")
+        Navigate('')
       }
     })
     .catch((err)=>{
@@ -117,8 +121,9 @@ const SubServices = ({ category }) => {
                 
                     <input
                       type="email"
+                      
                       name="email"
-                      placeholder="Email"
+                      placeholder={`${user.email}`}
                       className="input input-bordered w-full "
                     />
                   </div>
