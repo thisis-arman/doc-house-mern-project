@@ -16,7 +16,7 @@ const HeroSection = () => {
       </div>
     </div>
     <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-      <img className="object-cover object-center hidden md:block rounded" alt="hero" src="../../../../doc-house Assets/hero-image.png" />
+      <img className="object-cover object-center hidden md:block rounded" alt="hero" src="https://i.ibb.co/VQ1MkTt/hero-image.png" />
     </div>
   </div>
 </section>

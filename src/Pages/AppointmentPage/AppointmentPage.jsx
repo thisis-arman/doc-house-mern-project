@@ -10,8 +10,8 @@ const AppointmentPage = () => {
   const [value, setValue] = useState(new Date());
   const [services, setServices] = useState([]);
   console.log(services);
-  console.log([value]);
-
+  // console.log(value.split(' ').slice(0,4).join(' '))
+  
   useEffect(() => {
     fetch("http://localhost:5000/services")
       .then((res) => res.json())
@@ -23,7 +23,7 @@ const AppointmentPage = () => {
       <PageCover pageName={"Appointment"} />
       <section className="background-image-chair relative md:top-[400px]  top-6 min-h-screen md:mb-[400px]">
         {/* Calender */}
-        <div className="md:w-5/6  mx-auto md:flex flex flex-col-reverse justify-center gap-16  items-center">
+        <div className="md:w-5/6  mx-auto flex md:flex-row flex-col-reverse justify-center gap-16  items-center">
           <div className="w-3/5 mx-auto">
             <Calendar className='w-96' value={value} onChange={(d) => setValue(d)} />
           </div>
@@ -39,7 +39,7 @@ const AppointmentPage = () => {
         {/* Services */}
         <section>
           <div className="text-center py-10">
-            <p>{`Available Service on ${value} `}</p>
+            <p>{`Available Service on  `}</p>
             <h2 className="text-4xl font-bold py-4">Please Select A Service</h2>
           </div>
           {/* Tailblocks  start here */}

@@ -103,4 +103,9 @@ function canPay(array, totalDue) {
    
 }
 const chips = canPay([2,4,8],10)
-console.log(chips)
+// console.log(chips)
+
+const  value = "Thu Aug 10 2023 12:49:30 GMT+0600 (Bangladesh Standard Time)"
+console.log(value.split(' ').slice(0,4).join(' '))
+const split  = value.split(' ')
+console.log(split.slice(0,4).join(' '))
