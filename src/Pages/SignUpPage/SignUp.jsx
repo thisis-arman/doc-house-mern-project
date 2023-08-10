@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast';
 import Swal from "sweetalert2";
@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const SignUp = () => {
   const {createUser,updateUserProfile} =useContext(AuthContext)
 
-
+const navigate = useNavigate()
 
   const handleSubmit =(event)=>{
     event.preventDefault()
@@ -46,6 +46,7 @@ const SignUp = () => {
             timer: 2000
           })
         })
+        navigate('/')
       })
     })
     .catch(err=>console.log(err))
