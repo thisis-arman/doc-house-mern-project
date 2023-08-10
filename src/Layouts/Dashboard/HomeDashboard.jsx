@@ -31,17 +31,17 @@ const sidebarMenu =(
         </a>
       </Link>
       <Link>
-        <a href="#" className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+        <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
           All User
         </a>
       </Link>
       <Link>
-        <a href="#" className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+        <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
           Add a Doctor
         </a>
       </Link>
       <Link>
-        <a href="#" className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+        <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
          Manage Doctor
         </a>
       </Link>
@@ -49,17 +49,17 @@ const sidebarMenu =(
     :
     <ul className="space-y-2 flex flex-col my-8">
       <Link>
-        <a href="#" className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+        <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
           Dashboard
         </a>
       </Link>
-      <Link>
-        <a href="#" className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
-          Profile
+      <Link to='my-appointments'>
+        <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+          My Appointments
         </a>
       </Link>
       <Link>
-        <a href="#" className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+        <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
           Settings
         </a>
       </Link>
