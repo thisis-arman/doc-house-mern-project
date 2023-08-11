@@ -24,34 +24,121 @@ const AddDoctor = () => {
   return (
     <div>
 
-      <form onSubmit={handleSubmit} className="shadow border flex flex-col justify-center items-center  md:w-1/2 p-4 py-10 mx-auto rounded m-8">
-        <h2 className="text-xl font-bold text-center">Sign In to Doc House</h2>
-        <div className="form-control w-full max-w-xs">
-          <label className="label">
-            <span className="label-text">Email</span>
-          </label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            className="input input-bordered w-full max-w-xs"
-          />
-        </div>
-        <div className="form-control w-full max-w-xs">
-          <label className="label">
+      {/*
+  Heads up! 👋
 
-            <span className="label-text">Password</span>
-          </label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Enter your password"
-            className="input input-bordered w-full max-w-xs"
-          />
-        </div>
-        <button type="submit" className="btn w-full max-w-xs btn-secondary my-4">ADD </button>
+  Plugins:
+    - @tailwindcss/forms
+*/}
 
-      </form>
+<section className="bg-gray-100">
+  <div className=" w-3/5 mx-auto max-w-screen px-4 py-6 sm:px-6 lg:px-8">
+<h2 className="text-3xl font-bold py-4">Add a Doctor</h2>
+    {/* <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5"> */}
+     {/*  <div className="lg:col-span-2 lg:py-12">
+        <p className="max-w-xl text-lg">
+          At the same time, the fact that we are wholly owned and totally
+          independent from manufacturer and other group control gives you
+          confidence that we will only recommend what is right for you.
+        </p>
+
+        <div className="mt-8">
+          <a href="" className="text-2xl font-bold text-pink-600">
+            0151 475 4450
+          </a>
+
+          <address className="mt-2 not-italic">
+            282 Kevin Brook, Imogeneborough, CA 58517
+          </address>
+        </div>
+      </div> */}
+
+      <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
+        <form action="" className="space-y-4">
+          <div>
+            <label className="sr-only" htmlFor="name">Name</label>
+            <input
+              className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
+              placeholder="Name"
+              type="text"
+              id="name"
+            />
+          </div>
+          <div>
+              <label className="sr-only" htmlFor="phone">Expertise</label>
+              <input
+                className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
+                placeholder="e.g: BDS, MDS - Periodontics"
+                type="text"
+                id="phone"
+              />
+            </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label className="sr-only" htmlFor="email">Email</label>
+              <input
+                className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
+                placeholder="Email address"
+                type="email"
+                id="email"
+              />
+            </div>
+
+            <div>
+              <label className="sr-only" htmlFor="phone">Phone</label>
+              <input
+                className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
+                placeholder="Phone Number"
+                type="tel"
+                id="phone"
+              />
+            </div>
+           
+          </div>
+
+         
+            <div>
+            <label className="sr-only" htmlFor="phone">Phone</label>
+              <input
+               className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
+                placeholder="e.g : Teeth Orthodontics"
+                type="text"
+                tabIndex="-1"
+                name="specialize"
+              />
+            </div>
+
+          
+
+          <div>
+            <label className="sr-only" htmlFor="message">About</label>
+
+            <textarea
+              className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
+              placeholder="About yourself"
+              rows="8"
+              id="message"
+            ></textarea>
+          </div>
+          <div>
+            <label className="sr-only" htmlFor="image">Image</label>
+
+        <input type="file" name="image" className="w-full  rounded-lg border-2 border-gray-200 p-3 text-sm" id="" />
+          </div>
+
+          <div className="mt-4">
+            <button
+              type="submit"
+              className="inline-block w-full rounded-lg bg-green-800 hover:bg-green-700 px-5 py-3 font-medium text-white max-w-full"
+            >
+              ADD
+            </button>
+          </div>
+        </form>
+      </div>
+    {/* </div> */}
+  </div>
+</section>
 
 
     </div>
