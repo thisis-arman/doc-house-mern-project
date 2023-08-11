@@ -10,6 +10,8 @@ import AdminHome from "../Layouts/Dashboard/AdminDashboard/AdminHome";
 import SignIn from "../Pages/SignInPage/SignIn";
 import MyAppointments from "../Layouts/Dashboard/UserDashboard/MyAppointments";
 import UserHome from "../Layouts/Dashboard/UserDashboard/UserHome";
+import MyReview from "../Layouts/Dashboard/UserDashboard/MyReview";
+import MyHistory from "../Layouts/Dashboard/UserDashboard/MyHistory";
 
 const router = createBrowserRouter([
     {
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
         {
           path:'user-home',
           element:<UserHome/>
+        },
+        {
+          path:'my-review',
+          element:<MyReview/>
+        },
+        {
+          path:"my-history",
+          element:<MyHistory/>
         }
       ]
     }

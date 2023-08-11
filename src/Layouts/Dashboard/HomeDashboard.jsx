@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const HomeDashboard = () => {
+
+  const {user} =useContext(AuthContext)
 
   
     const isAdmin =false;
@@ -18,7 +21,7 @@ const HomeDashboard = () => {
 
 
 const sidebarMenu =(
-    
+    <div>
     <div className="p-4">
     <h2 className="text-xl font-bold mb-4">
     <img src="../../../doc-house Assets/logo.png" alt="" />
@@ -58,15 +61,39 @@ const sidebarMenu =(
           My Appointments
         </a>
       </Link>
-      <Link>
+      <Link to="my-review">
         <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
-          Settings
+          My Reviews
+        </a>
+      </Link>
+      <Link to="my-history">
+        <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+          My History
         </a>
       </Link>
     </ul>
+
     
     }
 
+  </div>
+  <div className="relative inset-x-0 bottom-0 border-t border-gray-100">
+    <a href="#" className="flex items-center gap-2 bg-white p-4 hover:bg-gray-50">
+      <img
+        alt="Man"
+        src={user?.photoURL}
+        className="h-10 w-10 rounded-full object-cover"
+      />
+
+      <div>
+        <p className="text-xs">
+          <strong className="block font-medium">{user.displayName}</strong>
+
+          <span> {user.email}</span>
+        </p>
+      </div>
+    </a>
+  </div>
   </div>
 )
 
