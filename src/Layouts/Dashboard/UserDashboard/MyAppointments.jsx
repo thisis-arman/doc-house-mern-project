@@ -16,12 +16,9 @@ const MyAppointments = () => {
     })
     return (
         <div>
+<h2 className="py-6 text-3xl font-bold">My Appointments</h2>
 
-
-            {
-                appointments.map(data => <TableRow key={data._id} data={data}/>)
-            }
-
+<TableRow  data={appointments}/>
 
 
             

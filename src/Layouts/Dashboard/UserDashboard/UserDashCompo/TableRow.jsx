@@ -21,32 +21,40 @@ const TableRow = ({data}) => {
           Date
         </th>
         <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-          Status
+          Category
         </th>
         <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
           Fee
+        </th>
+        <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          Status
         </th>
         <th className="px-4 py-2"></th>
       </tr>
     </thead>
 
-    <tbody className="divide-y divide-gray-200">
-      <tr>
-        <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-          John Doe
+    <tbody className="divide-y divide-gray-200 text-center">
+    {
+      data.map(data => 
+       <tr key={data._id}>
+        <td  className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          {data?.name}
         </td>
-        <td className="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-        <td className="whitespace-nowrap px-4 py-2 text-gray-700">Web Developer</td>
+        <td className="whitespace-nowrap px-4 py-2 text-gray-700">{data.time}</td>
+        <td className="whitespace-nowrap px-4 py-2 text-gray-700">{data.category}</td>
         <td className="whitespace-nowrap px-4 py-2 text-gray-700">$120,000</td>
+        <td className="whitespace-nowrap px-4 py-2 text-gray-700">Pending</td>
         <td className="whitespace-nowrap px-4 py-2">
           <a
             href="#"
-            className="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
+            className="inline-block rounded bg-green-700 px-4 py-2 text-xs font-medium text-white hover:bg-green-900"
           >
-            View
+            Pay
           </a>
         </td>
       </tr>
+     )
+    }
     </tbody>
   </table>
 </div>

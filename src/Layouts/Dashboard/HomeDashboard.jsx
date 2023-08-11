@@ -4,7 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 const HomeDashboard = () => {
 
   
-    const isAdmin =true;
+    const isAdmin =false;
 
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -48,7 +48,7 @@ const sidebarMenu =(
     </ul>
     :
     <ul className="space-y-2 flex flex-col my-8">
-      <Link>
+      <Link to='user-home'>
         <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
           Dashboard
         </a>
