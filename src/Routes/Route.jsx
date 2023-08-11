@@ -12,6 +12,8 @@ import MyAppointments from "../Layouts/Dashboard/UserDashboard/MyAppointments";
 import UserHome from "../Layouts/Dashboard/UserDashboard/UserHome";
 import MyReview from "../Layouts/Dashboard/UserDashboard/MyReview";
 import MyHistory from "../Layouts/Dashboard/UserDashboard/MyHistory";
+import AllUsers from "../Layouts/Dashboard/AdminDashboard/AllUsers";
+import AddDoctor from "../Layouts/Dashboard/AdminDashboard/AddDoctor";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +52,14 @@ const router = createBrowserRouter([
         {
           path:'/dashboard/admin',
           element:<AdminHome/>
+        },
+        {
+        path:'all-users',
+        element:<AllUsers/>
+        },
+        {
+          path:'add-doctor',
+          element:<AddDoctor/>
         },
         {
           path:'my-appointments',

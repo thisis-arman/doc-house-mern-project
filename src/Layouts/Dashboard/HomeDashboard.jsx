@@ -7,7 +7,7 @@ const HomeDashboard = () => {
   const {user} =useContext(AuthContext)
 
   
-    const isAdmin =false;
+    const isAdmin =true;
 
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -33,12 +33,12 @@ const sidebarMenu =(
           Dashboard
         </a>
       </Link>
-      <Link>
+      <Link to='all-users'>
         <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
           All User
         </a>
       </Link>
-      <Link>
+      <Link to='add-doctor'>
         <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
           Add a Doctor
         </a>
