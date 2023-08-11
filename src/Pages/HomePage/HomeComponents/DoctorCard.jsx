@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const DoctorCard = ({brief}) => {
     console.log(brief)
-    const {profile}=brief;
+    const {profile,_id}=brief;
     return (
         <div>
             <div className="card md:w-96 border rounded-lg bg-base-100 shadow-sm">
@@ -28,7 +28,7 @@ const DoctorCard = ({brief}) => {
         <p className="text-[#877e7e]"> ${profile.consultFee}</p>
     </div>
     <div className="card-actions py-4">
-     <Link to={`/doctor/${profile._id}`} className="btn w-full btn-outline text-[#F7A582] hover:bg-[#F7A582] hover:text-white"
+     <Link to={`/doctor/${_id}`} className="btn w-full btn-outline text-[#F7A582] hover:bg-[#F7A582] hover:text-white"
     >Book Appointment
      </Link>
     </div>

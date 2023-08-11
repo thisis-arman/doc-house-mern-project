@@ -28,14 +28,14 @@ const updatedAbout =()=>{
               <img
                 alt="doctor"
                 className="lg:w-1/2 w-full   object-cover object-center rounded-none"
-                src={profile.drImage}
+                src={profile?.drImage}
               />
               <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                 <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-                  {profile.name}
+                  {profile?.name}
                 </h1>
                 <h2 className="text-sm title-font text-gray-500 tracking-widest">
-                  {profile.expertise}
+                  {profile?.expertise}
                 </h2>
                 <div className="flex mb-4">
                   <span className="flex items-center">
@@ -150,10 +150,10 @@ const updatedAbout =()=>{
             
                 <div>
                   <button className="btn btn-outline mr-4 my-4 py-0 hover:bg-gray-400 hover:text-black">
-                    {profile.services[0]}
+                    {profile?.services[0]}
                   </button>
                   <button className="btn btn-outline my-4 hover:bg-gray-400 hover:text-black">
-                    {profile.services[1]}
+                    {profile?.services[1]}
                   </button>
                 </div>
                

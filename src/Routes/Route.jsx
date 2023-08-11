@@ -30,7 +30,7 @@ const router = createBrowserRouter([
           element:<AppointmentPage/>
         },
         {
-          path:'/doctor/:id',
+          path:'doctor/:id',
           element:<DoctorDetails/>,
           loader:({params})=>fetch(`http://localhost:5000/doctors/${params.id}`)
         },
