@@ -99,7 +99,7 @@ const sidebarMenu =(
 
   return (
     <div>
-  <div className="flex min-h-screen hover:bg-gray-100">
+  <div className="flex min-h-screen  hover:bg-gray-100">
       {/* Sidebar for medium and large screens */}
       <div className="hidden md:block lg:block w-64 bg-white shadow-lg">
         {/* Sidebar content */}

@@ -34,27 +34,10 @@ const AddDoctor = () => {
 <section className="bg-gray-100">
   <div className=" w-3/5 mx-auto max-w-screen px-4 py-6 sm:px-6 lg:px-8">
 <h2 className="text-3xl font-bold py-4">Add a Doctor</h2>
-    {/* <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5"> */}
-     {/*  <div className="lg:col-span-2 lg:py-12">
-        <p className="max-w-xl text-lg">
-          At the same time, the fact that we are wholly owned and totally
-          independent from manufacturer and other group control gives you
-          confidence that we will only recommend what is right for you.
-        </p>
-
-        <div className="mt-8">
-          <a href="" className="text-2xl font-bold text-pink-600">
-            0151 475 4450
-          </a>
-
-          <address className="mt-2 not-italic">
-            282 Kevin Brook, Imogeneborough, CA 58517
-          </address>
-        </div>
-      </div> */}
+   
 
       <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-        <form action="" className="space-y-4">
+        <form onSubmit={handleSubmit} action="" className="space-y-4">
           <div>
             <label className="sr-only" htmlFor="name">Name</label>
             <input
@@ -73,6 +56,15 @@ const AddDoctor = () => {
                 id="phone"
               />
             </div>
+          <div>
+              <label className="sr-only" htmlFor="Chamber">Chamber</label>
+              <input
+                className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
+                placeholder="e.g: 406 no room , Popular , DhaKa"
+                type="text"
+                name="chamber"
+              />
+            </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
               <label className="sr-only" htmlFor="email">Email</label>
@@ -80,6 +72,7 @@ const AddDoctor = () => {
                 className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
                 placeholder="Email address"
                 type="email"
+                name="email"
                 id="email"
               />
             </div>
@@ -90,6 +83,7 @@ const AddDoctor = () => {
                 className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
                 placeholder="Phone Number"
                 type="tel"
+                name="number"
                 id="phone"
               />
             </div>

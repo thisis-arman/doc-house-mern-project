@@ -1,4 +1,4 @@
-// Problem 1 - tasif
+/* // Problem 1 - tasif
 function cubeNumber(number) {
   const type = typeof number;
 
@@ -109,3 +109,5 @@ const  value = "Thu Aug 10 2023 12:49:30 GMT+0600 (Bangladesh Standard Time)"
 console.log(value.split(' ').slice(0,4).join(' '))
 const split  = value.split(' ')
 console.log(split.slice(0,4).join(' '))
+ */
+
