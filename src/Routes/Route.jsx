@@ -14,6 +14,7 @@ import MyReview from "../Layouts/Dashboard/UserDashboard/MyReview";
 import MyHistory from "../Layouts/Dashboard/UserDashboard/MyHistory";
 import AllUsers from "../Layouts/Dashboard/AdminDashboard/AllUsers";
 import AddDoctor from "../Layouts/Dashboard/AdminDashboard/AddDoctor";
+import Blogs from "../Pages/BlogPage/Blogs";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         {
           path:'/appointment',
           element:<AppointmentPage/>
+        },
+        {
+          path:'/blog',
+          element:<Blogs/>
         },
         {
           path:'doctor/:id',
@@ -45,6 +50,7 @@ const router = createBrowserRouter([
       path:'/sign-in',
       element:<SignIn/>
     },
+    
     {
       path:'/dashboard',
       element:<HomeDashboard/>,

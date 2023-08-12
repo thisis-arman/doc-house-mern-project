@@ -75,7 +75,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link
+              <Link to='/blog'
                 className=" transition  hover:border-b-2  hover:text-lime-400/75"
                  
               >
