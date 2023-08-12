@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageCover from "../../Components/PageCover";
 
 
@@ -29,11 +30,11 @@ const Blogs = () => {
 
                     <div className="flex flex-1 flex-col justify-between">
                         <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
-                            <a href="#">
+                            <Link to='/blog/your-Comprehensive-Guide'>
                                 <h3 className="font-bold uppercase text-gray-900">
-                                    Finding the right guitar for your style - 5 tips
+                                Achieving and Maintaining Physical Fitness: Your Comprehensive Guide
                                 </h3>
-                            </a>
+                            </Link>
 
                             <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
