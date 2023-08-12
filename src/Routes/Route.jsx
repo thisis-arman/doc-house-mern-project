@@ -16,6 +16,7 @@ import AllUsers from "../Layouts/Dashboard/AdminDashboard/AllUsers";
 import AddDoctor from "../Layouts/Dashboard/AdminDashboard/AddDoctor";
 import Blogs from "../Pages/BlogPage/Blogs";
 import FitnessArticle from "../Pages/BlogPage/Blogs/FitnessArticle";
+import { CircleIndicator } from "../Components/ScrollProgressBar";
 
 const router = createBrowserRouter([
     {
@@ -34,10 +35,13 @@ const router = createBrowserRouter([
         {
           path:'/blog',
           element:<Blogs/>,
+          children:[
+           
+          ]
         },
         {
-          path:'/blog/your-Comprehensive-Guide',
-          element:<FitnessArticle/>
+          path:'/blog/blog-one',
+          element:<CircleIndicator/>
         },
         {
           path:'doctor/:id',

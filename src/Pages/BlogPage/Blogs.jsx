@@ -30,7 +30,7 @@ const Blogs = () => {
 
                     <div className="flex flex-1 flex-col justify-between">
                         <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
-                            <Link to='/blog/your-Comprehensive-Guide'>
+                            <Link to='blog-one'>
                                 <h3 className="font-bold uppercase text-gray-900">
                                 Achieving and Maintaining Physical Fitness: Your Comprehensive Guide
                                 </h3>

@@ -15,7 +15,7 @@ const Awards = () => {
             </p>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 md:px-20 gap-8 md:grid-cols-3 lg:grid-cols-5">
+          <div className="mt-8 grid grid-cols-3 md:px-20 gap-8 lg:grid-cols-5">
             <img
               src="https://www.usahealthsystem.com/uploads/recognitions/_recognitions2x/2023-American-Heart-Association-Gold-Plus-Stroke-850.png?20230720102955"
               alt=""

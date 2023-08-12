@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom";
-
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const DoctorCard = ({brief}) => {
+    useEffect(() => {
+        Aos.init({
+          duration: 1000,
+        });
+      }, [])
+
     console.log(brief)
     const {profile,_id}=brief;
     return (
         <div>
-            <div className="card md:w-96 border rounded-lg bg-base-100 shadow-sm">
+            <div data-aos="fade-up" data-aos-delay="300" className="card md:w-96 border rounded-lg bg-base-100 shadow-sm">
   <figure className="px-4  py-4">
     <img src={profile.drImage} alt="Shoes" className="rounded-xl w-full" />
   </figure>

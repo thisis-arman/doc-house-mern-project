@@ -1,4 +1,7 @@
 import react, { useState } from "react";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const ContactForm = () => {
   const [name, setName] = useState("");
@@ -8,10 +11,16 @@ const ContactForm = () => {
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
 
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+    });
+  }, [])
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     console.log(formData);
+    
 
     const url =
       "https://script.google.com/macros/s/AKfycby5nRdDBaCX1qpxDWa6DHQeYKMwBW9Ec2gaJ9dFF8xFmMKmttgYS70rbadJ3QNIx5UM/exec";
@@ -44,10 +53,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="container mx-auto relative top-20 md:mb-28 px-4">
-      <div className="hero min-h-screen text-white bg-[#07332F] rounded-md py-8 ">
-        <div className="md:px-20 px-4 md:flex items-center gap-12 ">
-          <div className="text-center md:w-2/5  lg:text-left">
+    <div className="container overflow-hidden mx-auto relative top-20 md:mb-28 mb-36 px-4">
+      <div className="hero min-h-screen text-white bg-[#07332F] rounded-md py-16 ">
+        <div className="md:px-20 px-6 md:flex items-center gap-12 ">
+          <div className="text-center  md:w-2/5  lg:text-left">
             <h1 className="text-5xl font-bold">Contact With Us!</h1>
             <p className="py-6">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -69,7 +78,7 @@ const ContactForm = () => {
           </div>
 
           <div className="card flex-shrink-0 md:w-3/5 w-full  shadow-2xl ">
-            <form onSubmit={handleSubmit}>
+            <form  data-aos="fade-left" data-aos-delay="400"  onSubmit={handleSubmit}>
               <div className="card-body grid grid-cols-1 md:grid-cols-2">
                 <div className="form-control">
                   <label className="label">

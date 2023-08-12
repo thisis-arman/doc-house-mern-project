@@ -1,16 +1,25 @@
-
+// import  motion  from "framer-motion";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const BlogCTA = () => {
+    useEffect(() => {
+        Aos.init({
+          duration: 1000,
+        });
+      }, [])
     return (
         <div>
-            <section>
+            <section className='overflow-hidden'>
   <div
     className="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8"
   >
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-      <div
+      <div data-aos="fade-left" data-aos-delay="500"
         className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full"
       >
+       
         <img
           alt="blogs"
           src="https://img.freepik.com/free-photo/overhead-view-laptop-stethoscope-medical-uniform-green-backdrop_23-2148129641.jpg?w=900&t=st=1691816589~exp=1691817189~hmac=3ee8d43b6d36fae8e271656086df2360516b9489836aafc2fde945fd9fe1a80b"
@@ -18,7 +27,7 @@ const BlogCTA = () => {
         />
       </div>
 
-      <div className="lg:py-24">
+      <div data-aos="fade-right" data-aos-delay="600" className="lg:py-24">
         <h2 className="text-3xl font-bold sm:text-4xl">Learn and Explore About your Health</h2>
 
         <p className="mt-4 text-gray-600">
