@@ -12,6 +12,7 @@
   "dependencies": {
     "@editorjs/editorjs": "^2.27.2",
     "@editorjs/header": "^2.7.0",
+    "aos": "^2.3.4",
     "axios": "^1.4.0",
     "daisyui": "^2.51.6",
     "firebase": "^9.23.0",

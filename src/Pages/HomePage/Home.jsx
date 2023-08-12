@@ -1,3 +1,5 @@
+import Awards from "./HomeComponents/Awards";
+import BlogCTA from "./HomeComponents/BlogCTA";
 import ContactForm from "./HomeComponents/ContactForm";
 import Contacts from "./HomeComponents/Contacts";
 import Editor from "./HomeComponents/Editor";
@@ -14,6 +16,8 @@ const Home = () => {
             <Contacts/>
             <Testimonials/>
             <ExpertDoctors/>
+            <Awards/>
+            <BlogCTA/>
             <ContactForm/>
             
         </div>
