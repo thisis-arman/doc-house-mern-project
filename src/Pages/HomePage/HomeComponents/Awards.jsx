@@ -3,8 +3,8 @@ const Awards = () => {
     <div>
       <section className="bg-green-900 my-8 text-white">
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
-          <div className="mx-auto max-w-lg text-center">
-            <h2 className="text-3xl font-bold sm:text-4xl">
+          <div className="mx-auto max-w-xl text-center">
+            <h2 className="text-3xl font-bold sm:text-5xl">
               Awards and Recognition
             </h2>
 

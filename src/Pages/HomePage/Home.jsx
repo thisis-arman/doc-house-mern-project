@@ -1,5 +1,6 @@
 import Awards from "./HomeComponents/Awards";
 import BlogCTA from "./HomeComponents/BlogCTA";
+import CaseStudies from "./HomeComponents/CaseStudies";
 import ContactForm from "./HomeComponents/ContactForm";
 import Contacts from "./HomeComponents/Contacts";
 import Editor from "./HomeComponents/Editor";
@@ -14,8 +15,9 @@ const Home = () => {
             <HeroSection/>
             <OurServices/>
             <Contacts/>
-            <Testimonials/>
             <ExpertDoctors/>
+            <CaseStudies/>
+            <Testimonials/>
             <Awards/>
             <BlogCTA/>
             <ContactForm/>
