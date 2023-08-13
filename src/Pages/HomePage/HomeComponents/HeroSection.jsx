@@ -30,8 +30,8 @@ const HeroSection = () => {
         <div  className="bg-[#07332F] overflow-hidden min-h-screen z-0 absolute w-full top-0">
             <section className="text-white body-font">
   <div  className="container mx-auto flex px-5 md:py-24  py-12  md:flex-row flex-col items-center">
-    <div data-aos="fade-left" data-aos-delay="800"  className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 mt-16 md:mb-0 items-center text-center">
-      <h1 className="title-font sm:text-4xl lg:text-5xl text-3xl mb-4 font-medium ">
+    <div data-aos="fade-left" data-aos-delay="800"  className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 mt-20 md:mb-0 items-center text-center">
+      <h1 className="title-font sm:text-4xl lg:text-6xl text-4xl mb-4 font-medium ">
       {/* <TextTransition className='text-lime-400 text-center  text-2xl md:text-5xl ml-7 md:ml-0 ' springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}</TextTransition> */}
         Your Journey to Wellness Begins Here
       </h1>

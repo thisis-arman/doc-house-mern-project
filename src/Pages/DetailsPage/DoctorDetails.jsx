@@ -171,36 +171,31 @@ const updatedAbout =()=>{
                   <div className="flex mb-4">
                     <TabList className="w-full bg-base-300 p-4 rounded ">
                       <div className="flex  ">
-                        <Tab className="border w-1/3 mr-4 hover:bg-gray-300 ">
+                        <Tab className="border w-full mr-4 hover:bg-gray-300 ">
                           Overview
                         </Tab>
-                        <Tab className="w-1/3 border hover:bg-gray-300 mr-4">
+                        <Tab className="w-full border hover:bg-gray-300 mr-4">
                           Locations
                         </Tab>
-                        <Tab className="w-1/3 border hover:bg-gray-300 mr-4">
+                        <Tab className="w-full border hover:bg-gray-300 mr-4">
                           Reviews
                         </Tab>
-                        <Tab className="w-1/3 border hover:bg-gray-300 mr-4">
+                        <Tab className="w-full border hover:bg-gray-300 mr-4">
                           Business Hours
                         </Tab>
                       </div>
                     </TabList>
                   </div>
 
-                  {/*    <TabPanel>
-      <h2>Any content 1</h2>
-    </TabPanel>
-    <TabPanel>
-      <h2>Any content 2</h2>
-    </TabPanel> */}
+                
 
                   <TabPanel>
                     <div>
                       {/* About me */}
                       <h2 className="text-xl py-2 font-bold">About Me</h2>
                       <div suppressContentEditableWarning={true} contentEditable id="about-text"  className="pb-2">{overview?.aboutMe}</div>
-                      <button onClick={updatedAbout}   className="btn btn-primary">save changes</button>
-                      <div className="grid grid-cols-2  ">
+                      {/* <button onClick={updatedAbout}   className="btn btn-primary">save changes</button> */}
+                      <div className="grid md:grid-cols-2  grid-cols-1  ">
                         {/* Education */}
                         <div>
                           <h2 className="text-xl py-2 font-bold">Education</h2>

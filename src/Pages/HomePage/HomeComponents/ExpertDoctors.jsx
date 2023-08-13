@@ -7,9 +7,10 @@ import 'aos/dist/aos.css';
 
 const ExpertDoctors = () => {
 const [doctors,setDoctor]=useState([])
+console.log(doctors)
 
 useEffect(()=>{
-    fetch('http://localhost:5000/doctors')
+    fetch('http://localhost:5000/api/all-info')
     .then(res =>res.json())
     .then(data =>setDoctor(data))
 },[])
