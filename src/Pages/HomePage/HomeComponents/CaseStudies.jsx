@@ -1,12 +1,25 @@
+import { TypeAnimation } from "react-type-animation";
 
 
 const CaseStudies = () => {
     return (
-        <section className="container mx-auto my-16">
+        <section className="container mx-auto my-16 p-4">
             <div>
                 <header className="text-left py-6">
-                    <h2 className="text-xl font-bold text-gray-900 sm:text-5xl">
-                       Case Studies
+                    <h2 className="text-3xl font-bold text-gray-900 sm:text-5xl">
+                    <TypeAnimation
+  sequence={[
+    // Same substring at the start will only be typed once, initially
+    'Case Studies',
+    1000,
+    'Research Paper',
+    1000,
+   
+  ]}
+  speed={50}
+  style={{ fontSize: '1em' }}
+  repeat={Infinity}
+/>
                     </h2>
 
                     <p className="max-w-md  mt-4 text-gray-500">
@@ -18,7 +31,7 @@ const CaseStudies = () => {
             </div>
 
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <article
                     className="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg"
                 >

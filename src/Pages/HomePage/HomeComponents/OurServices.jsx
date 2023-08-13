@@ -12,13 +12,13 @@ const OurServices = () => {
     });
   }, [])
     return (
-        <div className="container relative top-[600px] mb-[500px] w-full mx-auto grid md:grid-cols-2 px-5 py-24 md:flex-row flex-col items-start">
+        <div className="container relative top-[600px] mb-[500px] w-full mx-auto grid md:grid-cols-2 gap-4 px-5 py-24 md:flex-row flex-col items-center">
             <div  data-aos="fade-up" data-aos-delay="400"  className=" ">
-                <img className='' src="../../../../doc-house Assets/grilwithNotes.png" alt="" />
+                <img className='' src="https://i.ibb.co/Tc2q8K7/grilwith-Notes.png" alt="" />
             </div>
             <div  data-aos="fade-down" data-aos-delay="400"  className="text-center md:text-left">
                 <div>
-                    <h2 className="text-3xl font-semibold py-10">Our Services</h2>
+                    <h2 className="text-3xl sm:text-4xl font-semibold py-4">Our Services</h2>
                     <p className='pb-4'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
                 </div>
                 <div>
@@ -31,9 +31,9 @@ const OurServices = () => {
     </TabList>
 
     <TabPanel>
-      <img className='py-4' src="../../../../doc-house Assets/teeth-x.png" alt="" />
-      <h2 className='text-4xl py-4 font-semibold'>Electro  Gastrology Therapy</h2>
-      <p className=''>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> <br />
+      <img className='py-4' src="https://i.ibb.co/SfsPwmj/teeth-x.png" alt="" />
+      <h2 className='text-3xl py-4 font-semibold'>Electro  Gastrology Therapy</h2>
+      <p className=''>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
       <p className='py-4'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
       <button className='btn btn-secondary'>More Details</button>
     </TabPanel>

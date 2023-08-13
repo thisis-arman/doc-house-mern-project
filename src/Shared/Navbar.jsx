@@ -20,7 +20,7 @@ const Navbar = () => {
         <a className="block "  >
           <span className="sr-only">Home</span>
           <Link className=" text-xl">
-       <img className="w-28 md:w-full" src="../../doc-house Assets/menu-logo.png" alt="" />
+       <img className="w-28 md:w-full" src="https://i.ibb.co/5hRKp1m/menu-logo.png" alt="" />
       
       </Link>
         </a>

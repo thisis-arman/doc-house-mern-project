@@ -14,7 +14,7 @@ const DoctorCard = ({brief}) => {
     const {profile,_id}=brief;
     return (
         <div>
-            <div data-aos="fade-up" data-aos-delay="300" className="card md:w-96 border rounded-lg bg-base-100 shadow-sm">
+            <div data-aos="fade-up" data-aos-delay="100" className="card w-full md:w-full lg:w-full border rounded-lg bg-base-100 shadow-sm">
   <figure className="px-4  py-4">
     <img src={profile.drImage} alt="Shoes" className="rounded-xl w-full" />
   </figure>

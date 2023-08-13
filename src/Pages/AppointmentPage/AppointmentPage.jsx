@@ -30,7 +30,7 @@ const AppointmentPage = () => {
           <div>
             <img
               className="md:w-4/5 mt-6 md:mt-0 w-full"
-              src="../../../doc-house Assets/chair 1.png"
+              src="https://i.ibb.co/P9Djp5K/chair-1.png"
               alt=""
             />
           </div>

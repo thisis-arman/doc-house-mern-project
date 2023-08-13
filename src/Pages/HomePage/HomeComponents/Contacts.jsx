@@ -10,7 +10,7 @@ const Contacts = () => {
             {/* <h2 className="text-xs text-green-500 tracking-widest font-medium title-font mb-1">ROOF PARTY POLAROID</h2> */}
             {/* <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">Master Cleanse Reliac Heirloom</h1> */}
           </div>
-          <div className="grid md:grid-cols-3 grid-cols-1 -m-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 -m-4">
             <div className="p-4 ">
 
               <div className="flex rounded-lg h-full bg-[#07332F] text-white p-8 flex-col">
