@@ -105,7 +105,7 @@ const sidebarMenu =(
 
   </div>
   <div className="relative inset-x-0 bottom-0 border-t border-gray-100">
-    <a href="#" className="flex items-center gap-2 bg-white p-4 hover:bg-gray-50">
+    <a href="#" className="flex items-center gap-2  p-4 ">
       <img
         alt="Man"
         src={user?.photoURL}
@@ -126,9 +126,9 @@ const sidebarMenu =(
 
   return (
     <div className="">
-  <div className="flex min-h-screen  hover:bg-gray-100">
+  <div className="flex min-h-screen m-4 hover:bg-gray-100">
       {/* Sidebar for medium and large screens */}
-      <div className="hidden md:block lg:block w-64 bg-gradient-to-t from-[#efedfe] to-[#fcf3f4] shadow-lg">
+      <div className="hidden md:block lg:block w-64 bg-gradient-to-t from-[#efedfe] to-[#fcf3f4] shadow-2xl px-4  rounded-md shadow-black">
         {/* Sidebar content */}
       {sidebarMenu}
       </div>

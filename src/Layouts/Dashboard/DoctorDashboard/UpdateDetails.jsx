@@ -1,199 +1,301 @@
 import { toast } from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
-// import {FcEditImage} from 'react-icons/fc'
-import {LiaEdit} from 'react-icons/lia'
+import { LiaEdit } from "react-icons/lia";
 // import PageCover from "../../Components/PageCover";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import { useState } from "react";
 
 const UpdateDetails = () => {
   const data = useLoaderData();
+  const [profileForm, setProfileForm] = useState(true);
   console.log(data);
-  const { profile, overview, education, awards, services } = data;
+  const { profile, education, awards, services,aboutMe } = data;
 
-const updatedAbout =()=>{
- const currentAbout = document.getElementById('about-text')
- const updatedAbout = currentAbout.innerText;
- console.log(updatedAbout)
+const handleEditForm=()=>{
+  setProfileForm(profileForm => !profileForm)
+}
 
+ /*  const updatedAbout = () => {
+    const currentAbout = document.getElementById("about-text");
+    const updatedAbout = currentAbout.innerText;
+    console.log(updatedAbout);
 
- try {
-    const response =  fetch(
-        `http://localhost:5000/api/all-info/${data._id}`,
-      {
+    try {
+      const response = fetch(`http://localhost:5000/api/all-info/${data._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({updatedAbout} ),
-      }
-    );
+        body: JSON.stringify({ updatedAbout }),
+      });
 
-    if (response.ok) {
+      if (response.ok) {
         toast.success("updated successfully");
-      } 
+      } else {
+        console.log("something");
+      }
     } catch (error) {
       console.error("An error occurred:", error);
     }
-  };
-
-
-  
+  }; */
 
   return (
     <section>
       {/* <PageCover pageName="Doctor Profile" /> */}
       {/* Profile section */}
-      <section className="bg-[#E6E7EE]">
-
+      <section className="">
         <section className=" body-font overflow-hidden ">
           <div className="container rounded-md   mx-auto shadow-white ">
-           
-      
             <div>
-            <button className="absolute top-10 right-24 border-2 border-black p-2"><LiaEdit/> Edit</button>
-            <div className="md:flex gap-10 items-center justify-start border-4  m-4 shadow-2xl shadow-black p-16">
-              <div className="p-4">
+              <button onClick={handleEditForm} className="absolute top-10 right-12 border flex items-center px-1 border-black">
+                <LiaEdit className=" h-6 w-6" />
+                <span>Edit</span>
+              </button>
+              <div className="md:flex gap-10 items-center justify-start border-4  m-4 shadow-2xl shadow-black p-16">
+                <div className="p-4">
+                  <img
+                    className="  rounded-full w-44 h-44"
+                    src={profile?.drImage}
+                    alt=""
+                  />
+                  <button className="border-2 border-black p-1 px-4 hover:bg-gray-400 hover:text-white m-4">
+                    Change Photo
+                  </button>
+                </div>
+
+                {profileForm?<div>
+                  <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
+                    {profile?.name}
+                  </h1>
+                  <h2 className="text-sm title-font text-gray-500 tracking-widest">
+                    {profile?.expertise}
+                  </h2>
+                  <div className="flex mb-4">
+                    <span className="flex items-center">
+                      <svg
+                        fill="currentColor"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        className="w-4 h-4 text-indigo-500"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                      <svg
+                        fill="currentColor"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        className="w-4 h-4 text-indigo-500"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                      <svg
+                        fill="currentColor"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        className="w-4 h-4 text-indigo-500"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                      <svg
+                        fill="currentColor"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        className="w-4 h-4 text-indigo-500"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        className="w-4 h-4 text-indigo-500"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                      <span className="text-gray-600 ml-3">4 Reviews</span>
+                    </span>
+                    <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s">
+                      <a className="text-gray-500">
+                        <svg
+                          fill="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          className="w-5 h-5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                        </svg>
+                      </a>
+                      <a className="text-gray-500">
+                        <svg
+                          fill="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          className="w-5 h-5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                        </svg>
+                      </a>
+                      <a className="text-gray-500">
+                        <svg
+                          fill="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          className="w-5 h-5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+                        </svg>
+                      </a>
+                    </span>
+                  </div>
+
+                  <div className="flex gap-4 items-center">
+                    <img
+                      src="../../../../doc-house Assets/location.png"
+                      alt=""
+                    />
+                    <p className="text-[#877e7e]">{profile?.Chamber}</p>
+                  </div>
+                  <div>
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                  </div>
+
+                  <div>
+                    <button className="btn btn-outline mr-4 my-4 py-0 hover:bg-gray-400 hover:text-black">
+                      {profile?.services[0]}
+                    </button>
+                    <button className="btn btn-outline my-4 hover:bg-gray-400 hover:text-black">
+                      {profile?.services[1]}
+                    </button>
+                  </div>
+                </div>
                 
-                <img className="  rounded-full w-44 h-44" src={profile?.drImage} alt="" />
-                <button className="border-2 border-black p-1 px-4 hover:bg-gray-400 hover:text-white m-4">Change Photo</button>
+               :
+                <div>
+  
+                  <section className="relative flex   lg:items-center">
+                    <div className="w-full px-4  sm:px-6 sm:py-1  lg:px-8 ">
+                      <div className="mx-auto  text-center">
+                        
+                      </div>
+
+                      <form action="" className="mx-auto mb-0 mt-8 min-w-xl space-y-4">
+                        <div>
+                          <label htmlFor="email" className="sr-only">Email</label>
+
+                          <div className="relative">
+                            <input
+                              type="email"
+                              className="w-full rounded-lg border-gray-200 w-xl  p-4 pe-28 text-sm shadow-sm"
+                              placeholder="Enter email"
+                            />
+
+                            <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-4 w-4 text-gray-400"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+
+                        <div>
+                          <label htmlFor="password" className="sr-only">Password</label>
+
+                          <div className="relative">
+                            <input
+                              type="password"
+                              className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                              placeholder="Enter password"
+                            />
+
+                            <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-4 w-4 text-gray-400"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                />
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center justify-between">
+                          <p className="text-sm text-gray-500">
+                            No account?
+                            <a className="underline" href="">Sign up</a>
+                          </p>
+
+                          <button
+                            type="submit"
+                            className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+                          >
+                            Sign in
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+
+                    
+                  </section>
+
+                </div>}
 
               </div>
-              <div>
-              <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-                  {profile?.name}
-                </h1>
-                <h2 className="text-sm title-font text-gray-500 tracking-widest">
-                  {profile?.expertise}
-                </h2>
-                <div className="flex mb-4">
-                  <span className="flex items-center">
-                    <svg
-                      fill="currentColor"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      className="w-4 h-4 text-indigo-500"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                    <svg
-                      fill="currentColor"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      className="w-4 h-4 text-indigo-500"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                    <svg
-                      fill="currentColor"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      className="w-4 h-4 text-indigo-500"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                    <svg
-                      fill="currentColor"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      className="w-4 h-4 text-indigo-500"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      className="w-4 h-4 text-indigo-500"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                    <span className="text-gray-600 ml-3">4 Reviews</span>
-                  </span>
-                  <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s">
-                    <a className="text-gray-500">
-                      <svg
-                        fill="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        className="w-5 h-5"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                      </svg>
-                    </a>
-                    <a className="text-gray-500">
-                      <svg
-                        fill="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        className="w-5 h-5"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-                      </svg>
-                    </a>
-                    <a className="text-gray-500">
-                      <svg
-                        fill="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        className="w-5 h-5"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-                      </svg>
-                    </a>
-                  </span>
-                </div>
-
-                <div className="flex gap-4 items-center">
-                  <img src="../../../../doc-house Assets/location.png" alt="" />
-                  <p className="text-[#877e7e]">{profile?.Chamber}</p>
-                </div>
-                <div>
-                  <img src="" alt="" />
-                  <img src="" alt="" />
-                  <img src="" alt="" />
-                  <img src="" alt="" />
-                </div>
-
-            
-                <div>
-                  <button className="btn btn-outline mr-4 my-4 py-0 hover:bg-gray-400 hover:text-black">
-                    {profile?.services[0]}
-                  </button>
-                  <button className="btn btn-outline my-4 hover:bg-gray-400 hover:text-black">
-                    {profile?.services[1]}
-                  </button>
-                </div>
-
-              </div>
-            </div>
             </div>
           </div>
         </section>
 
         {/* Overview Section */}
-        <section className="text-gray-600 body-font overflow-hidden  ">
+        <section className="shadow-2xl shadow-black body-font overflow-hidden m-4 ">
           <div className="container px-5 pb-24 mx-auto   shadow-2xl shadow-white drop-shadow-2xl  border border-gray-50 md:mb-20">
             <div className="lg:w-4/5 mx-auto flex flex-wrap">
               <div className=" w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
@@ -220,12 +322,12 @@ const updatedAbout =()=>{
                 
 
                   <TabPanel>
-                    <div>
+                    <div className="">
                       {/* About me */}
                       <h2 className="text-xl py-2 font-bold">About Me</h2>
-                      <div suppressContentEditableWarning={true} contentEditable id="about-text"  className="pb-2">{data?.aboutMe}</div>
+                      {/* <div suppressContentEditableWarning={true} contentEditable id="about-text"  className="pb-2">{aboutMe ||'N/A'}</div> */}
 
-                      <button onClick={updatedAbout}   className="btn  btn-primary">save changes</button>
+                      {/* <button  onClick={updatedAbout}  className="btn  btn-primary">save changes</button> */}
                       <div className="grid md:grid-cols-2  grid-cols-1  ">
                         {/* Education */}
                         <div>
