@@ -1,37 +1,66 @@
+import { toast } from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
-import PageCover from "../../Components/PageCover";
+// import {FcEditImage} from 'react-icons/fc'
+import {LiaEdit} from 'react-icons/lia'
+// import PageCover from "../../Components/PageCover";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
-const DoctorDetails = () => {
+const UpdateDetails = () => {
   const data = useLoaderData();
   console.log(data);
   const { profile, overview, education, awards, services } = data;
 
-/* const updatedAbout =()=>{
+const updatedAbout =()=>{
  const currentAbout = document.getElementById('about-text')
  const updatedAbout = currentAbout.innerText;
  console.log(updatedAbout)
 
-}
-   */
+
+ try {
+    const response =  fetch(
+        `http://localhost:5000/api/all-info/${data._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({updatedAbout} ),
+      }
+    );
+
+    if (response.ok) {
+        toast.success("updated successfully");
+      } 
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  };
+
+
+  
 
   return (
     <section>
-      <PageCover pageName="Doctor Profile" />
+      {/* <PageCover pageName="Doctor Profile" /> */}
       {/* Profile section */}
       <section className="bg-[#E6E7EE]">
 
-        <section className="text-gray-600 body-font overflow-hidden ">
-          <div className="container rounded-md   relative py-24  top-[320px] mb-[300px]  mx-auto shadow-white ">
-            <div className="bg-[#e6e7ee] mx-auto flex flex-wrap shadow-2xl shadow-white drop-shadow-2xl  border border-gray-50 p-6">
-              <img
-                alt="doctor"
-                className="lg:w-1/2 w-full   object-cover object-center rounded-none"
-                src={profile?.drImage}
-              />
-              <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
+        <section className=" body-font overflow-hidden ">
+          <div className="container rounded-md   mx-auto shadow-white ">
+           
+      
+            <div>
+            <button className="absolute top-10 right-24 border-2 border-black p-2"><LiaEdit/> Edit</button>
+            <div className="md:flex gap-10 items-center justify-start border-4  m-4 shadow-2xl shadow-black p-16">
+              <div className="p-4">
+                
+                <img className="  rounded-full w-44 h-44" src={profile?.drImage} alt="" />
+                <button className="border-2 border-black p-1 px-4 hover:bg-gray-400 hover:text-white m-4">Change Photo</button>
+
+              </div>
+              <div>
+              <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
                   {profile?.name}
                 </h1>
                 <h2 className="text-sm title-font text-gray-500 tracking-widest">
@@ -156,8 +185,9 @@ const DoctorDetails = () => {
                     {profile?.services[1]}
                   </button>
                 </div>
-               
+
               </div>
+            </div>
             </div>
           </div>
         </section>
@@ -193,8 +223,9 @@ const DoctorDetails = () => {
                     <div>
                       {/* About me */}
                       <h2 className="text-xl py-2 font-bold">About Me</h2>
-                      <div suppressContentEditableWarning={true} contentEditable id="about-text"  className="pb-2">{overview?.aboutMe}</div>
-                      {/* <button onClick={updatedAbout}   className="btn btn-primary">save changes</button> */}
+                      <div suppressContentEditableWarning={true} contentEditable id="about-text"  className="pb-2">{data?.aboutMe}</div>
+
+                      <button onClick={updatedAbout}   className="btn  btn-primary">save changes</button>
                       <div className="grid md:grid-cols-2  grid-cols-1  ">
                         {/* Education */}
                         <div>
@@ -270,4 +301,4 @@ const DoctorDetails = () => {
   );
 };
 
-export default DoctorDetails;
+export default UpdateDetails;

@@ -7,7 +7,8 @@ const HomeDashboard = () => {
   const {user} =useContext(AuthContext)
 
   
-    const isAdmin =true;
+    const isAdmin =false;
+    const isDoctor =true;
 
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -24,10 +25,11 @@ const sidebarMenu =(
     <div>
     <div className="p-4">
     <h2 className="text-xl font-bold mb-4">
-    <img src="../../../doc-house Assets/logo.png" alt="" />
+   <Link to='/'> <img src="https://i.ibb.co/fHGPb2R/logo.png" alt="" /></Link>
     </h2>
 
-    {isAdmin?<ul className="space-y-2 flex flex-col my-8">
+    {isAdmin?
+    <ul className="space-y-2 flex flex-col my-8">
       <Link to='admin'>
         <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
           Dashboard
@@ -41,6 +43,31 @@ const sidebarMenu =(
       <Link to='add-doctor'>
         <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
           Add a Doctor
+        </a>
+      </Link>
+      <Link>
+        <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+         Manage Doctor
+        </a>
+      </Link>
+    </ul>
+   :
+    isDoctor?
+    
+    <ul className="space-y-2 flex flex-col my-8">
+      <Link to='admin'>
+        <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+          Dashboard
+        </a>
+      </Link>
+      <Link to='all-users'>
+        <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+          My Appointments
+        </a>
+      </Link>
+      <Link to='doctor-details'>
+        <a  className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+          Update Doctor
         </a>
       </Link>
       <Link>
@@ -87,9 +114,9 @@ const sidebarMenu =(
 
       <div>
         <p className="text-xs">
-          <strong className="block font-medium">{user.displayName}</strong>
+          <strong className="block font-medium">{user?.displayName}</strong>
 
-          <span> {user.email}</span>
+          <span> {user?.email}</span>
         </p>
       </div>
     </a>
@@ -98,16 +125,16 @@ const sidebarMenu =(
 )
 
   return (
-    <div>
+    <div className="">
   <div className="flex min-h-screen  hover:bg-gray-100">
       {/* Sidebar for medium and large screens */}
-      <div className="hidden md:block lg:block w-64 bg-white shadow-lg">
+      <div className="hidden md:block lg:block w-64 bg-gradient-to-t from-[#efedfe] to-[#fcf3f4] shadow-lg">
         {/* Sidebar content */}
       {sidebarMenu}
       </div>
 
       {/* Main content */}
-      <div className="flex-grow p-8">
+      <div className="flex-grow ">
         {/* Button to open Drawer on small screens */}
         <div className="md:hidden lg:hidden flex justify-end">
           <button
@@ -121,7 +148,7 @@ const sidebarMenu =(
         <div>
             <Outlet/>
         </div>
-        <p>This is the main content area.</p>
+        {/* <p>This is the main content area.</p> */}
       </div>
 
       {/* Drawer overlay */}

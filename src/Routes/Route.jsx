@@ -17,6 +17,7 @@ import AddDoctor from "../Layouts/Dashboard/AdminDashboard/AddDoctor";
 import Blogs from "../Pages/BlogPage/Blogs";
 import FitnessArticle from "../Pages/BlogPage/Blogs/FitnessArticle";
 import { CircleIndicator } from "../Components/ScrollProgressBar";
+import UpdateDetails from "../Layouts/Dashboard/DoctorDashboard/UpdateDetails";
 
 const router = createBrowserRouter([
     {
@@ -91,6 +92,11 @@ const router = createBrowserRouter([
         {
           path:"my-history",
           element:<MyHistory/>
+        },
+        {
+          path:'doctor-details/:id',
+          element:<UpdateDetails/>,
+          loader:({params})=>fetch(`http://localhost:5000/api/all-info/${params.id}`)
         }
       ]
     }
