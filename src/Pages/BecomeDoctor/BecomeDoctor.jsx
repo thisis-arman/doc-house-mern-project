@@ -3,6 +3,7 @@ import DoctorBanner from "./DoctorBanner";
 import Guide from "./Guide";
 import Process from "./Process";
 import RegisterAsDoctor from "./RegisterAsDoctor";
+import RulesReg from "./RulesReg";
 import Stats from "./Stats";
 
 
@@ -15,6 +16,7 @@ const BecomeDoctor = () => {
             <Guide />
             <Process />
             <RegisterAsDoctor />
+            <RulesReg />
 
 
 

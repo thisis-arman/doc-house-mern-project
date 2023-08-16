@@ -4,14 +4,14 @@ const RulesReg = () => {
     return (
         <div>
             <section>
-                <div className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-screen-2xl px-4 py-24 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
                         <div className="relative z-10 lg:py-16">
                             <div className="relative h-64 sm:h-80 lg:h-full">
                                 <img
                                     alt="House"
                                     src="https://img.freepik.com/free-vector/flat-hand-drawn-hospital-reception-scene_52683-54613.jpg?w=900&t=st=1692203039~exp=1692203639~hmac=decf73361578838a703315f6376ddec307da0fb9ffd1111ed68e4cd7f546879e"
-                                    className="absolute inset-0 h-full w-full object-cover"
+                                    className="absolute inset-0 h-full w-full  shadow-md object-cover"
                                 />
                             </div>
                         </div>
@@ -23,16 +23,18 @@ const RulesReg = () => {
 
                             <div className="p-8 sm:p-16 lg:p-24">
                                 <h2 className="text-2xl font-bold sm:text-3xl">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore,
-                                    debitis.
+                                    Instructor rules & regulations
                                 </h2>
 
                                 <p className="mt-4 text-gray-600">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid,
-                                    molestiae! Quidem est esse numquam odio deleniti, beatae, magni
-                                    dolores provident quaerat totam eos, aperiam architecto eius quis
-                                    quibusdam fugiat dicta.
+                                    Sed auctor, nisl non elementum ornare, turpis orci consequat arcu, at iaculis quam leo nec libero. Aenean mollis turpis velit, id laoreet sem luctus in. Etiam et egestas lorem.
                                 </p>
+                                <ul className="list-disc pl-10">
+                                    <li>Lorem ipsum dolor sit amet consectetur</li>
+                                    <li>Lorem ipsum dolor sit amet consectetur</li>
+                                    <li>Lorem ipsum dolor sit amet consectetur</li>
+                                    <li>Lorem ipsum dolor sit amet consectetur</li>
+                                </ul>
 
                                 <a
                                     href="#"
