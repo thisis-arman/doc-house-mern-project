@@ -4,7 +4,7 @@ const Process = () => {
     return (
         <div>
             <section className="text-gray-600 body-font">
-                <div className="container px-5 py-12 mx-auto">
+                <div className="container px-5 py-12  mx-auto">
                     <div className="text-center mb-20">
                         <h1 className="sm:text-4xl text-2xl font-bold title-font text-gray-900 mb-4">How you'll become successful Doctor</h1>
 
