@@ -1,10 +1,38 @@
+import { useContext } from 'react';
 import { PiEyeClosedThin } from 'react-icons/pi'
+import { AuthContext } from '../../Provider/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const RegisterAsDoctor = () => {
+    const { createUser } = useContext(AuthContext)
 
 
     const handleForm = (event) => {
-        const form
+        event.preventDefault()
+        const form = event.target
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const image = form.image.value;
+
+        const min = 100000; // Minimum 6-digit number (inclusive)
+        const max = 999999; // Maximum 6-digit number (inclusive)
+        const newRandomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        console.log(newRandomNumber)
+
+
+        const doctorID = newRandomNumber;
+        const newUser = { name, email, image, role: "doctor", status: "pending", doctorID }
+        console.log(newUser)
+        createUser(email, password)
+            .then((result) => {
+                const createdUser = result.data;
+                console.log(createdUser)
+                toast.success("User Created Successfully")
+
+            })
+            .catch(err => console.log(err))
+
     }
     return (
         <div id='register-doctor'>
@@ -82,7 +110,7 @@ const RegisterAsDoctor = () => {
                                 </p>
                             </div>
 
-                            <form action="#" className="mt-8 grid grid-cols-6 gap-6">
+                            <form onSubmit={handleForm} action="#" className="mt-8 grid grid-cols-6 gap-6">
                                 <div className="col-span-6 sm:col-span-3">
                                     <label
                                         htmlFor="FirstName"
@@ -94,7 +122,7 @@ const RegisterAsDoctor = () => {
                                     <input
                                         type="text"
                                         id="FirstName"
-                                        name="first_name"
+                                        name="name"
                                         className="mt-1 w-full rounded-md  p-2 border-b-2 border-2 text-gray-700 bg-white text-sm  "
                                     />
                                 </div>
@@ -192,7 +220,7 @@ const RegisterAsDoctor = () => {
                                 </div>
 
                                 <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-                                    <button
+                                    <button type='submit'
                                         className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
                                     >
                                         Create an account
