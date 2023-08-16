@@ -18,89 +18,94 @@ import Blogs from "../Pages/BlogPage/Blogs";
 import FitnessArticle from "../Pages/BlogPage/Blogs/FitnessArticle";
 import { CircleIndicator } from "../Components/ScrollProgressBar";
 import UpdateDetails from "../Layouts/Dashboard/DoctorDashboard/UpdateDetails";
+import BecomeDoctor from "../Pages/BecomeDoctor/BecomeDoctor";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main/>,
-      errorElement:<ErrorPage/>,
-      children:[
-        {
-            path:'/',
-            element:<Home/>
-        },
-        {
-          path:'/appointment',
-          element:<AppointmentPage/>
-        },
-        {
-          path:'/blog',
-          element:<Blogs/>,
-          children:[
-           
-          ]
-        },
-        {
-          path:'/blog/blog-one',
-          element:<CircleIndicator/>
-        },
-        {
-          path:'doctor/:id',
-          element:<DoctorDetails/>,
-          loader:({params})=>fetch(`http://localhost:5000/api/all-info/${params.id}`)
-        },
-        
-      ]
-    },
-    {
-      path:'/sign-up',
-      element:<SignUp/>
-    },
-    {
-      path:'/sign-in',
-      element:<SignIn/>
-    },
-    
-    {
-      path:'/dashboard',
-      element:<HomeDashboard/>,
-      children:[
-        {
-          path:'/dashboard/admin',
-          element:<AdminHome/>
-        },
-        {
-        path:'all-users',
-        element:<AllUsers/>
-        },
-        {
-          path:'add-doctor',
-          element:<AddDoctor/>
-        },
-        {
-          path:'my-appointments',
-          element:<MyAppointments/>
-        },
-        {
-          path:'user-home',
-          element:<UserHome/>
-        },
-        {
-          path:'my-review',
-          element:<MyReview/>
-        },
-        {
-          path:"my-history",
-          element:<MyHistory/>
-        },
-        {
-          path:'doctor-details/:id',
-          element:<UpdateDetails/>,
-          loader:({params})=>fetch(`http://localhost:5000/api/all-info/${params.id}`)
-        }
-      ]
-    }
-   
-  ]);
+  {
+    path: "/",
+    element: <Main />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: '/appointment',
+        element: <AppointmentPage />
+      },
+      {
+        path: '/be-doctor',
+        element: <BecomeDoctor />
+      },
+      {
+        path: '/blog',
+        element: <Blogs />,
+        children: [
 
-  export default router;
+        ]
+      },
+      {
+        path: '/blog/blog-one',
+        element: <CircleIndicator />
+      },
+      {
+        path: 'doctor/:id',
+        element: <DoctorDetails />,
+        loader: ({ params }) => fetch(`http://localhost:5000/api/all-info/${params.id}`)
+      },
+
+    ]
+  },
+  {
+    path: '/sign-up',
+    element: <SignUp />
+  },
+  {
+    path: '/sign-in',
+    element: <SignIn />
+  },
+
+  {
+    path: '/dashboard',
+    element: <HomeDashboard />,
+    children: [
+      {
+        path: '/dashboard/admin',
+        element: <AdminHome />
+      },
+      {
+        path: 'all-users',
+        element: <AllUsers />
+      },
+      {
+        path: 'add-doctor',
+        element: <AddDoctor />
+      },
+      {
+        path: 'my-appointments',
+        element: <MyAppointments />
+      },
+      {
+        path: 'user-home',
+        element: <UserHome />
+      },
+      {
+        path: 'my-review',
+        element: <MyReview />
+      },
+      {
+        path: "my-history",
+        element: <MyHistory />
+      },
+      {
+        path: 'doctor-details/:id',
+        element: <UpdateDetails />,
+        loader: ({ params }) => fetch(`http://localhost:5000/api/all-info/${params.id}`)
+      }
+    ]
+  }
+
+]);
+
+export default router;
