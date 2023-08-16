@@ -4,7 +4,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import { toast } from 'react-hot-toast';
 
 const RegisterAsDoctor = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser, updateUserProfile } = useContext(AuthContext)
 
 
     const handleForm = (event) => {
@@ -26,9 +26,27 @@ const RegisterAsDoctor = () => {
         console.log(newUser)
         createUser(email, password)
             .then((result) => {
-                const createdUser = result.data;
+
+                const createdUser = result;
                 console.log(createdUser)
+                updateUserProfile(name, image)
+                    .then(() => {
+                        toast.success('Updated Successfully')
+                    })
                 toast.success("User Created Successfully")
+                fetch('http://localhost:5000/users', {
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/json"
+                    },
+                    body: JSON.stringify(newUser)
+                })
+                    .then(data => {
+                        if (data.insertedId) {
+                            toast.success('User Created Successs...!')
+                        }
+                    })
+                    .catch(err => console.log(err))
 
             })
             .catch(err => console.log(err))
