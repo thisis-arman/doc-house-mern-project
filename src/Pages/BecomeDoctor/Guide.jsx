@@ -52,7 +52,7 @@ const Guide = () => {
                                         <path d="M22 4L12 14.01l-3-3" />
                                     </svg>
                                 </div>
-                                <div className="flex-grow ml-4 pl-4">
+                                <div className="flex-grow ml-4 ">
                                     <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">FINISH</h2>
                                     <p className="leading-relaxed">Pitchfork ugh tattooed scenester echo park gastropub whatever cold-pressed retro.</p>
                                 </div>
