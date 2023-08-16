@@ -1,5 +1,6 @@
 import PageCover from "../../Components/PageCover";
 import DoctorBanner from "./DoctorBanner";
+import Guide from "./Guide";
 import RegisterAsDoctor from "./RegisterAsDoctor";
 import Stats from "./Stats";
 
@@ -10,6 +11,7 @@ const BecomeDoctor = () => {
             <PageCover pageName="Join As Doctor" />
             <DoctorBanner />
             <Stats />
+            <Guide />
             <RegisterAsDoctor />
 
 
