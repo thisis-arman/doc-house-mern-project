@@ -99,9 +99,9 @@ const router = createBrowserRouter([
         element: <MyHistory />
       },
       {
-        path: 'doctor-details/:id',
+        path: 'profile/:email',
         element: <UpdateDetails />,
-        loader: ({ params }) => fetch(`http://localhost:5000/api/all-info/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/api/all-info-by/${params.email}`)
       }
     ]
   }
