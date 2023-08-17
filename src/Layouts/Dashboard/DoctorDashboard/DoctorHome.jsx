@@ -61,52 +61,35 @@ const DoctorHome = () => {
             <div>
                 {/* Table */}
 
-                <div className="overflow-x-auto  border-gray-200">
+                <div className="overflow-x-auto  border-gray-200 ">
                     <table className=" divide-y-2 border rounded-lg  divide-gray-200 bg-white text-sm">
-                        <thead className="ltr:text-left rtl:text-right">
+                        <thead className="ltr:text-left rtl:text-right bg-base-200">
                             <tr>
                                 <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                                     Name
                                 </th>
                                 <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                    Date of Birth
+                                    Number
                                 </th>
                                 <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                    Role
+                                    Date
                                 </th>
-                                <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                    Salary
-                                </th>
+
                             </tr>
                         </thead>
 
                         <tbody className="divide-y divide-gray-200">
-                            <tr>
-                                <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                    John Doe
-                                </td>
-                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">Web Developer</td>
-                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">$120,000</td>
-                            </tr>
+                            {
+                                appointments.map((data, i) => <tr key={i}>
+                                    <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                                        {data.name}
+                                    </td>
+                                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">{data.number}</td>
+                                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">{data.date}</td>
+                                </tr>)
+                            }
 
-                            <tr>
-                                <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                    Jane Doe
-                                </td>
-                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">04/11/1980</td>
-                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">Web Designer</td>
-                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">$100,000</td>
-                            </tr>
 
-                            <tr>
-                                <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                    Gary Barlow
-                                </td>
-                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">Singer</td>
-                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">$20,000</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
