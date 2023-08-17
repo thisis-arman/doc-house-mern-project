@@ -56,7 +56,7 @@ const HomeDashboard = () => {
           isDoctor ?
 
             <ul className="space-y-2 flex flex-col my-8">
-              <Link to='admin'>
+              <Link to='doctor-home'>
                 <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                   Dashboard
                 </a>

@@ -19,6 +19,7 @@ import FitnessArticle from "../Pages/BlogPage/Blogs/FitnessArticle";
 import { CircleIndicator } from "../Components/ScrollProgressBar";
 import UpdateDetails from "../Layouts/Dashboard/DoctorDashboard/UpdateDetails";
 import BecomeDoctor from "../Pages/BecomeDoctor/BecomeDoctor";
+import DoctorHome from "../Layouts/Dashboard/DoctorDashboard/DoctorHome";
 
 const router = createBrowserRouter([
   {
@@ -102,6 +103,10 @@ const router = createBrowserRouter([
         path: 'profile/:email',
         element: <UpdateDetails />,
         loader: ({ params }) => fetch(`http://localhost:5000/api/all-info-by/${params.email}`)
+      },
+      {
+        path: 'doctor-home',
+        element: <DoctorHome />
       }
     ]
   }

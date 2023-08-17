@@ -20,6 +20,7 @@ const UpdateDetails = () => {
 
   return (
     <section className=" p-4 bg-gray-200">
+      <h2 className="text-3xl font-bold pb-8 pt-4">My Profile</h2>
 
       {/* Profile section */}
       <section className="md:flex   gap-4 ">
