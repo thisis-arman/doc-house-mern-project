@@ -83,7 +83,7 @@ const router = createBrowserRouter([
         element: <AddDoctor />
       },
       {
-        path: 'my-appointments',
+        path: 'appointments',
         element: <MyAppointments />
       },
       {

@@ -37,9 +37,10 @@ const SubServices = ({ category }) => {
     const time = form.time.value;
     const number = form.number.value;
     const email = form.email.value;
-    const doctor_name = form.doctor_name.value;
+    const doctorID = form.doctorID.value;
+    console.log(doctorID)
 
-    const appointmentInfo = { name, email, number, time, date, category, userEmail: user.email, doctor_name }
+    const appointmentInfo = { name, email, number, time, date, category, userEmail: user.email, doctorID }
     fetch('http://localhost:5000/appointments', {
       method: "POST",
       headers: {
@@ -140,8 +141,8 @@ const SubServices = ({ category }) => {
                           />
                         </div>
                         <div className="form-control w-full mb-4 max-w-sm">
-                          <select className="input input-bordered w-full max-w-sm" id="doctor_name" name="doctor_name">
-                            {users.map((user, i) => <option key={i} name={user?.name} >{user?.name}</option>)}
+                          <select placeholder="Doctor ID" className="input input-bordered w-full max-w-sm" id="doctor_name" name={user?.doctorID}>
+                            {users.map((user, i) => <option key={i} name={user?.doctorID} >{user?.doctorID}</option>)}
                           </select>
                         </div>
                         <div className="form-control w-full mb-4 max-w-sm">
