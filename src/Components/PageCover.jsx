@@ -5,7 +5,7 @@ const PageCover = ({ pageName }) => {
     return (
         <section className="bg-[#07332F] absolute w-full top-0 ">
 
-            <div className="px-36 hidden  md:py-32 md:flex flex-col justify-center  w-full ">
+            <div className="px-36 hidden  md:pt-32 md:pb-20 md:flex flex-col justify-center  w-full ">
                 <div className="text-sm text-white breadcrumbs">
                     <ul>
                         <li><a href="/">Home</a></li>

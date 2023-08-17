@@ -20,6 +20,7 @@ import { CircleIndicator } from "../Components/ScrollProgressBar";
 import UpdateDetails from "../Layouts/Dashboard/DoctorDashboard/UpdateDetails";
 import BecomeDoctor from "../Pages/BecomeDoctor/BecomeDoctor";
 import DoctorHome from "../Layouts/Dashboard/DoctorDashboard/DoctorHome";
+import AboutPage from "../Pages/AboutPage/AboutPage";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path: 'about',
+        element: <AboutPage />
       },
       {
         path: '/appointment',
