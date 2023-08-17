@@ -19,25 +19,25 @@ const UpdateDetails = () => {
 
 
   return (
-    <section>
+    <section className=" p-4 bg-gray-200">
 
       {/* Profile section */}
-      <section className="md:flex  gap-4 ">
+      <section className="md:flex   gap-4 ">
         {/*   <section className=" body-font overflow-hidden ">
           <div className="container rounded-md   mx-auto shadow-white ">
             <div>
-              <button onClick={handleEditForm} className="absolute top-10 right-12 border flex items-center px-1 border-black">
+              <button onClick={handleEditForm} className="absolute top-10 right-12 border-b-2 flex items-center px-1 border-b-2-black">
                 <LiaEdit className=" h-6 w-6" />
                 <span>Edit</span>
               </button>
-              <div className="md:flex gap-10 items-center justify-start border-4  m-4 shadow-2xl shadow-black p-16">
+              <div className="md:flex gap-10 items-center justify-start border-b-2-4  m-4 shadow-2xl shadow-black p-16">
                 <div className="p-4">
                   <img
                     className="  rounded-full w-44 h-44"
                     src={profile?.drImage}
                     alt=""
                   />
-                  <button className="border-2 border-black p-1 px-4 hover:bg-gray-400 hover:text-white m-4">
+                  <button className="border-b-2-2 border-b-2-black p-1 px-4 hover:bg-gray-400 hover:text-white m-4">
                     Change Photo
                   </button>
                 </div>
@@ -108,7 +108,7 @@ const UpdateDetails = () => {
                       </svg>
                       <span className="text-gray-600 ml-3">4 Reviews</span>
                     </span>
-                    <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s">
+                    <span className="flex ml-3 pl-3 py-2 border-b-2-l-2 border-b-2-gray-200 space-x-2s">
                       <a className="text-gray-500">
                         <svg
                           fill="currentColor"
@@ -188,7 +188,7 @@ const UpdateDetails = () => {
                             <div className="relative">
                               <input
                                 type="email"
-                                className="w-full rounded-lg border-gray-200 w-xl  p-4 pe-28 text-sm shadow-sm"
+                                className="w-full rounded-lg border-b-2-gray-200 w-xl  p-4 pe-28 text-sm shadow-sm"
                                 placeholder="Enter email"
                               />
 
@@ -217,7 +217,7 @@ const UpdateDetails = () => {
                             <div className="relative">
                               <input
                                 type="password"
-                                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                                className="w-full rounded-lg border-b-2-gray-200 p-4 pe-12 text-sm shadow-sm"
                                 placeholder="Enter password"
                               />
 
@@ -271,7 +271,7 @@ const UpdateDetails = () => {
             </div>
           </div>
         </section> */}
-        <section className=" w-3/12 flex flex-col object-contain border-4 border-black">
+        <section className=" w-3/12  flex flex-col md:h-96 shadow-md  bg-white ">
           <figure className="w-32 h-32 mb-12 mx-auto pt-8">
             <img className="rounded-full" src={profile?.drImage} alt="" />
           </figure>
@@ -280,35 +280,41 @@ const UpdateDetails = () => {
             <p className="font-semibold">{profile?.expertise}</p>
             <button className="bg-blue-600 text-white mx-auto text-center px-4 flex items-center p-1 rounded-md shadow-sm"><LiaEdit className="w-6 h-6" /> <span>Edit Profile</span></button>
             <p className="font-bold text-center py-2">{profile?.numberOfReviews} Reviews</p>
+            {/* TODO:react ratings apply here */}
           </div>
 
 
         </section>
 
         {/* Overview Section */}
-        <section className="shadow-2xl shadow-black body-font overflow-hidden w-9/12  m-4 ">
-          <div className="container px-5 pb-24 mx-auto   shadow-2xl shadow-white drop-shadow-2xl  border border-gray-50 md:mb-20">
-            <div className="lg:w-4/5 mx-auto flex flex-wrap">
-              <div className=" w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
-                <Tabs>
-                  <div className="flex mb-4">
-                    <TabList className="w-full bg-base-300 p-4 rounded ">
-                      <div className="flex  ">
-                        <Tab className="border w-full mr-4 hover:bg-gray-300 ">
-                          Overview
-                        </Tab>
-                        <Tab className="w-full border hover:bg-gray-300 mr-4">
-                          Locations
-                        </Tab>
-                        <Tab className="w-full border hover:bg-gray-300 mr-4">
-                          Reviews
-                        </Tab>
-                        <Tab className="w-full border hover:bg-gray-300 mr-4">
-                          Business Hours
-                        </Tab>
-                      </div>
-                    </TabList>
-                  </div>
+        <section className=" shadow-black body-font overflow-hidden w-9/12  ">
+          <Tabs>
+
+            <div className="  mb-4  bg-white">
+              <TabList className="  p-4 rounded ">
+                <div className="flex  ">
+                  <Tab className="border-b-2  mr-4 hover:bg-gray-300 ">
+                    Overview
+                  </Tab>
+                  <Tab className=" border-b-2 hover:bg-gray-300 mr-4">
+                    Locations
+                  </Tab>
+                  <Tab className=" border-b-2 hover:bg-gray-300 mr-4">
+                    Reviews
+                  </Tab>
+                  <Tab className=" border-b-2 hover:bg-gray-300 mr-4">
+                    Business Hours
+                  </Tab>
+                </div>
+              </TabList>
+            </div>
+
+
+            <div className="container px-5 pb-24 mx-auto  bg-white   md:mb-20">
+              <div className="lg:w-4/5 mx-auto flex flex-wrap">
+                <div className=" w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+
+
 
 
 
@@ -384,11 +390,13 @@ const UpdateDetails = () => {
                       bottle austin listicle pour-over, neutra jean.
                     </p>
                   </TabPanel>
-                </Tabs>
+
+                </div>
               </div>
             </div>
-          </div>
+          </Tabs>
         </section>
+
       </section>
     </section>
   );

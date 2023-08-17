@@ -32,22 +32,22 @@ const HomeDashboard = () => {
         {isAdmin ?
           <ul className="space-y-2 flex flex-col my-8">
             <Link to='admin'>
-              <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+              <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                 Dashboard
               </a>
             </Link>
             <Link to='all-users'>
-              <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+              <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                 All User
               </a>
             </Link>
             <Link to='add-doctor'>
-              <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+              <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                 Add a Doctor
               </a>
             </Link>
             <Link>
-              <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+              <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                 Manage Doctor
               </a>
             </Link>
@@ -57,23 +57,23 @@ const HomeDashboard = () => {
 
             <ul className="space-y-2 flex flex-col my-8">
               <Link to='admin'>
-                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                   Dashboard
                 </a>
               </Link>
               <Link to={`appointments`}>
-                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                   My Appointments
                 </a>
               </Link>
               {/*  to={`/class/${cls._id}`} */}
               <Link to={`profile/${user.email}`}>
-                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                   My Profile
                 </a>
               </Link>
               <Link>
-                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                   Manage Doctor
                 </a>
               </Link>
@@ -81,22 +81,22 @@ const HomeDashboard = () => {
             :
             <ul className="space-y-2 flex flex-col my-8">
               <Link to='user-home'>
-                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                   Dashboard
                 </a>
               </Link>
               <Link to='my-appointments'>
-                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                   My Appointments
                 </a>
               </Link>
               <Link to="my-review">
-                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                   My Reviews
                 </a>
               </Link>
               <Link to="my-history">
-                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                   My History
                 </a>
               </Link>
@@ -128,9 +128,9 @@ const HomeDashboard = () => {
 
   return (
     <div className="">
-      <div className="flex min-h-screen  hover:bg-gray-100">
+      <div className="flex min-h-screen  ">
         {/* Sidebar for medium and large screens */}
-        <div className="hidden md:block lg:block w-64 bg-gradient-to-t from-[#efedfe] to-[#fcf3f4] shadow-2xl px-4  rounded-md shadow-black">
+        <div className="hidden md:block lg:block w-64 bg-black  text-white px-4   shadow-2xl shadow-black ">
           {/* Sidebar content */}
           {sidebarMenu}
         </div>
@@ -147,7 +147,7 @@ const HomeDashboard = () => {
             </button>
           </div>
           {/* Content */}
-          <div className="p-4">
+          <div className="">
             <Outlet />
           </div>
           {/* <p>This is the main content area.</p> */}
@@ -163,7 +163,7 @@ const HomeDashboard = () => {
 
         {/* Mobile Drawer */}
         {isDrawerOpen && (
-          <div className="md:hidden lg:hidden fixed inset-y-0 right-0 w-64 bg-white shadow-lg transform transition-transform duration-300">
+          <div className="md:hidden lg:hidden fixed inset-y-0 right-0 w-64 bg-base-200 shadow-lg transform transition-transform duration-300">
             {sidebarMenu}
           </div>
         )}
