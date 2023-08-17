@@ -16,36 +16,14 @@ const UpdateDetails = () => {
     setProfileForm(profileForm => !profileForm)
   }
 
-  /*  const updatedAbout = () => {
-     const currentAbout = document.getElementById("about-text");
-     const updatedAbout = currentAbout.innerText;
-     console.log(updatedAbout);
- 
-     try {
-       const response = fetch(`http://localhost:5000/api/all-info/${data._id}`, {
-         method: "PUT",
-         headers: {
-           "Content-Type": "application/json",
-         },
-         body: JSON.stringify({ updatedAbout }),
-       });
- 
-       if (response.ok) {
-         toast.success("updated successfully");
-       } else {
-         console.log("something");
-       }
-     } catch (error) {
-       console.error("An error occurred:", error);
-     }
-   }; */
+
 
   return (
     <section>
-      {/* <PageCover pageName="Doctor Profile" /> */}
+
       {/* Profile section */}
-      <section className="">
-        <section className=" body-font overflow-hidden ">
+      <section className="md:flex  gap-4 ">
+        {/*   <section className=" body-font overflow-hidden ">
           <div className="container rounded-md   mx-auto shadow-white ">
             <div>
               <button onClick={handleEditForm} className="absolute top-10 right-12 border flex items-center px-1 border-black">
@@ -292,10 +270,23 @@ const UpdateDetails = () => {
               </div>
             </div>
           </div>
+        </section> */}
+        <section className=" w-3/12 flex flex-col object-contain border-4 border-black">
+          <figure className="w-32 h-32 mb-12 mx-auto pt-8">
+            <img className="rounded-full" src={profile?.drImage} alt="" />
+          </figure>
+          <div className="mx-auto">
+            <h2 className="text-2xl font-bold">{profile?.name}</h2>
+            <p className="font-semibold">{profile?.expertise}</p>
+            <button className="bg-blue-600 text-white mx-auto text-center px-4 flex items-center p-1 rounded-md shadow-sm"><LiaEdit className="w-6 h-6" /> <span>Edit Profile</span></button>
+            <p className="font-bold text-center py-2">{profile?.numberOfReviews} Reviews</p>
+          </div>
+
+
         </section>
 
         {/* Overview Section */}
-        <section className="shadow-2xl shadow-black body-font overflow-hidden m-4 ">
+        <section className="shadow-2xl shadow-black body-font overflow-hidden w-9/12  m-4 ">
           <div className="container px-5 pb-24 mx-auto   shadow-2xl shadow-white drop-shadow-2xl  border border-gray-50 md:mb-20">
             <div className="lg:w-4/5 mx-auto flex flex-wrap">
               <div className=" w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
