@@ -61,7 +61,7 @@ const HomeDashboard = () => {
                   Dashboard
                 </a>
               </Link>
-              <Link to='all-users'>
+              <Link to={`appointments`}>
                 <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
                   My Appointments
                 </a>

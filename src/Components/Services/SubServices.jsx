@@ -4,7 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const SubServices = ({ category }) => {
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext)
+  const [users, setUsers] = useState([])
   const [services, setServices] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const Navigate = useNavigate()
@@ -17,8 +18,18 @@ const SubServices = ({ category }) => {
     setIsModalOpen(false);
   };
 
+  useEffect(() => {
+    fetch('http://localhost:5000/users')
+      .then(res => res.json())
+      .then(data => {
+        const doctor = data.filter(d => d.role == "doctor")
+        setUsers(doctor)
+      })
+  }, [])
+  console.log(users, 'all users----')
 
-  const handleSubmit =(event)=>{
+
+  const handleSubmit = (event) => {
     event.preventDefault()
     const form = event.target;
     const name = form.name.value;
@@ -26,25 +37,26 @@ const SubServices = ({ category }) => {
     const time = form.time.value;
     const number = form.number.value;
     const email = form.email.value;
+    const doctor_name = form.doctor_name.value;
 
-    const appointmentInfo = {name,email,number,time,date ,category ,userEmail :user.email}
-    fetch('http://localhost:5000/appointments',{
-      method:"POST",
-      headers:{
-        'content-type':'application/json'
+    const appointmentInfo = { name, email, number, time, date, category, userEmail: user.email, doctor_name }
+    fetch('http://localhost:5000/appointments', {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json'
       },
-      body:JSON.stringify(appointmentInfo)
+      body: JSON.stringify(appointmentInfo)
     })
-    .then((data)=>{
-      if(data.insertedId){
-        toast.success(" Appointment Booked Successfully")
-        Navigate('')
-      }
-    })
-    .catch((err)=>{
-      console.log(err)
-      toast.error("Please try Again")
-    })
+      .then((data) => {
+        if (data.insertedId) {
+          toast.success(" Appointment Booked Successfully")
+          Navigate('')
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+        toast.error("Please try Again")
+      })
   }
 
   useEffect(() => {
@@ -79,72 +91,77 @@ const SubServices = ({ category }) => {
             </div>
             {/* Modal */}
             <div className="flex justify-center items-center ">
-        {isModalOpen && (
-          <div className="fixed inset-0 flex items-center justify-center  z-10">
-            <div className="bg-gray-900 bg-opacity-50 absolute inset-0"></div>
-            <div className="bg-white rounded-lg md:w-1/3 w-full z-20">
-              <div className=" md:flex items-center justify-center   ">
-                <form onSubmit={handleSubmit} className="shadow border flex flex-col justify-center items-center w-full  p-8 mx-auto rounded ">
-                  <button
-                    onClick={closeModal}
-                    className="bg-red-500 hover:bg-red-700 relative left-44 -top-6  text-white font-bold py-2 px-4 rounded"
-                  >
-                    Close
-                  </button>
+              {isModalOpen && (
+                <div className="fixed inset-0 flex items-center justify-center  z-10">
+                  <div className="bg-gray-900 bg-opacity-50 absolute inset-0"></div>
+                  <div className="bg-white rounded-lg md:w-1/3 w-full z-20">
+                    <div className=" md:flex items-center justify-center   ">
+                      <form onSubmit={handleSubmit} className="shadow border flex flex-col justify-center items-center w-full  p-8 mx-auto rounded ">
+                        <button
+                          onClick={closeModal}
+                          className="bg-red-500 hover:bg-red-700 relative left-44 -top-6  text-white font-bold py-2 px-4 rounded"
+                        >
+                          Close
+                        </button>
 
-                  <div className="form-control w-full max-w-sm">
-                    <input
-                      type="text"
-                      name="time"
-                      defaultValue={data?.time}
-                      placeholder=""
-                      className="input my-4 input-bordered w-full max-w-sm"
-                    />
+                        <div className="form-control w-full max-w-sm">
+                          <input
+                            type="text"
+                            name="time"
+                            defaultValue={data?.time}
+                            placeholder=""
+                            className="input my-4 input-bordered w-full max-w-sm"
+                          />
+                        </div>
+                        <div className="form-control w-full max-w-sm">
+                          <input
+                            type="date"
+                            name="date"
+                            placeholder="Select Date"
+                            className="input my-4 input-bordered w-full max-w-sm"
+                          />
+                        </div>
+                        <div className="form-control w-full max-w-sm">
+                          <input
+                            type="text"
+                            name="name"
+                            placeholder="Full Name"
+                            className="input input-bordered w-full max-w-sm"
+                          />
+                        </div>
+                        <div className="form-control w-full  my-4 max-w-sm">
+
+                          <input
+                            type="email"
+
+                            name="email"
+                            placeholder={`${user.email}`}
+                            className="input input-bordered w-full "
+                          />
+                        </div>
+                        <div className="form-control w-full mb-4 max-w-sm">
+                          <select className="input input-bordered w-full max-w-sm" id="doctor_name" name="doctor_name">
+                            {users.map((user, i) => <option key={i} name={user?.name} >{user?.name}</option>)}
+                          </select>
+                        </div>
+                        <div className="form-control w-full mb-4 max-w-sm">
+
+                          <input
+                            type="number"
+                            name="number"
+                            placeholder="Phone Number"
+                            className="input input-bordered w-full max-w-sm"
+                          />
+                        </div>
+                        <button type="submit" className="btn w-full max-w-sm btn-secondary my-4">
+                          Submit
+                        </button>
+                      </form>
+                    </div>
                   </div>
-                  <div className="form-control w-full max-w-sm">
-                    <input
-                      type="date"
-                      name="date"
-                      placeholder="Select Date"
-                      className="input my-4 input-bordered w-full max-w-sm"
-                    />
-                  </div>
-                  <div className="form-control w-full max-w-sm">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Full Name"
-                      className="input input-bordered w-full max-w-sm"
-                    />
-                  </div>
-                  <div className="form-control w-full  my-4 max-w-sm">
-                
-                    <input
-                      type="email"
-                      
-                      name="email"
-                      placeholder={`${user.email}`}
-                      className="input input-bordered w-full "
-                    />
-                  </div>
-                  <div className="form-control w-full mb-4 max-w-sm">
-                  
-                    <input
-                      type="number"
-                      name="number"
-                      placeholder="Phone Number"
-                      className="input input-bordered w-full max-w-sm"
-                    />
-                  </div>
-                  <button type="submit" className="btn w-full max-w-sm btn-secondary my-4">
-                    Submit
-                  </button>
-                </form>
-              </div>
+                </div>
+              )}
             </div>
-          </div>
-        )}
-      </div>
 
 
           </div>
@@ -152,7 +169,7 @@ const SubServices = ({ category }) => {
       </div>
       {/* You can open the modal using ID.showModal() method */}
 
-     
+
     </section>
   );
 };
