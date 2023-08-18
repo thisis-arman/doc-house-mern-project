@@ -21,6 +21,7 @@ import UpdateDetails from "../Layouts/Dashboard/DoctorDashboard/UpdateDetails";
 import BecomeDoctor from "../Pages/BecomeDoctor/BecomeDoctor";
 import DoctorHome from "../Layouts/Dashboard/DoctorDashboard/DoctorHome";
 import AboutPage from "../Pages/AboutPage/AboutPage";
+import UserAppointments from "../Layouts/Dashboard/UserDashboard/UserAppointments";
 
 const router = createBrowserRouter([
   {
@@ -95,6 +96,10 @@ const router = createBrowserRouter([
       {
         path: 'user-home',
         element: <UserHome />
+      },
+      {
+        path: 'my-appointments',
+        element: <UserAppointments />
       },
       {
         path: 'my-review',

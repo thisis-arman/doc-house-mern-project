@@ -43,7 +43,7 @@ const SubServices = ({ category }) => {
     const doctorID = form.doctorID.value;
     console.log(doctorID)
 
-    const appointmentInfo = { name, email, number, time, date, category, userEmail: user.email, doctorID }
+    const appointmentInfo = { name, email, number, time, date, category, userEmail: user.email, doctorID: parseInt(doctorID) }
     fetch('http://localhost:5000/appointments', {
       method: "POST",
       headers: {
