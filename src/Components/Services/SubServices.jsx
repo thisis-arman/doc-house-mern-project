@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { toast } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
@@ -8,8 +8,9 @@ const SubServices = ({ category }) => {
   const [users, setUsers] = useState([])
   const [services, setServices] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentDoctor, setCurrentDoctor] = useState()
   const Navigate = useNavigate()
-
+  console.log(currentDoctor)
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -23,6 +24,8 @@ const SubServices = ({ category }) => {
       .then(res => res.json())
       .then(data => {
         const doctor = data.filter(d => d.role == "doctor")
+        const currentDoctor = data.find(d => d.name == user.displayName)
+        setCurrentDoctor(currentDoctor)
         setUsers(doctor)
       })
   }, [])
@@ -50,6 +53,8 @@ const SubServices = ({ category }) => {
     })
       .then((data) => {
         if (data.insertedId) {
+          console.log(data)
+          alert('Successfully')
           toast.success(" Appointment Booked Successfully")
           Navigate('')
         }
@@ -141,7 +146,7 @@ const SubServices = ({ category }) => {
                           />
                         </div>
                         <div className="form-control w-full mb-4 max-w-sm">
-                          <select placeholder="Doctor ID" className="input input-bordered w-full max-w-sm" id="doctor_name" name={user?.doctorID}>
+                          <select placeholder="Doctor ID" className="input input-bordered w-full max-w-sm" id="doctor_name" name='doctorID'>
                             {users.map((user, i) => <option key={i} name={user?.doctorID} >{user?.doctorID}</option>)}
                           </select>
                         </div>
@@ -163,7 +168,7 @@ const SubServices = ({ category }) => {
                 </div>
               )}
             </div>
-
+            <Toaster />
 
           </div>
         ))}

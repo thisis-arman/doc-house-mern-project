@@ -21,7 +21,7 @@ const AboutBanner = () => {
                         </div>
 
                         <div className="lg:py-24">
-                            <h2 className="text-3xl font-bold sm:text-4xl">Grow your audience</h2>
+                            <h2 className="text-3xl font-bold sm:text-5xl">Your Health, Our Priority.</h2>
 
                             <p className="mt-4 text-gray-600">
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui hic

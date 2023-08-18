@@ -15,7 +15,7 @@ import { useState } from "react";
 const auth = getAuth(app);
 export const AuthContext = createContext(null);
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(true);
   const [loading, setLoading] = useState(true);
 
@@ -28,33 +28,33 @@ const AuthProvider = ({children}) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const LogOut =()=>{
+  const LogOut = () => {
     setLoading(true)
     return signOut(auth)
   }
 
   const googleProver = new GoogleAuthProvider();
-  const handleGoogleLogin =()=>{
-    return signInWithPopup(auth,googleProver)
+  const handleGoogleLogin = () => {
+    return signInWithPopup(auth, googleProver)
   }
 
-  const updateUserProfile =(name,photo)=>{
-    return updateProfile(auth.currentUser,{
-      displayName:name,
-      photoURL:photo,
+  const updateUserProfile = (name, photo) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
     })
   }
 
-  useEffect(()=>{
-    const unsubscribe = onAuthStateChanged(auth,(loggedUser)=>{
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
       console.log('logged in User inside the auth state Observer')
       setUser(loggedUser)
       setLoading(false)
     });
-    return ()=>{
+    return () => {
       unsubscribe()
     };
-  },[])
+  }, [])
 
 
 

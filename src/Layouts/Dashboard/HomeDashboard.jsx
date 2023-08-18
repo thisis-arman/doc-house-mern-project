@@ -9,7 +9,7 @@ const HomeDashboard = () => {
 
 
   const isAdmin = false;
-  const isDoctor = true;
+  const isDoctor = false;
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
