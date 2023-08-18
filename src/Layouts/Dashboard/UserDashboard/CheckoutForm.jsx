@@ -19,30 +19,34 @@ const CheckoutForm = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <CardElement
-                    options={{
-                        style: {
-                            base: {
-                                fontSize: '16px',
-                                color: '#424770',
-                                '::placeholder': {
-                                    color: '#aab7c4',
+        <section className="">
+            <div className="flex h-screen items-center  justify-center">
+                <form onSubmit={handleSubmit} className="border p-10 bg-white shadow">
+                    <CardElement className="border "
+                        options={{
+                            style: {
+                                base: {
+                                    padding: "20px",
+                                    fontSize: '16px',
+                                    color: '#424770',
+                                    border: '4px solid black',
+                                    '::placeholder': {
+                                        color: '#aab7c4',
+                                    },
+                                },
+                                invalid: {
+                                    color: '#9e2146',
                                 },
                             },
-                            invalid: {
-                                color: '#9e2146',
-                            },
-                        },
-                    }}
-                />
-                <button type="submit" disabled={!stripe}>
-                    Pay
-                </button>
-            </form>
+                        }}
+                    />
+                    <button className="bg-green-500 px-24 btn-outline my-6 p-1 shadow-md text-white hover:bg-green-400 rounded-sm" type="submit" disabled={!stripe}>
+                        Pay
+                    </button>
+                </form>
 
-        </div>
+            </div>
+        </section>
     );
 };
 
