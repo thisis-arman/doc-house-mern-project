@@ -22,6 +22,8 @@ import BecomeDoctor from "../Pages/BecomeDoctor/BecomeDoctor";
 import DoctorHome from "../Layouts/Dashboard/DoctorDashboard/DoctorHome";
 import AboutPage from "../Pages/AboutPage/AboutPage";
 import UserAppointments from "../Layouts/Dashboard/UserDashboard/UserAppointments";
+import CheckoutForm from "../Layouts/Dashboard/UserDashboard/CheckoutForm";
+import Payments from "../Layouts/Dashboard/UserDashboard/Payments";
 
 const router = createBrowserRouter([
   {
@@ -77,10 +79,13 @@ const router = createBrowserRouter([
     path: '/dashboard',
     element: <HomeDashboard />,
     children: [
+
+      // Admin Routes
       {
         path: '/dashboard/admin',
         element: <AdminHome />
       },
+
       {
         path: 'all-users',
         element: <AllUsers />
@@ -89,10 +94,8 @@ const router = createBrowserRouter([
         path: 'add-doctor',
         element: <AddDoctor />
       },
-      {
-        path: 'appointments',
-        element: <MyAppointments />
-      },
+
+      // User Routes
       {
         path: 'user-home',
         element: <UserHome />
@@ -110,6 +113,11 @@ const router = createBrowserRouter([
         element: <MyHistory />
       },
       {
+        path: 'payments',
+        element: <Payments />
+      },
+      // Doctor Routes
+      {
         path: 'profile/:email',
         element: <UpdateDetails />,
         loader: ({ params }) => fetch(`http://localhost:5000/api/all-info-by/${params.email}`)
@@ -117,7 +125,12 @@ const router = createBrowserRouter([
       {
         path: 'doctor-home',
         element: <DoctorHome />
-      }
+      },
+      {
+        path: 'appointments',
+        element: <MyAppointments />
+      },
+
     ]
   }
 

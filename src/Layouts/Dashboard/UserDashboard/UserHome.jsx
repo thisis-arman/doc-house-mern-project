@@ -16,14 +16,14 @@ const UserHome = () => {
 
   return (
     <div>
-      <section className="bg-white p-8">
+      <section className="bg-slate-200 p-8">
 
         <h2 className="text-4xl font-bold">Welcome ,{user.displayName}</h2>
-        <div className="mx-auto max-w-screen-xl px-4 py-6 sm:px-6 md:py-8 lg:px-8">
+        <div className="mx-auto  px-4 py-6 sm:px-6 md:py-8 lg:px-8">
 
 
           <div className="mt-8 sm:mt-12">
-            <dl className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <dl className="grid grid-cols-1 gap-4 md:grid-cols-3">
               <div
                 className="flex flex-col rounded-lg border text-white bg-purple-500 border-gray-100 px-4 py-8 text-center"
               >
@@ -56,6 +56,46 @@ const UserHome = () => {
                 <dd className="text-4xl font-extrabold  md:text-5xl">$86</dd>
               </div>
             </dl>
+          </div>
+
+
+          <div className=" py-6 ">
+            <h2 className="text-xl overflow-x-auto  overflow-y-auto bg-white p-1 font-semibold max-w-md my-2 px-4">Recent Appointments</h2>
+            <table className="  divide-y-2 border shadow-sm text-center divide-gray-200 bg-white text-sm">
+              <thead className="ltr:text-left rtl:text-right">
+                <tr>
+                  <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                    Name
+                  </th>
+                  <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                    Email
+                  </th>
+                  <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                    Number
+                  </th>
+                  <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                    Date
+                  </th>
+
+                </tr>
+              </thead>
+
+              <tbody className="divide-y divide-gray-200">
+                {
+                  appointments.map((app, i) => <tr key={i}>
+                    <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                      {app.name}
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app.userEmail}</td>
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app.number}</td>
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app?.date}</td>
+
+                  </tr>)
+                }
+
+
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
