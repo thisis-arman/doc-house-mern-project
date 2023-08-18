@@ -2,10 +2,10 @@
 
 const AboutBanner = () => {
     return (
-        <div>
-            <section className="relative mt-60">
+        <div className="border-b">
+            <section className="relative mt-56">
                 <div
-                    className="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8"
+                    className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 sm:px-6 lg:py-16 lg:px-8"
                 >
                     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
                         <div
