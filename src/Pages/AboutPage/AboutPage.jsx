@@ -1,6 +1,7 @@
 import PageCover from "../../Components/PageCover";
 import AboutBanner from "./AboutComponents/AboutBanner";
 import AboutStats from "./AboutComponents/AboutStats";
+import MissionSection from "./AboutComponents/MissionSection";
 
 
 const AboutPage = () => {
@@ -9,6 +10,7 @@ const AboutPage = () => {
             <PageCover pageName={"About"} />
             <AboutBanner />
             <AboutStats />
+            <MissionSection />
         </div>
     );
 };
