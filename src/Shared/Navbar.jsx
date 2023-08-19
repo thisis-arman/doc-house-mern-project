@@ -57,7 +57,7 @@ const Navbar = () => {
                   </Link>
 
                   <li>
-                    <Link
+                    <Link to='services'
                       className=" transition  hover:border-b-2  hover:text-lime-400/75"
 
                     >
