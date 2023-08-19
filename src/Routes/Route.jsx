@@ -24,6 +24,7 @@ import AboutPage from "../Pages/AboutPage/AboutPage";
 import UserAppointments from "../Layouts/Dashboard/UserDashboard/UserAppointments";
 import CheckoutForm from "../Layouts/Dashboard/UserDashboard/CheckoutForm";
 import Payments from "../Layouts/Dashboard/UserDashboard/Payments";
+import ContactPage from "../Pages/ContactPage/ContactPage";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: 'about',
         element: <AboutPage />
+      },
+      {
+        path: 'contact',
+        element: <ContactPage />
       },
       {
         path: '/appointment',
