@@ -130,7 +130,7 @@ const HomeDashboard = () => {
     <div className="">
       <div className="flex min-h-screen  ">
         {/* Sidebar for medium and large screens */}
-        <div className="hidden md:block lg:block w-64 bg-black  text-white px-4   shadow-2xl shadow-black ">
+        <div className="hidden md:block lg:block w-64 bg-gray-100 px-4   ">
           {/* Sidebar content */}
           {sidebarMenu}
         </div>
@@ -222,7 +222,7 @@ const HomeDashboard = () => {
                     <span className="sr-only">Profile</span>
                     <img
                       alt="Man"
-                      src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                      src={user.photoURL}
                       className="h-10 w-10 rounded-full object-cover"
                     />
                   </a>
@@ -230,12 +230,11 @@ const HomeDashboard = () => {
 
                 <div className="mt-8">
                   <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
-                    Welcome Back, Barry!
+                    Welcome Back,{user?.displayName}!
                   </h1>
 
                   <p className="mt-1.5 text-sm text-gray-500">
-                    Your website has seen a 52% increase in traffic in the last month. Keep
-                    it up! 🚀
+                    Wish You A Very Good Day🚀
                   </p>
                 </div>
               </div>

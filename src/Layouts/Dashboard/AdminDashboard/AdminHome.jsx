@@ -34,7 +34,7 @@ const AdminHome = () => {
 
   return (
     <div>
-      <section className="bg-slate-200">
+      <section className="bg-gray-50">
         <div className="mx-auto max-w-screen-2xl px-4  ">
 
 
@@ -78,7 +78,7 @@ const AdminHome = () => {
 
               <div className="overflow-x-auto">
                 <h2 className="text-xl font-bold  p-2 my-2 bg-slate-200">Recent Appointments</h2>
-                <table className=" divide-y-2 min-w-full  border shadow-lg divide-gray-200 bg-white text-sm">
+                <table className=" divide-y-2 min-w-full  text-center border shadow-lg divide-gray-200 bg-white text-sm">
                   <thead className="ltr:text-left rtl:text-right">
                     <tr>
                       <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
@@ -113,7 +113,7 @@ const AdminHome = () => {
             <div>
               <div className="overflow-x-auto">
                 <h2 className="text-xl font-bold  p-2 my-2 bg-slate-200">Recent Transactions</h2>
-                <table className="min-w-full  divide-y-2 border shadow-lg divide-gray-200 bg-white text-sm">
+                <table className="min-w-full text-center  divide-y-2 border shadow-lg divide-gray-200 bg-white text-sm">
                   <thead className="ltr:text-left rtl:text-right">
                     <tr>
                       <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">

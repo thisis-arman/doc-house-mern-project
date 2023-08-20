@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { motion } from "framer-motion";
 
 
 const Navbar = () => {
@@ -9,6 +10,23 @@ const Navbar = () => {
   const handlelogOut = () => {
     LogOut()
   }
+
+  const variants = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 }
+      }
+    },
+    closed: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000 }
+      }
+    }
+  };
   return (
     <div className="container mx-auto">
 
@@ -28,60 +46,86 @@ const Navbar = () => {
 
             <div className="md:flex md:items-center md:gap-12">
               <nav aria-label="Global" className="hidden md:block">
+
                 <ul className="flex items-center gap-6 text-sm">
-                  <li>
+                  <motion.li
+                    variants={variants}
+                    whileHover={{ scale: 1.3 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <Link to='/about'
                       className=" transition  hover:border-b-2  hover:text-lime-400/75"
 
                     >
                       About
                     </Link>
-                  </li>
+                  </motion.li>
 
-                  <li>
+                  <motion.li
+                    variants={variants}
+                    whileHover={{ scale: 1.3 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <Link to='/appointment'
                       className=" transition  hover:border-b-2  hover:text-lime-400/75"
 
                     >
                       Appointment
                     </Link>
-                  </li>
+                  </motion.li>
+                  <motion.li
+                    variants={variants}
+                    whileHover={{ scale: 1.3 }}
+                    whileTap={{ scale: 0.95 }}>
 
-                  <Link to='contact'>
-                    <a
-                      className=" transition  hover:border-b-2  hover:text-lime-400/75"
+                    <Link to='contact'>
+                      <a
+                        className=" transition  hover:border-b-2  hover:text-lime-400/75"
 
-                    >
-                      Contact
-                    </a>
-                  </Link>
+                      >
+                        Contact
+                      </a>
+                    </Link>
+                  </motion.li>
 
-                  <li>
+                  <motion.li
+                    variants={variants}
+                    whileHover={{ scale: 1.3 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <Link to='services'
                       className=" transition  hover:border-b-2  hover:text-lime-400/75"
 
                     >
                       Services
                     </Link>
-                  </li>
+                  </motion.li>
 
-                  <li>
+                  <motion.li
+                    variants={variants}
+                    whileHover={{ scale: 1.3 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <Link
                       className=" transition  hover:border-b-2  hover:text-lime-400/75"
 
                     >
                       Projects
                     </Link>
-                  </li>
+                  </motion.li>
 
-                  <li>
+                  <motion.li
+                    variants={variants}
+                    whileHover={{ scale: 1.3 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <Link to='/blog'
                       className=" transition  hover:border-b-2  hover:text-lime-400/75"
 
                     >
                       Blog
                     </Link>
-                  </li>
+                  </motion.li>
                 </ul>
               </nav>
 

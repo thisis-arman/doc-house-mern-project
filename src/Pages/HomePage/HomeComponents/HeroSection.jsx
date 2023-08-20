@@ -3,6 +3,8 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { motion } from "framer-motion";
+
 import TextTransition, { presets } from 'react-text-transition';
 
 const TEXTS = ['Empowering Health,', 'Enriching Lives,', 'Transforming Lives,'];
@@ -35,13 +37,35 @@ const HeroSection = () => {
               {/* <TextTransition className='text-lime-400 text-center  text-2xl md:text-5xl ml-7 md:ml-0 ' springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}</TextTransition> */}
               Your Journey to Wellness Begins Here
             </h1>
-            <p className="mb-8  md:text-md text-sm ">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+
+            <motion.p animate={{}} className="mb-8  md:text-md text-sm ">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</motion.p>
             <div className="flex justify-center">
               <button className="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">All Services</button>
               {/* <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button> */}
             </div>
           </div>
-          <div data-aos="fade-right" data-aos-delay="1500" className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+
+          <motion.div
+            className="box"
+            animate={{
+              scale: [1, 2, 2, 1, 1],
+              rotate: [0, 0, 180, 180, 0],
+              borderRadius: ["0%", "0%", "50%", "50%", "0%"]
+            }}
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+              times: [0, 0.2, 0.5, 0.8, 1],
+              repeat: Infinity,
+              repeatDelay: 1
+            }}
+          />
+          <div
+
+
+            data-aos="fade-right" data-aos-delay="1500" className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+
+
             <img className="object-cover object-center hidden md:block rounded" alt="hero" src="https://i.ibb.co/VQ1MkTt/hero-image.png" />
           </div>
         </div>
