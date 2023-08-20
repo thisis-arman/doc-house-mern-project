@@ -2,10 +2,12 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import { ToastBar, Toaster, toast } from "react-hot-toast";
 
 
 const CheckoutForm = ({ fees }) => {
     const { user } = useContext(AuthContext)
+    console.log(user)
     const [clientSecret, setClientSecret] = useState("");
     const stripe = useStripe();
     const elements = useElements()
@@ -13,14 +15,16 @@ const CheckoutForm = ({ fees }) => {
     const [processing, setProcessing] = useState(false)
     const [transactionId, setTransactionId] = useState('')
 
-    const payAmount = fees.map(p => p.fee)
-    const fee = payAmount[0]
-    console.log(fee)
+    // const payAmount = fees.map(p => p.fee)
 
+    // // const fee = payAmount[0]
+    const { name, email, fee, category, number
+    } = fees[0]
+    console.log(name, email, fee, category)
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intents', {
+        fetch('http://localhost:5000/create-payment-intent', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -64,9 +68,8 @@ const CheckoutForm = ({ fees }) => {
                 payment_method: {
                     card: card,
                     billing_details: {
-                        name: user?.displayName || 'anonymous',
-                        email: user?.email || 'Unknown',
-                        image: user?.photoURL || 'https://img.freepik.com/free-icon/user_318-159711.jpg?t=st=1692513781~exp=1692514381~hmac=1eaa0e4c36f8bd490e7908ce2940336efc423ccdc613dbf5a2c20a24de2db134'
+                        email: user?.email || 'unknown',
+                        name: user?.displayName || 'anonymous'
                     },
                 },
             },
@@ -77,9 +80,22 @@ const CheckoutForm = ({ fees }) => {
             console.log(confirmError);
         }
         setProcessing(true)
-        if (paymentIntent.status === 'succeeded') {
+        if (paymentIntent?.status === 'succeeded') {
             console.log(paymentIntent, 'Payment intent')
             setTransactionId(paymentIntent.id)
+            const payment = { name, email, userEmail: user.email, category, date: new Date(), transactionId: paymentIntent.id }
+            fetch('http://localhost:5000/payment', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                }, body: JSON.stringify(payment)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        toast.success('Payment successfully')
+                    }
+                })
 
 
         }
@@ -116,6 +132,8 @@ const CheckoutForm = ({ fees }) => {
                 </form>
 
             </div>
+            {/* <ToastBar /> */}
+            <Toaster />
         </section>
     );
 
