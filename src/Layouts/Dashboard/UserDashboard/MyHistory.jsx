@@ -47,7 +47,7 @@ const MyHistory = () => {
                                         {data?.name}
                                     </td>
                                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">{data?.email}</td>
-                                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">{data?.fee}</td>
+                                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">${data?.fee}</td>
                                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">{data?.date}</td>
                                 </tr>)
                             }
