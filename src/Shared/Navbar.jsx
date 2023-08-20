@@ -131,12 +131,15 @@ const Navbar = () => {
 
               <div className="flex items-center gap-4">
                 {user ? <div className="sm:flex sm:gap-4">
+
                   <Link to='dashboard'
                     className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
 
                   >
                     Dashboard
                   </Link>
+
+
 
                   <div className="hidden sm:flex">
                     <Link onClick={handlelogOut}
