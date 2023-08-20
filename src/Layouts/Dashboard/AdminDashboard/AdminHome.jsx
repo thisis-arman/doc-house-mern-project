@@ -34,7 +34,7 @@ const AdminHome = () => {
 
   return (
     <div>
-      <section className="bg-gradient-to-l">
+      <section className="bg-slate-200">
         <div className="mx-auto max-w-screen-2xl px-4  ">
 
 
@@ -68,7 +68,7 @@ const AdminHome = () => {
             </dl>
           </div>
           {/* ************* */}
-          <div className=" grid md:grid-cols-3 grid-cols-1 gap-4 py-12 ">
+          <div className=" grid md:grid-cols-2 grid-cols-1 gap-4 py-12 ">
             <div>
               {/*
   Heads up! 👋
@@ -77,17 +77,18 @@ const AdminHome = () => {
 */}
 
               <div className="overflow-x-auto">
-                <table className=" divide-y-2 border shadow divide-gray-200 bg-white text-sm">
+                <h2 className="text-xl font-bold  p-2 my-2 bg-slate-200">Recent Appointments</h2>
+                <table className=" divide-y-2 min-w-full  border shadow-lg divide-gray-200 bg-white text-sm">
                   <thead className="ltr:text-left rtl:text-right">
                     <tr>
                       <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         Name
                       </th>
                       <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                        Date of Birth
+                        Date
                       </th>
                       <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                        Role
+                        Number
                       </th>
 
                     </tr>
@@ -111,31 +112,34 @@ const AdminHome = () => {
             </div>
             <div>
               <div className="overflow-x-auto">
-                <table className=" divide-y-2 border shadow divide-gray-200 bg-white text-sm">
+                <h2 className="text-xl font-bold  p-2 my-2 bg-slate-200">Recent Transactions</h2>
+                <table className="min-w-full  divide-y-2 border shadow-lg divide-gray-200 bg-white text-sm">
                   <thead className="ltr:text-left rtl:text-right">
                     <tr>
                       <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         Name
                       </th>
                       <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                        Date of Birth
+                        Fee
                       </th>
                       <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                        Role
+                        Trx. ID
                       </th>
 
                     </tr>
                   </thead>
 
                   <tbody className="divide-y divide-gray-200">
-                    <tr className="odd:bg-gray-50">
-                      <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                        John Doe
-                      </td>
-                      <td className="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                      <td className="whitespace-nowrap px-4 py-2 text-gray-700">Web Developer</td>
+                    {
+                      payments.map((payment, i) => <tr key={i} className="odd:bg-gray-50">
+                        <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                          {payment?.name}
+                        </td>
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">{payment?.fee}</td>
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">{payment?.transactionId}</td>
 
-                    </tr>
+                      </tr>)
+                    }
 
 
                   </tbody>
@@ -147,32 +151,44 @@ const AdminHome = () => {
             <div>
 
               <div className="overflow-x-auto">
-                <table className=" divide-y-2 border shadow divide-gray-200 bg-white text-sm">
+                <h2 className="text-xl font-bold  p-2 my-2 bg-slate-200">Patients</h2>
+                <table className="min-w-full  text-center divide-y-2 border shadow-lg divide-gray-200 bg-white text-sm">
                   <thead className="ltr:text-left rtl:text-right">
                     <tr>
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+
+                      </th>
                       <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                         Name
                       </th>
                       <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                        Date of Birth
-                      </th>
-                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                        Role
+                        Email
                       </th>
 
                     </tr>
                   </thead>
 
                   <tbody className="divide-y divide-gray-200">
-                    <tr className="odd:bg-gray-50">
-                      <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                        John Doe
-                      </td>
-                      <td className="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                      <td className="whitespace-nowrap px-4 py-2 text-gray-700">Web Developer</td>
+                    {
+                      users.map((user, i) => <tr key={i} className="odd:bg-gray-50">
+                        <td>
+                          <div className="flex items-center space-x-3">
+                            <div className="avatar">
+                              <div className="mask mask-squircle w-12 h-12">
+                                <img src={user?.image || 'https://img.freepik.com/free-icon/user_318-159711.jpg?t=st=1692541894~exp=1692542494~hmac=a9c577088b09d43e068f2de89460096e075027517e682b2bb48400d1aba1b15d'} alt="Avatar Tailwind CSS Component" />
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                          {user?.name}
+                        </td>
+                        <td className="whitespace-nowrap px-4 py-2 text-gray-700">{user?.email}</td>
 
-                    </tr>
 
+                      </tr>
+                      )
+                    }
 
                   </tbody>
                 </table>
