@@ -15,14 +15,14 @@ import MyHistory from "../Layouts/Dashboard/UserDashboard/MyHistory";
 import AllUsers from "../Layouts/Dashboard/AdminDashboard/AllUsers";
 import AddDoctor from "../Layouts/Dashboard/AdminDashboard/AddDoctor";
 import Blogs from "../Pages/BlogPage/Blogs";
-import FitnessArticle from "../Pages/BlogPage/Blogs/FitnessArticle";
+// import FitnessArticle from "../Pages/BlogPage/Blogs/FitnessArticle";
 import { CircleIndicator } from "../Components/ScrollProgressBar";
 import UpdateDetails from "../Layouts/Dashboard/DoctorDashboard/UpdateDetails";
 import BecomeDoctor from "../Pages/BecomeDoctor/BecomeDoctor";
 import DoctorHome from "../Layouts/Dashboard/DoctorDashboard/DoctorHome";
 import AboutPage from "../Pages/AboutPage/AboutPage";
 import UserAppointments from "../Layouts/Dashboard/UserDashboard/UserAppointments";
-import CheckoutForm from "../Layouts/Dashboard/UserDashboard/CheckoutForm";
+// import CheckoutForm from "../Layouts/Dashboard/UserDashboard/CheckoutForm";
 import Payments from "../Layouts/Dashboard/UserDashboard/Payments";
 import ContactPage from "../Pages/ContactPage/ContactPage";
 import ServicesPage from "../Pages/ServicesPage/ServicesPage";
@@ -123,8 +123,9 @@ const router = createBrowserRouter([
         element: <MyHistory />
       },
       {
-        path: 'my-appointments/payments',
-        element: <Payments />
+        path: 'my-appointments/payments/:id',
+        element: <Payments />,
+        loader: ({ params }) => fetch(`http://localhost:5000/api/appointment/${params.id}`)
       },
       // Doctor Routes
       {

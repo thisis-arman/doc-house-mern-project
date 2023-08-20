@@ -57,7 +57,7 @@ const UserAppointments = () => {
                                 <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app.number}</td>
                                 <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app?.date}</td>
                                 <td className="whitespace-nowrap px-4 py-2">
-                                    <Link to='payments' fee={app.fee}
+                                    <Link to={`payments/${app._id}`}
                                         href="#"
                                         className="inline-block rounded bg-green-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
                                     >
