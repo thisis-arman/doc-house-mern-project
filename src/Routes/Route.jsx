@@ -123,7 +123,7 @@ const router = createBrowserRouter([
         element: <MyHistory />
       },
       {
-        path: 'payments',
+        path: 'my-appointments/payments',
         element: <Payments />
       },
       // Doctor Routes

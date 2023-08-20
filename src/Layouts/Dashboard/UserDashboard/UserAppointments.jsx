@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 const UserAppointments = () => {
@@ -15,7 +16,10 @@ const UserAppointments = () => {
             .then(data => setAppointments(data))
     }, [user])
 
+    console.log(appointments)
 
+    const totalFee = appointments.reduce((sum, item) => sum + parseFloat(item?.fee), 0);
+    console.log(totalFee, 'total feeeee')
 
     return (
         <div className="p-8">
@@ -53,12 +57,12 @@ const UserAppointments = () => {
                                 <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app.number}</td>
                                 <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app?.date}</td>
                                 <td className="whitespace-nowrap px-4 py-2">
-                                    <a
+                                    <Link to='payments' fee={app.fee}
                                         href="#"
                                         className="inline-block rounded bg-green-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
                                     >
                                         Pay
-                                    </a>
+                                    </Link>
                                 </td>
                             </tr>)
                         }

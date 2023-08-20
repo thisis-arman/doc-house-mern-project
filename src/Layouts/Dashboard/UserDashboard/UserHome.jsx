@@ -61,7 +61,7 @@ const UserHome = () => {
 
           <div className=" py-6 ">
             <h2 className="text-xl overflow-x-auto  overflow-y-auto bg-white p-1 font-semibold max-w-md my-2 px-4">Recent Appointments</h2>
-            <table className="  divide-y-2 border shadow-sm text-center divide-gray-200 bg-white text-sm">
+            <table className="w-full  divide-y-2 border shadow-sm text-center divide-gray-200 bg-white text-sm">
               <thead className="ltr:text-left rtl:text-right">
                 <tr>
                   <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">

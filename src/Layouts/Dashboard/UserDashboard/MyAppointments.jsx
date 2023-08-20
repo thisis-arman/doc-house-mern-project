@@ -12,6 +12,9 @@ const MyAppointments = () => {
     const currentUser = users.find(d => d.name == user.displayName)
     // console.log(data.doctorID, 'checking user--')
     console.log(appointments, 'appointments')
+
+
+
     // console.log(user.doctorID)
     useEffect(() => {
         fetch('http://localhost:5000/users')
