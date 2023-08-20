@@ -95,9 +95,9 @@ const HomeDashboard = () => {
                   My Reviews
                 </a>
               </Link>
-              <Link to="my-history">
+              <Link to="history">
                 <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
-                  My History
+                  History
                 </a>
               </Link>
             </ul>

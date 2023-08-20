@@ -6,6 +6,17 @@ const UserHome = () => {
   const { user } = useContext(AuthContext)
 
   const [appointments, setAppointments] = useState([])
+  const [payments, setPayment] = useState([])
+  console.log(payments)
+
+  const totalPayment = payments.reduce((sum, item) => sum + parseFloat(item?.fee), 0)
+
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/payment/${user.email}`)
+      .then(res => res.json())
+      .then(data => setPayment(data))
+  }, [user])
 
 
   useEffect(() => {
@@ -43,7 +54,7 @@ const UserHome = () => {
                   Paid Amount
                 </dt>
 
-                <dd className="text-4xl font-extrabold  md:text-5xl">$24</dd>
+                <dd className="text-4xl font-extrabold  md:text-5xl">${totalPayment}</dd>
               </div>
 
               <div

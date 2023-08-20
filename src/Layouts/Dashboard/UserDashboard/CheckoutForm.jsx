@@ -83,7 +83,7 @@ const CheckoutForm = ({ fees }) => {
         if (paymentIntent?.status === 'succeeded') {
             console.log(paymentIntent, 'Payment intent')
             setTransactionId(paymentIntent.id)
-            const payment = { name, email, userEmail: user.email, category, date: new Date(), transactionId: paymentIntent.id }
+            const payment = { name, email, userEmail: user.email, category, fee, date: new Date(), transactionId: paymentIntent.id }
             fetch('http://localhost:5000/payment', {
                 method: "POST",
                 headers: {

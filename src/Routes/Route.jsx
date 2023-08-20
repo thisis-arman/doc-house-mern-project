@@ -119,7 +119,7 @@ const router = createBrowserRouter([
         element: <MyReview />
       },
       {
-        path: "my-history",
+        path: "history",
         element: <MyHistory />
       },
       {
