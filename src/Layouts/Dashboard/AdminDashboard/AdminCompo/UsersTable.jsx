@@ -1,3 +1,4 @@
+import { Toaster, toast } from "react-hot-toast";
 import { FiTrash2 } from "react-icons/fi"
 
 const UsersTable = ({ users }) => {
@@ -11,20 +12,23 @@ const UsersTable = ({ users }) => {
 
 
 
-    const handleDeleteUser = (id) => {
-        fetch(`https://localhost:500/api/users/${id}`,
-        {
-            method:"DELETE",
-                headers:{
+    const handleDeleteUser = (user) => {
+        console.log(`Delete`, user)
+        fetch(`http://localhost:5000/users/${user._id}`,
+            {
+                method: "DELETE",
+                headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify()
-        })
-        .then(res => res.json())
-        .then(data => {
-           console.log(data)
-           alert('User deleted successfully')
-        })
+
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    alert('User deleted successfully')
+                    toast.success("User deleted successfully")
+                }
+            })
     }
     return (
         <div>
@@ -64,7 +68,7 @@ const UsersTable = ({ users }) => {
                                 <td className="whitespace-nowrap px-4 py-2 text-gray-700">{user?.number}</td>
                                 <td className="whitespace-nowrap px-4 py-2 text-gray-700">$120,000</td>
                                 <td className="whitespace-nowrap px-4 py-2">
-                                    <a onClick={()=>handleDeleteUser(user._id)}
+                                    <a onClick={() => handleDeleteUser(user)}
                                         href="#"
                                         className="inline-block rounded  text-black text-xs font-medium bg-base-200 shadow-lg bg-opacity-10 "
                                     >
@@ -79,7 +83,7 @@ const UsersTable = ({ users }) => {
                     </tbody>
                 </table>
             </div>
-
+            <Toaster />
 
 
         </div >
