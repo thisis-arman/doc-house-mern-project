@@ -1,6 +1,31 @@
-
+import { FiTrash2 } from "react-icons/fi"
 
 const UsersTable = ({ users }) => {
+
+
+
+
+
+
+
+
+
+
+    const handleDeleteUser = (id) => {
+        fetch(`https://localhost:500/api/users/${id}`,
+        {
+            method:"DELETE",
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify()
+        })
+        .then(res => res.json())
+        .then(data => {
+           console.log(data)
+           alert('User deleted successfully')
+        })
+    }
     return (
         <div>
             {/*
@@ -39,16 +64,16 @@ const UsersTable = ({ users }) => {
                                 <td className="whitespace-nowrap px-4 py-2 text-gray-700">{user?.number}</td>
                                 <td className="whitespace-nowrap px-4 py-2 text-gray-700">$120,000</td>
                                 <td className="whitespace-nowrap px-4 py-2">
-                                    <a
+                                    <a onClick={()=>handleDeleteUser(user._id)}
                                         href="#"
-                                        className="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
+                                        className="inline-block rounded  text-black text-xs font-medium bg-base-200 shadow-lg bg-opacity-10 "
                                     >
-                                        View
+                                        <FiTrash2 className="w-5 h-5" />
                                     </a>
                                 </td>
                             </tr>)
                         }
-                       
+
 
 
                     </tbody>
@@ -57,7 +82,7 @@ const UsersTable = ({ users }) => {
 
 
 
-        </div>
+        </div >
     );
 };
 
