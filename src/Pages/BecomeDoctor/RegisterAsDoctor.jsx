@@ -1,10 +1,12 @@
 import { useContext } from 'react';
 import { PiEyeClosedThin } from 'react-icons/pi'
 import { AuthContext } from '../../Provider/AuthProvider';
-import { toast } from 'react-hot-toast';
+import { Toaster, toast } from 'react-hot-toast';
+import { useState } from 'react';
 
 const RegisterAsDoctor = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext)
+    const [error, setError] = useState('')
 
 
     const handleForm = (event) => {
@@ -31,9 +33,9 @@ const RegisterAsDoctor = () => {
                 console.log(createdUser)
                 updateUserProfile(name, image)
                     .then(() => {
-                        toast.success('Updated Successfully')
+                        toast.success('Request Submitted Successfully')
                     })
-                toast.success("User Created Successfully")
+
                 fetch('http://localhost:5000/users', {
                     method: "POST",
                     headers: {
@@ -43,13 +45,19 @@ const RegisterAsDoctor = () => {
                 })
                     .then(data => {
                         if (data.insertedId) {
+                            setError('')
                             toast.success('User Created Successs...!')
                         }
                     })
-                    .catch(err => console.log(err))
+                    .catch(err => {
+                        // setError(err.message)
+                        console.log(err)
+                    })
 
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                setError(err.message)
+            })
 
     }
     return (
@@ -92,6 +100,7 @@ const RegisterAsDoctor = () => {
                             </p>
                         </div>
                     </section>
+                    <Toaster />
 
                     <main
                         className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
@@ -211,6 +220,7 @@ const RegisterAsDoctor = () => {
                                 </div> */}
 
                                 <div className="col-span-6">
+                                    {error && <p className='text-red-400 font-semibold'>{error}</p>}
                                     <label htmlFor="MarketingAccept" className="flex gap-4">
                                         <input
                                             type="checkbox"

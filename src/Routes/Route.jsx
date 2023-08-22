@@ -26,6 +26,7 @@ import UserAppointments from "../Layouts/Dashboard/UserDashboard/UserAppointment
 import Payments from "../Layouts/Dashboard/UserDashboard/Payments";
 import ContactPage from "../Pages/ContactPage/ContactPage";
 import ServicesPage from "../Pages/ServicesPage/ServicesPage";
+import DoctorRequest from "../Layouts/Dashboard/AdminDashboard/DoctorRequest";
 
 const router = createBrowserRouter([
   {
@@ -103,6 +104,10 @@ const router = createBrowserRouter([
       {
         path: 'add-doctor',
         element: <AddDoctor />
+      },
+      {
+        path: 'doctor-request',
+        element: <DoctorRequest />
       },
 
       // User Routes

@@ -46,6 +46,11 @@ const HomeDashboard = () => {
                 Add a Doctor
               </a>
             </Link>
+            <Link to='doctor-request'>
+              <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
+                Doctor Request
+              </a>
+            </Link>
             <Link>
               <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                 Manage Doctor
