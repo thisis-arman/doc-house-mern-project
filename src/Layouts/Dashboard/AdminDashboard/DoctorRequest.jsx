@@ -7,13 +7,23 @@ const DoctorRequest = () => {
     const [doctorReq, setDoctorReq] = useState([])
 
     useEffect(() => {
-        fetch(``)
+        fetch(`http://localhost:5000/users`)
+            .then(res => res.json())
+            .then(data => {
+
+                const pendingDoctor = data.filter(data => data.role === "doctor" && data.status === "pending")
+                setDoctorReq(pendingDoctor)
+                console.log(pendingDoctor)
+
+
+            })
     }, [])
+
 
 
     return (
         <div>
-            <h1>Doctor request</h1>
+            <h1>Doctor request  {doctorReq.length}</h1>
         </div>
     );
 };
