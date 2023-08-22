@@ -22,8 +22,8 @@ const DoctorRequest = () => {
 
 
     return (
-        <div className="p-10">
-            <h1>Doctor request  {doctorReq.length}</h1>
+        <div className="p-10 bg-slate-200">
+            <h1 className="font-bold text-2xl py-4">Doctor request  </h1>
 
 
             <div>
@@ -33,20 +33,22 @@ const DoctorRequest = () => {
                         <thead>
                             <tr>
                                 <th>
-                                    <label>
-                                        <input type="checkbox" className="checkbox" />
-                                    </label>
+                                    #
                                 </th>
                                 <th>Name</th>
                                 <th>Job</th>
-                                <th>Favorite Color</th>
-                                <th></th>
+                                <th>Status</th>
+                                <th>Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {/* row 1 */}
                             {
                                 doctorReq.map((req, i) => <tr key={i}>
+                                    <td>
+                                        {i + 1}
+                                    </td>
 
                                     <td>
                                         <div className="flex items-center space-x-3">
@@ -65,7 +67,10 @@ const DoctorRequest = () => {
                                     </td>
                                     <td>{req?.email}</td>
                                     <th>
-                                        <button className="btn btn-ghost btn-xs">details</button>
+                                        <button className="">{req?.status}</button>
+                                    </th>
+                                    <th>
+                                        <button className="px-4 bg-green-600 hover:bg-lime-600 rounded text-white">Accept</button>
                                     </th>
                                 </tr>)
                             }
