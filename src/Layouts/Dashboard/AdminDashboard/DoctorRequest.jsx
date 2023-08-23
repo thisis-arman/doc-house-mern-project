@@ -1,10 +1,37 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 
 const DoctorRequest = () => {
 
     const [doctorReq, setDoctorReq] = useState([])
+
+
+    const handleStatus = (user) => {
+        fetch(`http://localhost:5000/api/doctor/${user._id}`, {
+            method: 'PATCH',
+            headers: {
+                "content-type": "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data)
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Approved successfully.',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+
+                }
+            })
+
+
+    }
 
     useEffect(() => {
         fetch(`http://localhost:5000/users`)
@@ -18,7 +45,6 @@ const DoctorRequest = () => {
 
             })
     }, [])
-
 
 
     return (
@@ -35,8 +61,8 @@ const DoctorRequest = () => {
                                 <th>
                                     #
                                 </th>
+                                <th>Profile</th>
                                 <th>Name</th>
-                                <th>Job</th>
                                 <th>Status</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -70,7 +96,7 @@ const DoctorRequest = () => {
                                         <button className="">{req?.status}</button>
                                     </th>
                                     <th>
-                                        <button className="px-4 bg-green-600 hover:bg-lime-600 rounded text-white">Accept</button>
+                                        <button onClick={() => handleStatus(req)} className="px-4 bg-green-600 hover:bg-lime-600 rounded text-white">Accept</button>
                                     </th>
                                 </tr>)
                             }
