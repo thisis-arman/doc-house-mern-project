@@ -27,6 +27,7 @@ import Payments from "../Layouts/Dashboard/UserDashboard/Payments";
 import ContactPage from "../Pages/ContactPage/ContactPage";
 import ServicesPage from "../Pages/ServicesPage/ServicesPage";
 import DoctorRequest from "../Layouts/Dashboard/AdminDashboard/DoctorRequest";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -71,7 +72,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'doctor/:id',
-        element: <DoctorDetails />,
+        element: <PrivateRoute><DoctorDetails /></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/api/all-info/${params.id}`)
       },
 

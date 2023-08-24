@@ -75,9 +75,7 @@ const UsersTable = ({ users }) => {
                             <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                                 Email
                             </th>
-                            <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                Phono Number
-                            </th>
+
                             <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                                 Bill
                             </th>
@@ -104,7 +102,7 @@ const UsersTable = ({ users }) => {
                                     {user?.name}
                                 </td>
                                 <td className="whitespace-nowrap px-4 py-2 text-gray-700">{user?.email}</td>
-                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">{user?.number}</td>
+                                {/* <td className="whitespace-nowrap px-4 py-2 text-gray-700">{user?.number}</td> */}
                                 <td className="whitespace-nowrap px-4 py-2 text-gray-700">$120,000</td>
                                 <td className="whitespace-nowrap px-4 py-2">
                                     <a onClick={() => handleDeleteUser(user)}
