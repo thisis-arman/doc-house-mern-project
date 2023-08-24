@@ -9,6 +9,11 @@ const DoctorRequest = () => {
     const [doctors, setDoctor] = useState([])
 
 
+
+    const handleDetails = () => {
+
+    }
+
     const handleStatus = (user) => {
         fetch(`http://localhost:5000/api/doctor/${user._id}`, {
             method: 'PATCH',
@@ -102,7 +107,7 @@ const DoctorRequest = () => {
                                     <button className="">{req?.status}</button>
                                 </th>
                                 <th>
-                                    <button onClick={() => handleStatus(req)} className="px-4 bg-green-600 hover:bg-lime-600 rounded text-white">View</button>
+                                    <button onClick={() => handleDetails(req)} className="px-4 bg-green-600 hover:bg-lime-600 rounded text-white">View</button>
                                 </th>
                             </tr>)
                         }

@@ -1,5 +1,6 @@
 import { Toaster, toast } from "react-hot-toast";
 import { FiTrash2 } from "react-icons/fi"
+import Swal from "sweetalert2";
 
 const UsersTable = ({ users }) => {
 
@@ -7,7 +8,30 @@ const UsersTable = ({ users }) => {
 
 
 
+    const makeAdmin = (user) => {
+        fetch(`http://localhost:5000/api/users/${user._id}`, {
+            method: 'PATCH',
+            headers: {
+                "content-type": "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data)
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name} Your are Admin Now`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
 
+                }
+            })
+
+
+    }
 
 
 
@@ -31,7 +55,7 @@ const UsersTable = ({ users }) => {
             })
     }
     return (
-        <div>
+        <div className="p-10">
             {/*
   Heads up! 👋
 
@@ -39,9 +63,12 @@ const UsersTable = ({ users }) => {
 */}
 
             <div className="overflow-x-auto">
-                <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
-                    <thead className="ltr:text-left rtl:text-right">
+                <table className="min-w-full text-center divide-y-2 divide-gray-200 bg-white text-sm">
+                    <thead className="ltr:text-left rtl:text-right bg-base-200">
                         <tr>
+                            <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                                Profile
+                            </th>
                             <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                                 Name
                             </th>
@@ -55,12 +82,24 @@ const UsersTable = ({ users }) => {
                                 Bill
                             </th>
                             <th className="px-4 py-2"></th>
+                            <th className="px-4 py-2">Action</th>
                         </tr>
                     </thead>
 
                     <tbody className="divide-y divide-gray-200 text-center">
                         {
                             users.map(user => <tr key={user._id}>
+
+                                <td>
+                                    <div className="flex items-center space-x-3">
+                                        <div className="avatar">
+                                            <div className="mask mask-squircle w-12 h-12">
+                                                <img src={user?.image} alt="Avatar Tailwind CSS Component" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </td>
                                 <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                                     {user?.name}
                                 </td>
@@ -75,6 +114,7 @@ const UsersTable = ({ users }) => {
                                         <FiTrash2 className="w-5 h-5" />
                                     </a>
                                 </td>
+                                <td onClick={() => makeAdmin(user)} className="cursor-pointer px-2 py-1 m-2 bg-blue-700 text-white border rounded hover:bg-white hover:text-black hover:border-black">Make Admin</td>
                             </tr>)
                         }
 
