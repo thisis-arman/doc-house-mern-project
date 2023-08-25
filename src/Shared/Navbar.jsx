@@ -31,7 +31,7 @@ const Navbar = () => {
     <div className="container mx-auto">
 
 
-      <header className="text-white relative z-10">
+      <header className="mt-4  bg-[#F9F9F9] rounded-full sticky  z-10">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div className="flex  h-16 items-center justify-between">
             <div className="flex-1 md:flex md:items-center md:gap-12">
@@ -54,7 +54,7 @@ const Navbar = () => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Link to='/about'
-                      className=" transition  hover:border-b-2  hover:text-lime-400/75"
+                      className=" transition  hover:border-b-2  hover:text-yellow-500"
 
                     >
                       About
@@ -67,7 +67,7 @@ const Navbar = () => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Link to='/appointment'
-                      className=" transition  hover:border-b-2  hover:text-lime-400/75"
+                      className=" transition  hover:border-b-2  hover:text-yellow-500"
 
                     >
                       Appointment
@@ -80,7 +80,7 @@ const Navbar = () => {
 
                     <Link to='contact'>
                       <a
-                        className=" transition  hover:border-b-2  hover:text-lime-400/75"
+                        className=" transition  hover:border-b-2  hover:text-yellow-500"
 
                       >
                         Contact
@@ -94,7 +94,7 @@ const Navbar = () => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Link to='services'
-                      className=" transition  hover:border-b-2  hover:text-lime-400/75"
+                      className=" transition  hover:border-b-2  hover:text-yellow-500"
 
                     >
                       Services
@@ -107,7 +107,7 @@ const Navbar = () => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Link
-                      className=" transition  hover:border-b-2  hover:text-lime-400/75"
+                      className=" transition  hover:border-b-2  hover:text-yellow-500"
 
                     >
                       Projects
@@ -120,7 +120,7 @@ const Navbar = () => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Link to='/blog'
-                      className=" transition  hover:border-b-2  hover:text-lime-400/75"
+                      className=" transition  hover:border-b-2  hover:text-yellow-500"
 
                     >
                       Blog

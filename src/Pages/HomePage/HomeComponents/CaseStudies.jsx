@@ -1,4 +1,5 @@
 import { LazyMotion, domAnimation, m } from "framer-motion";
+import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 
 
@@ -28,9 +29,7 @@ const CaseStudies = () => {
                             </h2>
 
                             <p className="max-w-md  mt-4 text-gray-500">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
-                                praesentium cumque iure dicta incidunt est ipsam, officia dolor fugit
-                                natus?
+                                Gather Knowledge From real-life experiments, and researchers
                             </p>
                         </header>
                     </div>
@@ -42,7 +41,7 @@ const CaseStudies = () => {
                         >
                             <img
                                 alt="Office"
-                                src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                                src="https://img.freepik.com/free-photo/scientist-putting-blood-sample-from-test-tube-with-micropipette-petri-dish-analysing-chemical-reaction_482257-487.jpg?w=1060&t=st=1692955781~exp=1692956381~hmac=1ec3171f9e0ce51c5268226c922318558b63f22168b4eb0784c7afed8b4aeadc"
                                 className="absolute inset-0 h-full w-full object-cover"
                             />
 
@@ -54,18 +53,14 @@ const CaseStudies = () => {
                                         10th Oct 2022
                                     </time>
 
-                                    <a href="#">
+                                    <Link to="https://www.bmj.com/content/382/bmj-2022-074520">
                                         <h3 className="mt-0.5 text-lg text-white">
-                                            How to position your furniture for positivity
+                                            Cancer mortality after low dose exposure to ionising radiation
                                         </h3>
-                                    </a>
+                                    </Link>
 
                                     <p className="mt-2 line-clamp-3 text-sm/relaxed text-white/95">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                                        dolores, possimus pariatur animi temporibus nesciunt praesentium dolore
-                                        sed nulla ipsum eveniet corporis quidem, mollitia itaque minus soluta,
-                                        voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
-                                        Molestias explicabo corporis voluptatem?
+                                        The study included 103 553 deaths, of which 28 089 were due to solid cancers. The estimated rate of mortality due to solid cancer increased with cumulative dose by 52% (90% confidence interval 27% to 77%) per Gy, lagged by 10 years.
                                     </p>
                                 </div>
                             </div>
@@ -75,7 +70,7 @@ const CaseStudies = () => {
                         >
                             <img
                                 alt="Office"
-                                src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                                src="https://img.freepik.com/free-photo/biotechnology-specialist-laboratory-conducting-experiments_23-2150468692.jpg?w=900&t=st=1692955965~exp=1692956565~hmac=deb854336ef2458df38d75daa89a762234cd0299916be919adbed977e5d4dc72"
                                 className="absolute inset-0 h-full w-full object-cover"
                             />
 
@@ -84,21 +79,17 @@ const CaseStudies = () => {
                             >
                                 <div className="p-4 sm:p-6">
                                     <time datetime="2022-10-10" className="block text-xs text-white/90">
-                                        10th Oct 2022
+                                        20th Oct 2023
                                     </time>
 
-                                    <a href="#">
+                                    <Link to="https://www.bmj.com/content/382/bmj-2022-074258">
                                         <h3 className="mt-0.5 text-lg text-white">
-                                            How to position your furniture for positivity
+                                            Effect of home cook interventions for salt reduction in China
                                         </h3>
-                                    </a>
+                                    </Link>
 
                                     <p className="mt-2 line-clamp-3 text-sm/relaxed text-white/95">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                                        dolores, possimus pariatur animi temporibus nesciunt praesentium dolore
-                                        sed nulla ipsum eveniet corporis quidem, mollitia itaque minus soluta,
-                                        voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
-                                        Molestias explicabo corporis voluptatem?
+                                        1576 participants (775 (49.2%) men; mean age 55.8 (standard deviation 10.8) years) from 788 families (one home cook and one other adult in each family) completed the baseline assessment. After baseline assessment, 30 communities with 786 participants were allocated to the intervention group and 30 communities with 790 participants to the control group.
                                     </p>
                                 </div>
                             </div>
@@ -108,7 +99,7 @@ const CaseStudies = () => {
                         >
                             <img
                                 alt="Office"
-                                src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+                                src="https://img.freepik.com/free-photo/groupe-researchers-pharmacology-hospital-laboratory-modern-equipment-research-laboratory_482257-34686.jpg?w=900&t=st=1692956292~exp=1692956892~hmac=940a4ea54dd6d41f8913a42b6b0132a9dd9d0b4992c7b651e5fa397839614154"
                                 className="absolute inset-0 h-full w-full object-cover"
                             />
 
@@ -117,21 +108,17 @@ const CaseStudies = () => {
                             >
                                 <div className="p-4 sm:p-6">
                                     <time datetime="2022-10-10" className="block text-xs text-white/90">
-                                        10th Oct 2022
+                                        22th june 2023
                                     </time>
 
-                                    <a href="#">
+                                    <Link to="https://www.bmj.com/content/381/bmj-2023-075230">
                                         <h3 className="mt-0.5 text-lg text-white">
-                                            How to position your furniture for positivity
+                                            Vitamin D supplementation and major cardiovascular events
                                         </h3>
-                                    </a>
+                                    </Link>
 
                                     <p className="mt-2 line-clamp-3 text-sm/relaxed text-white/95">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                                        dolores, possimus pariatur animi temporibus nesciunt praesentium dolore
-                                        sed nulla ipsum eveniet corporis quidem, mollitia itaque minus soluta,
-                                        voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
-                                        Molestias explicabo corporis voluptatem?
+                                        21 302 people were included in the analysis. The median intervention period was five years. 1336 participants experienced a major cardiovascular event (placebo 699 (6.6%); vitamin D 637 (6.0%)). The rate of major cardiovascular events was lower in the vitamin D group than in the placebo group
                                     </p>
                                 </div>
                             </div>

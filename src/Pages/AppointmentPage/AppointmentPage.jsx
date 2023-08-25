@@ -11,7 +11,7 @@ const AppointmentPage = () => {
   const [services, setServices] = useState([]);
   console.log(services);
   // console.log(value.split(' ').slice(0,4).join(' '))
-  
+
   useEffect(() => {
     fetch("http://localhost:5000/services")
       .then((res) => res.json())
@@ -45,48 +45,48 @@ const AppointmentPage = () => {
           {/* Tailblocks  start here */}
           <div className="">
             <section className="text-gray-600 body-font ">
-              <div className="container px-5 py-16 mx-auto ">
+              <div className="container md:px-5 py-16 mx-auto ">
                 <Tabs>
                   <TabList>
-                  <div className="grid md:grid-cols-3 grid-cols-1  -m-2">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1  -m-2">
 
-                    {services.map((data) => (
-                      <Tab className=' p-2 '  key={data._id}>
-                        <div
-                       
-                        className=" border "
-                      >
-                        <div className="h-full flex items-center border-gray-200  p-4 rounded-lg">
-                          <img
-                            alt="team"
-                            className=" bg-red-200 p-4   rounded-xl mr-4"
-                            src={data?.image}
-                          />
-                          <div className="flex-grow">
-                            <h2 className="text-gray-900 text-xl font-bold">
-                              {data?.services}
-                            </h2>
+                      {services.map((data) => (
+                        <Tab className=' p-2 ' key={data._id}>
+                          <div
+
+                            className=" border "
+                          >
+                            <div className="h-full flex items-center border-gray-200  p-4 rounded-lg">
+                              <img
+                                alt="team"
+                                className=" bg-red-200 p-4   rounded-xl mr-4"
+                                src={data?.image}
+                              />
+                              <div className="flex-grow">
+                                <h2 className="text-gray-900 text-xl font-bold">
+                                  {data?.services}
+                                </h2>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                      </Tab>
-                    ))}
-                  </div>
+                        </Tab>
+                      ))}
+                    </div>
 
 
                   </TabList>
-                      <h2 className="text-3xl py-12 font-bold text-center">Available slots for Appointment</h2>
+                  <h2 className="text-3xl py-12 font-bold text-center">Available slots for Appointment</h2>
                   <TabPanel>
-                  <SubServices category="Cavity%20Orthodontics"/>
+                    <SubServices category="Cavity%20Orthodontics" />
                   </TabPanel>
                   <TabPanel>
-                    <CosmeticService/>
+                    <CosmeticService />
                   </TabPanel>
                   <TabPanel>
-                  <SubServices category="Cosmetic-Orthodontics"/>
+                    <SubServices category="Cosmetic-Orthodontics" />
                   </TabPanel>
                   <TabPanel>
-                    <SubServices category="Cavity%20Orthodontics"/>
+                    <SubServices category="Cavity%20Orthodontics" />
                   </TabPanel>
                 </Tabs>
               </div>

@@ -4,6 +4,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { motion } from "framer-motion";
+import { AiFillPlayCircle } from 'react-icons/ai'
 
 import TextTransition, { presets } from 'react-text-transition';
 
@@ -29,19 +30,33 @@ const HeroSection = () => {
   }, [])
 
   return (
-    <div className="bg-[#07332F] overflow-hidden min-h-screen z-0 absolute w-full top-0">
-      <section className="text-white body-font">
-        <div className="container mx-auto flex px-5 md:py-24  py-12  md:flex-row flex-col items-center">
-          <div data-aos="fade-left" data-aos-delay="800" className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 mt-20 md:mb-0 items-center text-center">
-            <h1 className="title-font sm:text-4xl lg:text-6xl text-4xl mb-4 font-medium ">
+    <div className=" overflow-hidden min-h-screen z-0 absolute w-full top-0">
+      <section className="text-black body-font">
+        <div className="container mx-auto flex px-5 md:pt-24  pt-12  md:flex-row flex-col items-center">
+          <div data-aos="fade-left" data-aos-delay="800" className="lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left mb-16 mt-20 md:mb-0 items-center text-center">
+            <h1 className="title-font sm:text-4xl lg:text-6xl text-4xl mb-4 font-extrabold ">
               {/* <TextTransition className='text-lime-400 text-center  text-2xl md:text-5xl ml-7 md:ml-0 ' springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}</TextTransition> */}
               Your Journey to Wellness Begins Here
             </h1>
 
-            <motion.p animate={{}} className="mb-8  md:text-md text-sm ">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</motion.p>
-            <div className="flex justify-center">
-              <motion.button whileHover={{ scale: 1.2 }} className="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">All Services</motion.button>
-              {/* <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button> */}
+            <motion.p animate={{}} className="mb-8  md:text-md text-sm ">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag.</motion.p>
+            <div className="flex justify-center gap-8">
+              <motion.button whileHover={{ scale: 1.1 }} className="inline-flex text-white bg-[#F75005] border-0 py-6 px-12  focus:outline-none  rounded-full  shadow-xl shadow-[#d9a891] text-xl uppercase">All Services</motion.button>
+              <motion.button whileHover={{ scale: 1.1 }} className=" text-black border-0 py-4 px-12  focus:outline-none  rounded-full text-xl uppercase flex items-center gap-2  shadow-xl "><AiFillPlayCircle className='text-red-400 w-10 h-10   border-4 hover:border-8 rounded-full' /> <span>
+                Watch Video</span></motion.button>
+              {/* <button className="ml-4 inline-flex  text-gray-700 bg-gray-100 border-0 py-4 px-12  focus:outline-none hover:bg-gray-200 rounded text-lg"></button> */}
+            </div>
+            <div className='flex gap-4 mt-4'>
+              <div className='p-10 mt-6 rounded-3xl bg-white border shadow-2xl shadow-[#F5F5F5]'>
+                <h2 className='text-5xl font-extrabold'>120k+ </h2>
+                <p>Satisfied patient</p>
+
+              </div>
+              <div className='p-10 mt-6 rounded-3xl bg-white border shadow-2xl shadow-[#F5F5F5]'>
+                <h2 className='text-5xl font-extrabold'>4.74 </h2>
+                <p>Average rating</p>
+
+              </div>
             </div>
           </div>
 
@@ -71,6 +86,7 @@ const HeroSection = () => {
             <img className="object-cover object-center hidden md:block rounded" alt="hero" src="https://i.ibb.co/VQ1MkTt/hero-image.png" />
           </div>
         </div>
+
       </section>
 
 

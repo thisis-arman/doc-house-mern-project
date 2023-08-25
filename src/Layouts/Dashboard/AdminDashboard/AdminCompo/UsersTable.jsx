@@ -55,15 +55,15 @@ const UsersTable = ({ users }) => {
             })
     }
     return (
-        <div className="p-10">
+        <div className="md:p-10">
             {/*
   Heads up! 👋
 
   This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
 */}
 
-            <div className="overflow-x-auto">
-                <table className="min-w-full text-center divide-y-2 divide-gray-200 bg-white text-sm">
+            <div className=" overflow-x-auto overflow-hidden">
+                <table className="min-w-full overflow-x-auto text-center divide-y-2 divide-gray-200 bg-white text-sm">
                     <thead className="ltr:text-left rtl:text-right bg-base-200">
                         <tr>
                             <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
