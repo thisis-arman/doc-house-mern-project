@@ -126,49 +126,52 @@ const Navbar = () => {
                       Blog
                     </Link>
                   </motion.li>
-                </ul>
-              </nav>
+                  {user ? <div className="sm:flex sm:gap-4">
 
-              <div className="flex items-center gap-4">
-                {user ? <div className="sm:flex sm:gap-4">
-
-                  <Link to='dashboard'
-                    className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-
-                  >
-                    Dashboard
-                  </Link>
-
-
-
-                  <div className="hidden sm:flex">
-                    <Link onClick={handlelogOut}
-                      className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
-
-                    >
-                      Sign Out
-                    </Link>
-                  </div>
-                </div>
-                  :
-                  <div className="sm:flex sm:gap-4">
-                    <Link to='/sign-in'
+                    <Link to='dashboard'
                       className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
 
                     >
-                      Login
+                      Dashboard
                     </Link>
 
+
+
                     <div className="hidden sm:flex">
-                      <Link to='/sign-up'
+                      <Link onClick={handlelogOut}
                         className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
 
                       >
-                        Register
+                        Sign Out
                       </Link>
                     </div>
                   </div>
-                }
+                    :
+                    <div className="sm:flex sm:gap-4">
+                      <Link to='/sign-in'
+                        className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
+
+                      >
+                        Login
+                      </Link>
+
+                      <div className="hidden sm:flex">
+                        <Link to='/sign-up'
+                          className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+
+                        >
+                          Register
+                        </Link>
+                      </div>
+                    </div>
+                  }
+                </ul>
+
+
+              </nav>
+
+              <div className="flex items-center gap-4">
+
                 <div className="dropdown ">
                   <div tabIndex={0} className="block md:hidden">
                     <button
@@ -197,6 +200,45 @@ const Navbar = () => {
                       <Link to='/' className="mr-4 hover:bg-red-300">About</Link>
                       <Link to='/appointment' className="mr-4 hover:bg-red-300">Appointment</Link>
                       <Link to='/' className="mr-4 hover:bg-red-300">Login</Link>
+                      {user ? <div className="sm:flex sm:gap-4">
+
+                        <Link to='dashboard'
+                          className="rounded-md  px-5 py-2.5 text-sm font-medium text-white shadow"
+
+                        >
+                          Dashboard
+                        </Link>
+
+
+
+                        <div className="hidden sm:flex">
+                          <Link onClick={handlelogOut}
+                            className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+
+                          >
+                            Sign Out
+                          </Link>
+                        </div>
+                      </div>
+                        :
+                        <div className="sm:flex sm:gap-4">
+                          <Link to='/sign-in'
+                            className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
+
+                          >
+                            Login
+                          </Link>
+
+                          <div className="hidden sm:flex">
+                            <Link to='/sign-up'
+                              className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+
+                            >
+                              Register
+                            </Link>
+                          </div>
+                        </div>
+                      }
                     </ul>
 
                   </div>

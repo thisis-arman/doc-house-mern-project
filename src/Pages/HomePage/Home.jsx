@@ -8,20 +8,22 @@ import ExpertDoctors from "./HomeComponents/ExpertDoctors";
 import HeroSection from "./HomeComponents/HeroSection";
 import OurServices from "./HomeComponents/OurServices";
 import Testimonials from "./HomeComponents/Testimonials";
+import Video from "./HomeComponents/Video";
 
 const Home = () => {
     return (
         <div>
-            <HeroSection/>
-            <OurServices/>
-            <Contacts/>
-            <ExpertDoctors/>
-            <CaseStudies/>
-            <Testimonials/>
-            <Awards/>
-            <BlogCTA/>
-            <ContactForm/>
-            
+            <HeroSection />
+            <Video />
+            <OurServices />
+            <Contacts />
+            <ExpertDoctors />
+            <CaseStudies />
+            <Testimonials />
+            <Awards />
+            <BlogCTA />
+            <ContactForm />
+
         </div>
     );
 };
