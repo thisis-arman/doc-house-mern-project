@@ -11,7 +11,7 @@ const Serve = () => {
                     <h2 className="sm:text-6xl text-4xl font-bold md:pt-8 pt-4">We are here to get you well</h2>
                 </div>
                 <div className=" gap-6">
-                    <div className="flex py-4 gap-4">
+                    <div className="flex flex-wrap py-4 gap-4">
                         <img src="https://skinive.com/wp-content/uploads/2022/11/take-care-of-skin-icon-1.svg" alt="" />
                         <img src="https://skinive.com/wp-content/uploads/2022/11/take-care-of-skin-icon-2.svg" alt="" />
                         <img src="https://skinive.com/wp-content/uploads/2022/11/take-care-of-skin-icon-3.svg" alt="" />

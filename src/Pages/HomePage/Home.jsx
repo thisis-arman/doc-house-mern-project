@@ -5,6 +5,7 @@ import ContactForm from "./HomeComponents/ContactForm";
 import Contacts from "./HomeComponents/Contacts";
 import Editor from "./HomeComponents/Editor";
 import ExpertDoctors from "./HomeComponents/ExpertDoctors";
+import Features from "./HomeComponents/Features";
 import HeroSection from "./HomeComponents/HeroSection";
 import OurServices from "./HomeComponents/OurServices";
 import Serve from "./HomeComponents/Serve";
@@ -17,6 +18,7 @@ const Home = () => {
             <HeroSection />
             <Video />
             <Serve />
+            <Features />
             <OurServices />
             <Contacts />
             <ExpertDoctors />
