@@ -9,7 +9,7 @@ const Features = () => {
                     <img src="https://skinive.com/wp-content/uploads/2023/02/key-features-item-one-image_big.png" alt="" />
                 </div>
                 <div className="md:w-1/2 items-start">
-                    <h2 className="sm:text-6xl text-5xl font-bold py-12">Key Feature</h2>
+                    <h2 className="sm:text-7xl text-5xl font-bold py-12">Key Feature</h2>
                     <div>
                         <div className="md:flex gap-6 py-6 items-center">
                             <FaHome className="min-w-min h-20 rounded-md p-4  bg-red-500 text-white" />

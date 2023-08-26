@@ -24,7 +24,7 @@ const Home = () => {
             <ExpertDoctors />
             <CaseStudies />
             <Testimonials />
-            <Awards />
+            {/* <Awards /> */}
             <BlogCTA />
             <ContactForm />
 

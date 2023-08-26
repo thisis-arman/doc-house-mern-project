@@ -20,7 +20,7 @@ const ContactForm = () => {
     event.preventDefault();
     const formData = new FormData(event.target);
     console.log(formData);
-    
+
 
     const url =
       "https://script.google.com/macros/s/AKfycby5nRdDBaCX1qpxDWa6DHQeYKMwBW9Ec2gaJ9dFF8xFmMKmttgYS70rbadJ3QNIx5UM/exec";
@@ -54,7 +54,7 @@ const ContactForm = () => {
 
   return (
     <div className="container overflow-hidden mx-auto relative top-20 md:mb-28 mb-36 px-4">
-      <div className="hero min-h-screen text-white bg-[#07332F] rounded-md py-16 ">
+      <div className="hero min-h-screen text-white bg-[#F96726] rounded-md py-16 ">
         <div className="md:px-20 px-6 md:flex items-center gap-12 ">
           <div className="text-center  md:w-2/5  lg:text-left">
             <h1 className="text-5xl font-bold">Contact With Us!</h1>
@@ -78,7 +78,7 @@ const ContactForm = () => {
           </div>
 
           <div className="card flex-shrink-0 md:w-3/5 w-full  shadow-2xl ">
-            <form  data-aos="fade-left" data-aos-delay="400"  onSubmit={handleSubmit}>
+            <form data-aos="fade-left" data-aos-delay="400" onSubmit={handleSubmit}>
               <div className="card-body grid grid-cols-1 md:grid-cols-2">
                 <div className="form-control">
                   <label className="label">
@@ -90,7 +90,7 @@ const ContactForm = () => {
                     name="Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="input input-bordered text-black bg-[#18433f]"
+                    className="input input-bordered text-black "
                   />
                 </div>
                 <div className="form-control">
@@ -103,7 +103,7 @@ const ContactForm = () => {
                     name="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="input input-bordered text-black bg-[#18433f]"
+                    className="input input-bordered text-black "
                   />
                 </div>
 
@@ -117,7 +117,7 @@ const ContactForm = () => {
                     name="Mobile"
                     value={mobile}
                     onChange={(e) => setMobile(e.target.value)}
-                    className="input input-bordered bg-[#18433f] text-black"
+                    className="input input-bordered  text-black"
                   />
                 </div>
 
@@ -131,7 +131,7 @@ const ContactForm = () => {
                     name="Doctor"
                     value={doctor}
                     onChange={(e) => setDoctor(e.target.value)}
-                    className="input input-bordered text-white bg-[#18433f]"
+                    className="input input-bordered text-black "
                   />
                 </div>
                 <div className="form-control">
@@ -144,7 +144,7 @@ const ContactForm = () => {
                     name="Date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="input input-bordered text-white bg-[#18433f]"
+                    className="input input-bordered text-black "
                   />
                 </div>
 
@@ -158,14 +158,14 @@ const ContactForm = () => {
                     name="Time"
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
-                    className="input input-bordered text-white bg-[#18433f]"
+                    className="input input-bordered text-black  "
                   />
                 </div>
               </div>
               <div className="form-control px-4 py-4 ">
                 <button
                   type="submit"
-                  className="btn btn-outline border-[#F7A582] text-[#F7A582] hover:bg-[#F7A582] hover:text-white"
+                  className="btn btn-outline text-black border-[#6c3f2b]  hover:bg-[#F7A582] hover:text-white"
                 >
                   Submit
                 </button>
