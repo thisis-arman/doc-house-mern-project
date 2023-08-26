@@ -28,10 +28,10 @@ const Navbar = () => {
     }
   };
   return (
-    <div className="container mx-auto">
+    <div className="container md:fixed sticky md:mx-16 mx-auto z-10  ">
 
 
-      <header className="mt-4  bg-[#F9F9F9] rounded-full sticky  z-10">
+      <header className="mt-4  bg-[#f7eeee] rounded-full  w-full   z-10">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div className="flex  h-16 items-center justify-between">
             <div className="flex-1 md:flex md:items-center md:gap-12">

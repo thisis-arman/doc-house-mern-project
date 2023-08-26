@@ -8,13 +8,13 @@ const Video = () => {
     return (
         <section className="container mx-auto px-4">
             <div className="relative md:top-[650px] top-[500px]">
-                <div className="md:max-w-3xl py-8 pb-12">
+                <div className="md:max-w-3xl py-16 pb-12">
                     <p className="md:text-2xl text-md text-red-500 font-semibold ">Perfect Life made easy</p>
                     <h2 className="sm:text-6xl text-4xl font-bold md:pt-8 pt-4">Start your journey
                         to healthy & beautiful Life</h2>
                 </div>
                 <div>
-                    <div className="rounded-2xl md:w-2/3 mx-auto bg-[url(https://i.ibb.co/ZzdX7Bs/Photo-for-video.jpg)] bg-cover bg-center bg-base-content bg-no-repeat h-96">
+                    <div className="rounded-2xl md:w-3/4 mx-auto bg-[url(https://i.ibb.co/ZzdX7Bs/Photo-for-video.jpg)] bg-cover bg-center bg-base-content bg-no-repeat h-96">
 
 
 

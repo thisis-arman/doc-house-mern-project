@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { AiFillPlayCircle } from 'react-icons/ai'
 
 import TextTransition, { presets } from 'react-text-transition';
+import PopUp from '../../../Components/Popup';
 
 const TEXTS = ['Empowering Health,', 'Enriching Lives,', 'Transforming Lives,'];
 
@@ -31,6 +32,7 @@ const HeroSection = () => {
 
   return (
     <div className=" overflow-hidden min-h-screen z-0 absolute w-full top-0 ">
+      <PopUp />
       <section className="text-black body-font ">
         <div className="container mx-auto flex px-5 md:pt-24  pt-32  md:flex-row flex-col items-center">
           <div data-aos="fade-left" data-aos-delay="800" className="lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left mb-16 mt-20 md:mb-0 items-center text-center">
