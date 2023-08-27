@@ -110,11 +110,11 @@ const Navbar = () => {
                     whileHover={{ scale: 1.3 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Link
+                    <Link to='/doctor'
                       className=" transition  hover:border-b-2  hover:text-yellow-500"
 
                     >
-                      Projects
+                      Doctors
                     </Link>
                   </motion.li>
 

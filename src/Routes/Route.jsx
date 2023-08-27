@@ -28,6 +28,7 @@ import ContactPage from "../Pages/ContactPage/ContactPage";
 import ServicesPage from "../Pages/ServicesPage/ServicesPage";
 import DoctorRequest from "../Layouts/Dashboard/AdminDashboard/DoctorRequest";
 import PrivateRoute from "./PrivateRoute";
+import DoctorPage from "../Pages/DoctorPage/DoctorPage";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: 'contact',
         element: <ContactPage />
+      },
+      {
+        path: 'doctor',
+        element: <DoctorPage />
       },
       {
         path: '/appointment',
