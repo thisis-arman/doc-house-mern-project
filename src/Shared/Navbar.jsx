@@ -4,8 +4,12 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { motion } from "framer-motion";
 
 
+
 const Navbar = () => {
   const { user, LogOut } = useContext(AuthContext)
+
+  const isAdmin = true;
+  const isDoctor = false;
 
   const handlelogOut = () => {
     LogOut()
@@ -31,7 +35,7 @@ const Navbar = () => {
     <div className="container md:fixed sticky md:mx-16 mx-auto z-10  ">
 
 
-      <header className="mt-4  bg-[#f7eeee] rounded-full  w-full   z-10">
+      <header className="mt-4  bg-base-200 rounded-full  w-full   z-10">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div className="flex  h-16 items-center justify-between">
             <div className="flex-1 md:flex md:items-center md:gap-12">
@@ -128,7 +132,13 @@ const Navbar = () => {
                   </motion.li>
                   {user ? <div className="sm:flex sm:gap-4">
 
-                    <Link to='dashboard'
+                    <Link to={
+                      isAdmin
+                        ? "/dashboard/admin"
+                        : isDoctor
+                          ? "/dashboard/doctor-home"
+                          : "/dashboard/user-home"
+                    }
                       className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
 
                     >

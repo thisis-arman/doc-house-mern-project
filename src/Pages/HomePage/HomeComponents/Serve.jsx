@@ -1,6 +1,7 @@
 // import { home } from "../../../../doc-house Assets/Icon/home.png"
-import { FaHome } from 'react-icons/fa'
+import { FaArrowAltCircleRight, FaArrowRight, FaHome } from 'react-icons/fa'
 import { MdOutlineLocalHospital, MdOutlinePeopleAlt } from 'react-icons/md'
+import { Link } from 'react-router-dom';
 
 const Serve = () => {
     return (
@@ -24,8 +25,12 @@ const Serve = () => {
                     {/* <img className="w-24  p-6 text-yellow-500 rounded-md bg-white" src="https://i.ibb.co/R3L2HJz/home-1.png" alt="" /> */}
                     <FaHome className="w-24 h-20  p-4 mb-4 text-[#F96320] rounded-xl bg-white" />
                     <div className='text-white'>
-                        <h2 className='text-3xl py-2 text-white font-bold'>Home Use</h2>
+                        <h2 className='text-3xl py-2 text-white font-bold'>Appointments</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                    <div className='relative -bottom-10  flex justify-end'>
+                        <Link to='/appointment'>  <FaArrowRight className='text-4xl text-white border rounded-full hover:bg-white hover:text-red-400  p-2' />
+                        </Link>
                     </div>
 
                 </div>
@@ -33,8 +38,12 @@ const Serve = () => {
                     {/* <img className="w-24  p-6 text-yellow-500 rounded-md bg-white" src="https://i.ibb.co/R3L2HJz/home-1.png" alt="" /> */}
                     <MdOutlineLocalHospital className="w-24 h-20  p-4 mb-4 text-[#7a8ded] rounded-xl bg-white" />
                     <div className='text-white'>
-                        <h2 className='text-3xl py-2 text-white font-bold'>Medical Professionals Use</h2>
+                        <h2 className='text-3xl py-2 text-white font-bold'>Medical Professionals</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                    <div className='relative -bottom-10  flex justify-end'>
+                        <Link to='/appointment'>  <FaArrowRight className='text-4xl text-white border rounded-full hover:bg-white hover:text-blue-400  p-2' />
+                        </Link>
                     </div>
 
                 </div>
@@ -42,10 +51,13 @@ const Serve = () => {
                     {/* <img className="w-24  p-6 text-yellow-500 rounded-md bg-white" src="https://i.ibb.co/R3L2HJz/home-1.png" alt="" /> */}
                     <MdOutlinePeopleAlt className="w-24 h-20  p-4 mb-4 text-[#8362ed] rounded-xl bg-white" />
                     <div className='text-white'>
-                        <h2 className='text-3xl py-2 text-white font-bold'>Patients Use</h2>
+                        <h2 className='text-3xl py-2 text-white font-bold'>Book for Lab Test</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur.</p>
                     </div>
-
+                    <div className='relative -bottom-10  flex justify-end  '>
+                        <Link to='/services'>  <FaArrowRight className='text-4xl text-center text-white border rounded-full hover:bg-white hover:text-indigo-600  p-2' />
+                        </Link>
+                    </div>
                 </div>
 
 

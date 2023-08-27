@@ -8,13 +8,13 @@ const DoctorDetails = () => {
   console.log(data);
   const { profile, overview, education, awards, services } = data;
 
-/* const updatedAbout =()=>{
- const currentAbout = document.getElementById('about-text')
- const updatedAbout = currentAbout.innerText;
- console.log(updatedAbout)
-
-}
-   */
+  /* const updatedAbout =()=>{
+   const currentAbout = document.getElementById('about-text')
+   const updatedAbout = currentAbout.innerText;
+   console.log(updatedAbout)
+  
+  }
+     */
 
   return (
     <section>
@@ -23,7 +23,7 @@ const DoctorDetails = () => {
       <section className="bg-[#E6E7EE]">
 
         <section className="text-gray-600 body-font overflow-hidden ">
-          <div className="container rounded-md   relative py-24  top-[320px] mb-[300px]  mx-auto shadow-white ">
+          <div className="container rounded-md   relative py-24  md:top-[320px] md:mb-[300px]  mx-auto shadow-white ">
             <div className="bg-[#e6e7ee] mx-auto flex flex-wrap shadow-2xl shadow-white drop-shadow-2xl  border border-gray-50 p-6">
               <img
                 alt="doctor"
@@ -147,7 +147,7 @@ const DoctorDetails = () => {
                   <img src="" alt="" />
                 </div>
 
-            
+
                 <div>
                   <button className="btn btn-outline mr-4 my-4 py-0 hover:bg-gray-400 hover:text-black">
                     {profile?.services[0]}
@@ -156,7 +156,7 @@ const DoctorDetails = () => {
                     {profile?.services[1]}
                   </button>
                 </div>
-               
+
               </div>
             </div>
           </div>
@@ -187,13 +187,13 @@ const DoctorDetails = () => {
                     </TabList>
                   </div>
 
-                
+
 
                   <TabPanel>
                     <div>
                       {/* About me */}
                       <h2 className="text-xl py-2 font-bold">About Me</h2>
-                      <div suppressContentEditableWarning={true} contentEditable id="about-text"  className="pb-2">{overview?.aboutMe}</div>
+                      <div suppressContentEditableWarning={true} contentEditable id="about-text" className="pb-2">{overview?.aboutMe}</div>
                       {/* <button onClick={updatedAbout}   className="btn btn-primary">save changes</button> */}
                       <div className="grid md:grid-cols-2  grid-cols-1  ">
                         {/* Education */}
