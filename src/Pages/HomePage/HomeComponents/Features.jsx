@@ -3,7 +3,7 @@ import { FaHome, FaUsers } from "react-icons/fa";
 
 const Features = () => {
     return (
-        <section className="container mx-auto px-6  relative md:top-[750px] top-[500px] mb-44 ">
+        <section className="container mx-auto px-6  relative md:top-[750px] top-[450px] mb-44 ">
             <div className="md:flex items-start justify-center gap-10">
                 <div className="md:w-1/2">
                     <img src="https://skinive.com/wp-content/uploads/2023/02/key-features-item-one-image_big.png" alt="" />
