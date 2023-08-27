@@ -8,7 +8,7 @@ const HomeDashboard = () => {
   console.log(user.email)
 
 
-  const isAdmin = true;
+  const isAdmin = false;
   const isDoctor = false;
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);

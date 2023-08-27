@@ -3,9 +3,9 @@ import { BsCheckLg } from 'react-icons/bs';
 const Guide = () => {
     return (
         <div>
-            <section className="text-gray-600 body-font">
-                <div className="container px-5 py-24 mx-auto flex flex-wrap">
-                    <div className="flex items-center gap-8 w-full">
+            <section className="text-gray-600 body-font ">
+                <div className="container px-5 py-6 md:py-24 mx-auto flex flex-wrap">
+                    <div className="md:flex items-center gap-8 w-full">
                         <div className="w-full">
                             <img className=" p-8 object-cover object-center rounded-lg md:mt-0 " src="https://www.apple.com/v/imac-24/h/images/overview/color_front_green__eb8qbnemmre6_large.jpg" alt="step" />
 

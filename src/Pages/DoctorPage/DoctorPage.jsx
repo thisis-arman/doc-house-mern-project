@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 const DoctorPage = () => {
     const [doctors, setDoctors] = useState([])
 
+
+
+
+
     useEffect(() => {
         fetch('http://localhost:5000/doctors')
             .then(res => res.json())
@@ -19,7 +23,7 @@ const DoctorPage = () => {
             <section className=" container mx-auto relative md:top-[350px] px-4 top-6 min-h-screen md:mb-[450px] mb-20">
                 <div className="grid md:grid-cols-3 gap-6  grid-cols-1">
                     {
-                        doctors.map((doctor, i) => <Link key={i} to='#' className="shadow relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8">
+                        doctors.map((doctor, i) => <Link key={i} to={`/doctors/${doctor.profile?.doctorID}`} className="shadow relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8">
                             <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600" />
                             <div className="flex justify-between gap-4">
                                 <div>
@@ -43,7 +47,7 @@ const DoctorPage = () => {
                                     <dd className="text-xs text-gray-500">Fee</dd>
                                 </div>
                                 <div className="flex flex-col-reverse">
-                                    <dt className="text-sm font-medium text-gray-600">{doctor?.profile?.ratings} reviews</dt>
+                                    <dt className="text-sm font-medium text-gray-600">{doctor?.profile?.ratings}/5</dt>
                                     <dd className="text-xs text-gray-500">Ratings</dd>
                                 </div>
                                 <div className="flex flex-col-reverse">

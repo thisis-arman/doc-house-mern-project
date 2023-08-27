@@ -147,7 +147,7 @@ const SubServices = ({ category }) => {
                         </div>
                         <div className="form-control w-full mb-4 max-w-sm">
                           <select placeholder="Doctor ID" className="input input-bordered w-full max-w-sm" id="doctor_name" name='doctorID'>
-                            {users.map((user, i) => <option key={i} name={user?.doctorID} >{user?.doctorID}</option>)}
+                            {users.map((user, i) => <option key={i} value={user?.doctorID} >{user?.name}</option>)}
                           </select>
                         </div>
                         <div className="form-control w-full mb-4 max-w-sm">

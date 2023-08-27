@@ -4,7 +4,7 @@ const Stats = () => {
     return (
         <div>
             <section className="text-gray-600 bg-pink-200 body-font">
-                <div className="container px-5 py-12   mb-16  mx-auto">
+                <div className="container px-5 md:py-12    mb-16  mx-auto">
                     <div className="flex flex-wrap -m-4 text-center">
                         <div className="p-4 sm:w-1/4 w-1/2">
                             <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">2.7K</h2>

@@ -35,7 +35,7 @@ const UserAppointments = () => {
                                 Name
                             </th>
                             <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                Email
+                                Doctor ID
                             </th>
                             <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                                 Number
@@ -53,7 +53,7 @@ const UserAppointments = () => {
                                 <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                                     {app.name}
                                 </td>
-                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app.userEmail}</td>
+                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app.doctorID}</td>
                                 <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app.number}</td>
                                 <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app?.date}</td>
                                 <td className="whitespace-nowrap px-4 py-2">

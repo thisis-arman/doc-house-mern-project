@@ -29,6 +29,7 @@ import ServicesPage from "../Pages/ServicesPage/ServicesPage";
 import DoctorRequest from "../Layouts/Dashboard/AdminDashboard/DoctorRequest";
 import PrivateRoute from "./PrivateRoute";
 import DoctorPage from "../Pages/DoctorPage/DoctorPage";
+import NewDoctorDetails from "../Pages/NewDoctorDetails.jsx/NewDoctorDetails";
 
 const router = createBrowserRouter([
   {
@@ -79,6 +80,11 @@ const router = createBrowserRouter([
         path: 'doctor/:id',
         element: <PrivateRoute><DoctorDetails /></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/api/all-info/${params.id}`)
+      },
+      {
+        path: '/doctors/:doctorID',
+        element: <NewDoctorDetails />,
+        loader: ({ params }) => fetch(`http://localhost:5000/api/all-info-by-id/${params.doctorID}`)
       },
 
     ]
