@@ -2,11 +2,14 @@ import { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import { Toaster, toast } from "react-hot-toast";
 
 
 const AddService = () => {
     const { user } = useContext(AuthContext)
     const [currentDoctor, setCurrentDoctor] = useState([])
+    const [selectedImage, setSelectedImage] = useState("");
+
 
 
     useEffect(() => {
@@ -16,13 +19,59 @@ const AddService = () => {
     }, [user])
 
     console.log(currentDoctor)
+
+
+
+    const handleImage = (event) => {
+        event.preventDefault();
+        const selectedImage = event.target.files[0]
+        console.log(selectedImage)
+        const formData = new FormData()
+        formData.append("file", selectedImage)
+        formData.append("upload_preset", 'vcvltcqx')
+        fetch(`https://api.cloudinary.com/v1_1/dshjcmrd0/image/upload`, {
+            method: "POST",
+            body: formData
+        })
+            .then(res => res.json())
+            .then(data => {
+                setSelectedImage(data.secure_url)
+
+            })
+
+    };
+
+
+
+
+
     const handleSubmit = (event) => {
         event.preventDefault()
-        const form = event.target.value;
+        const form = event.target;
         const serviceName = form.serviceName.value;
         const consultFee = form.consultFee.value;
+        const details = form.details.value;
+        const number = form.phone.value;
 
-        console.log(email, password)
+        const newService = { serviceName, consultFee: parseInt(consultFee), details, number, doctorID: currentDoctor?.profile?.doctorID, doctorEmail: currentDoctor?.profile?.email, status: "pending", image: selectedImage };
+
+        console.log({ newService })
+
+        fetch(`http://localhost:5000/api/services`, {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newService)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged === true) {
+                    toast.success(" Service Request sent successfully")
+                }
+            })
+
 
 
 
@@ -30,11 +79,11 @@ const AddService = () => {
     }
     return (
         <div className="p-10">
-            <h2 className="text-2xl font-bold">Add a Service</h2>
+            <h2 className="text-3xl font-bold">Add a Service</h2>
             <div>
-                <section className="bg-gray-100">
+                <section className="">
                     <div className=" w-3/5 mx-auto max-w-screen px-4 py-6 sm:px-6 lg:px-8">
-                        <h2 className="text-3xl font-bold py-4">Add a Doctor</h2>
+                        {/* <h2 className="text-3xl font-bold py-4">Add a Doctor</h2> */}
 
 
                         <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
@@ -43,7 +92,7 @@ const AddService = () => {
                                     <label className="" htmlFor="name"> Service Name</label>
                                     <input
                                         className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
-                                        placeholder="Service Name"
+                                        placeholder="ex:Kidney Disease Evaluation and Management"
                                         type="text"
                                         id="name"
                                         name='serviceName'
@@ -85,10 +134,10 @@ const AddService = () => {
                                         <label className="" htmlFor="phone">Doctor ID</label>
                                         <input
                                             className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
-                                            placeholder="Phone Number"
-                                            type="tel"
+                                            placeholder="doctor ID"
+                                            type="number"
                                             name="number"
-                                            id="phone"
+                                            id="id"
                                             defaultValue={currentDoctor?.profile?.doctorID}
                                         />
                                     </div>
@@ -100,29 +149,30 @@ const AddService = () => {
                                     <label className="" htmlFor="phone">Phone</label>
                                     <input
                                         className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
-                                        placeholder="e.g : Teeth Orthodontics"
-                                        type="text"
-                                        tabIndex="-1"
-                                        name="specialize"
+                                        placeholder="phone number"
+                                        type="tel"
+                                        defaultValue={currentDoctor?.profile?.phone}
+
+                                        name="phone"
                                     />
                                 </div>
 
 
 
                                 <div>
-                                    <label className="" htmlFor="message">About</label>
+                                    <label className="" htmlFor="message">Service Details</label>
 
                                     <textarea
                                         className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
-                                        placeholder="About yourself"
+                                        placeholder="Write details about Service"
                                         rows="8"
                                         id="message"
+                                        name="details"
                                     ></textarea>
                                 </div>
                                 <div>
                                     <label className="" htmlFor="image">Image</label>
-
-                                    <input type="file" name="image" className="w-full  rounded-lg border-2 border-gray-200 p-3 text-sm" id="" />
+                                    <input onChange={handleImage} type="file" name="image" className="w-full  rounded-lg border-2 border-gray-200 p-3 text-sm" id="" />
                                 </div>
 
                                 <div className="mt-4">
@@ -134,7 +184,7 @@ const AddService = () => {
                                     </button>
                                 </div>
                             </form>
-                        </div>
+                        </div>\<Toaster />
                         {/* </div> */}
                     </div>
                 </section>
