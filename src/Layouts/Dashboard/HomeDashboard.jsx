@@ -71,6 +71,11 @@ const HomeDashboard = () => {
                   My Appointments
                 </a>
               </Link>
+              <Link to='my-services'>
+                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
+                  My Services
+                </a>
+              </Link>
               <Link to='add-service'>
                 <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                   Add Service
