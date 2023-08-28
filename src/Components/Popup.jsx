@@ -17,11 +17,15 @@ const PopUp = () => {
     const [isOpen, setOpen] = React.useState(false);
 
     return (
-        <div className="  rounded-xl">
+        <div className="">
             <Popup open={isOpen} closeOnDocumentClick onClose={() => setOpen(false)}>
-                <div className="p-10 max-w-24 h-60">
-                    <p className='text-3xl font-bold text-red-400'>When ever i get an idea i will try to execute in this website. <br />
-                        So it will be continues update website</p>
+                <div className="p-10 m-2  rounded-2xl max-w-24 h-60">
+                    <div>
+                        <p className='text-2xl  font-bold text-red-400'>When ever i get an idea i will try to execute in this website.
+                            <br />
+                            So it will be continues update website</p>
+
+                    </div>
                 </div>
             </Popup>
 

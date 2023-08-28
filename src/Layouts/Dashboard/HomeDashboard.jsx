@@ -9,7 +9,7 @@ const HomeDashboard = () => {
 
 
   const isAdmin = false;
-  const isDoctor = false;
+  const isDoctor = true;
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -69,6 +69,11 @@ const HomeDashboard = () => {
               <Link to={`appointments`}>
                 <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                   My Appointments
+                </a>
+              </Link>
+              <Link to='add-service'>
+                <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
+                  Add Service
                 </a>
               </Link>
               {/*  to={`/class/${cls._id}`} */}

@@ -30,6 +30,7 @@ import DoctorRequest from "../Layouts/Dashboard/AdminDashboard/DoctorRequest";
 import PrivateRoute from "./PrivateRoute";
 import DoctorPage from "../Pages/DoctorPage/DoctorPage";
 import NewDoctorDetails from "../Pages/NewDoctorDetails.jsx/NewDoctorDetails";
+import AddService from "../Layouts/Dashboard/DoctorDashboard/AddService";
 
 const router = createBrowserRouter([
   {
@@ -153,6 +154,10 @@ const router = createBrowserRouter([
       {
         path: 'doctor-home',
         element: <DoctorHome />
+      },
+      {
+        path: 'add-service',
+        element: <AddService />
       },
       {
         path: 'appointments',
