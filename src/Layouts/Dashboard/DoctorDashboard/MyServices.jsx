@@ -11,8 +11,10 @@ const MyServices = () => {
     const { user } = useContext(AuthContext)
     const [currentDoctor, setCurrentDoctor] = useState([])
     const [services, setServices] = useState([])
+    const [service, setService] = useState({})
     const [selectedImage, setSelectedImage] = useState("");
-
+    const { serviceName, consultFee, doctorID, doctorEmail, details } = service;
+    console.log({ serviceName, consultFee, doctorID, doctorEmail, details })
 
     console.log({ currentDoctor })
 
@@ -37,6 +39,14 @@ const MyServices = () => {
             .then(res => res.json())
             .then(data => setServices(data))
     }, [user])
+
+    const showDefaultValue = (id) => {
+        fetch(`http://localhost:5000/api/services-by/${id}`)
+            .then(res => res.json())
+            .then(data => setService(data))
+    }
+
+
 
     const handleImage = (event) => {
         event.preventDefault();
@@ -68,7 +78,7 @@ const MyServices = () => {
         const details = form.details.value;
         const number = form.phone.value;
 
-        const newService = { serviceName, consultFee: parseInt(consultFee), details, number, doctorID: currentDoctor?.profile?.doctorID, doctorEmail: currentDoctor?.profile?.email, status: "pending", image: selectedImage };
+        const newService = { serviceName, consultFee: parseInt(consultFee), details, number, doctorID: service?.doctorID, doctorEmail: service?.email, status: "pending", image: selectedImage };
 
         console.log({ newService })
 
@@ -133,7 +143,7 @@ const MyServices = () => {
                                 <dt className="text-sm font-medium text-gray-600">Reading time</dt>
                                 <dd className="text-xs text-gray-500">3 minute</dd>
                             </div>
-                            <div className="relative left-72 top-4">
+                            <div onClick={() => showDefaultValue(service?._id)} className="relative left-72 top-4">
                                 <FiEdit onClick={openModal} className="text-2xl shadow hover:bg-slate-100  " />
                             </div>
                         </dl>
@@ -192,6 +202,8 @@ const MyServices = () => {
                                                     type="text"
                                                     id="name"
                                                     name='serviceName'
+
+                                                    defaultChecked={serviceName}
                                                 />
                                             </div>
                                             <div>
@@ -202,6 +214,8 @@ const MyServices = () => {
                                                     type="number"
                                                     id="phone"
                                                     name='consultFee'
+                                                    defaultChecked={consultFee}
+
                                                 />
                                             </div>
                                             <div>
@@ -211,7 +225,7 @@ const MyServices = () => {
                                                     placeholder="e.g: 406 no room , Popular , DhaKa"
                                                     type="text"
                                                     name="chamber"
-                                                    defaultChecked={currentDoctor?.profile?.Chamber}
+
                                                 />
                                             </div>
                                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -235,7 +249,7 @@ const MyServices = () => {
                                                         type="number"
                                                         name="number"
                                                         id="id"
-                                                        defaultValue={currentDoctor?.profile?.doctorID}
+                                                        defaultValue={service?.doctorID}
                                                     />
                                                 </div>
 
@@ -248,7 +262,7 @@ const MyServices = () => {
                                                     className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
                                                     placeholder="phone number"
                                                     type="tel"
-                                                    defaultValue={currentDoctor?.profile?.phone}
+                                                    defaultValue={service?.phone}
 
                                                     name="phone"
                                                 />
@@ -265,6 +279,7 @@ const MyServices = () => {
                                                     rows="8"
                                                     id="message"
                                                     name="details"
+                                                    defaultChecked={service?.details}
                                                 ></textarea>
                                             </div>
                                             <div>
