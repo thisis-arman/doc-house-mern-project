@@ -3,7 +3,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import { FiEdit } from 'react-icons/fi'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
-import { toast } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 
 
 
@@ -76,35 +76,28 @@ const MyServices = () => {
         const serviceName = form.serviceName.value;
         const consultFee = form.consultFee.value;
         const details = form.details.value;
-        const number = form.phone.value;
 
-        const newService = { serviceName, consultFee: parseInt(consultFee), details, number, doctorID: service?.doctorID, doctorEmail: service?.email, status: "pending", image: selectedImage };
+        const updatedService = { serviceName, consultFee: parseInt(consultFee), details, doctorID: service?.doctorID, doctorEmail: service?.email, status: "pending", image: selectedImage };
 
-        console.log({ newService })
+        console.log({ updatedService })
 
-        fetch(`http://localhost:5000/api/services`, {
-            method: 'POST',
+        fetch(`http://localhost:5000/api/services/${service._id}`, {
+            method: "PUT",
             headers: {
                 "content-type": "application/json"
             },
-            body: JSON.stringify(newService)
+            body: JSON.stringify(updatedService)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data.acknowledged === true) {
+                if (data.modifiedCount > 0) {
                     toast.success(" Service updated successfully")
                 }
             })
 
 
-        /*  fetch(`http://localhost:5000/api/services/${service._id}`, {
-             method: "PUT",
-             headers: {
-                 "content-type": "application/json"
-             },
-             body: JSON.stringify()
-         })
+        /*  
   */
     }
 
@@ -154,16 +147,8 @@ const MyServices = () => {
             </div>
 
             {/* Modals */}
+            <Toaster />
 
-            {/*    <div className="fixed inset-0 flex items-center justify-center">
-                <button
-                    type="button"
-                    onClick={openModal}
-                    className="rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-                >
-                    Open dialog
-                </button>
-            </div> */}
 
             <Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -198,7 +183,7 @@ const MyServices = () => {
                                                 <label className="" htmlFor="name"> Service Name</label>
                                                 <input
                                                     className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
-                                                    placeholder="ex:Kidney Disease Evaluation and Management"
+                                                    placeholder={`${serviceName}`}
                                                     type="text"
                                                     id="name"
                                                     name='serviceName'
@@ -210,7 +195,7 @@ const MyServices = () => {
                                                 <label className="" htmlFor="phone">Fee</label>
                                                 <input
                                                     className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
-                                                    placeholder="Consultation Fee"
+                                                    placeholder={`${consultFee}`}
                                                     type="number"
                                                     id="phone"
                                                     name='consultFee'
@@ -222,7 +207,7 @@ const MyServices = () => {
                                                 <label className="" htmlFor="Chamber">Chamber</label>
                                                 <input
                                                     className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
-                                                    placeholder="e.g: 406 no room , Popular , DhaKa"
+                                                    placeholder={`${currentDoctor?.profile?.Chamber}`}
                                                     type="text"
                                                     name="chamber"
 
@@ -249,14 +234,14 @@ const MyServices = () => {
                                                         type="number"
                                                         name="number"
                                                         id="id"
-                                                        defaultValue={service?.doctorID}
+                                                        defaultValue={doctorID}
                                                     />
                                                 </div>
 
                                             </div>
 
 
-                                            <div>
+                                            {/* <div>
                                                 <label className="" htmlFor="phone">Phone</label>
                                                 <input
                                                     className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
@@ -266,7 +251,7 @@ const MyServices = () => {
 
                                                     name="phone"
                                                 />
-                                            </div>
+                                            </div> */}
 
 
 
@@ -275,11 +260,12 @@ const MyServices = () => {
 
                                                 <textarea
                                                     className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
-                                                    placeholder="Write details about Service"
+                                                    placeholder={`${details}`}
                                                     rows="8"
                                                     id="message"
                                                     name="details"
-                                                    defaultChecked={service?.details}
+
+                                                    defaultChecked={details}
                                                 ></textarea>
                                             </div>
                                             <div>
