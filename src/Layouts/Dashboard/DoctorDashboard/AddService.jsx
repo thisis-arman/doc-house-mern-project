@@ -184,7 +184,9 @@ const AddService = () => {
                                     </button>
                                 </div>
                             </form>
-                        </div>\<Toaster />
+                        </div>
+
+                        <Toaster />
                         {/* </div> */}
                     </div>
                 </section>

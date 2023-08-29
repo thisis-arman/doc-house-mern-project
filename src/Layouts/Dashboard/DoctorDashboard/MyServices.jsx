@@ -1,16 +1,103 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import { FiEdit } from 'react-icons/fi'
+import { Dialog, Transition } from '@headlessui/react'
+import { Fragment } from 'react'
+import { toast } from "react-hot-toast";
+
 
 
 const MyServices = () => {
     const { user } = useContext(AuthContext)
+    const [currentDoctor, setCurrentDoctor] = useState([])
     const [services, setServices] = useState([])
+    const [selectedImage, setSelectedImage] = useState("");
+
+
+    console.log({ currentDoctor })
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/api/doctors/${user.email}`)
+            .then(res => res.json())
+            .then(data => setCurrentDoctor(data))
+    }, [user])
+
+    let [isOpen, setIsOpen] = useState(false)
+
+    function closeModal() {
+        setIsOpen(false)
+    }
+
+    function openModal() {
+        setIsOpen(true)
+    }
 
     useEffect(() => {
         fetch(`http://localhost:5000/api/services/${user.email}`)
             .then(res => res.json())
             .then(data => setServices(data))
     }, [user])
+
+    const handleImage = (event) => {
+        event.preventDefault();
+        const selectedImage = event.target.files[0]
+        console.log(selectedImage)
+        const formData = new FormData()
+        formData.append("file", selectedImage)
+        formData.append("upload_preset", 'vcvltcqx')
+        fetch(`https://api.cloudinary.com/v1_1/dshjcmrd0/image/upload`, {
+            method: "POST",
+            body: formData
+        })
+            .then(res => res.json())
+            .then(data => {
+                setSelectedImage(data.secure_url)
+
+            })
+
+    };
+
+
+    const handleEditService = (event) => {
+
+        console.log("worked")
+        event.preventDefault()
+        const form = event.target;
+        const serviceName = form.serviceName.value;
+        const consultFee = form.consultFee.value;
+        const details = form.details.value;
+        const number = form.phone.value;
+
+        const newService = { serviceName, consultFee: parseInt(consultFee), details, number, doctorID: currentDoctor?.profile?.doctorID, doctorEmail: currentDoctor?.profile?.email, status: "pending", image: selectedImage };
+
+        console.log({ newService })
+
+        fetch(`http://localhost:5000/api/services`, {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newService)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged === true) {
+                    toast.success(" Service updated successfully")
+                }
+            })
+
+
+        /*  fetch(`http://localhost:5000/api/services/${service._id}`, {
+             method: "PUT",
+             headers: {
+                 "content-type": "application/json"
+             },
+             body: JSON.stringify()
+         })
+  */
+    }
+
 
     console.log({ services })
     return (
@@ -46,13 +133,174 @@ const MyServices = () => {
                                 <dt className="text-sm font-medium text-gray-600">Reading time</dt>
                                 <dd className="text-xs text-gray-500">3 minute</dd>
                             </div>
+                            <div className="relative left-72 top-4">
+                                <FiEdit onClick={openModal} className="text-2xl shadow hover:bg-slate-100  " />
+                            </div>
                         </dl>
+
                     </div>
                     )
                 }
             </div>
 
-        </section>
+            {/* Modals */}
+
+            {/*    <div className="fixed inset-0 flex items-center justify-center">
+                <button
+                    type="button"
+                    onClick={openModal}
+                    className="rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                >
+                    Open dialog
+                </button>
+            </div> */}
+
+            <Transition appear show={isOpen} as={Fragment}>
+                <Dialog as="div" className="relative z-10" onClose={closeModal}>
+                    <Transition.Child
+                        as={Fragment}
+                        enter="ease-out duration-300"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="ease-in duration-200"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
+                    >
+                        <div className="fixed inset-0 bg-black bg-opacity-25" />
+                    </Transition.Child>
+
+                    <div className="fixed inset-0 overflow-y-auto">
+                        <div className="flex min-h-full items-center justify-center p-4 text-center">
+                            <Transition.Child
+                                as={Fragment}
+                                enter="ease-out duration-300"
+                                enterFrom="opacity-0 scale-95"
+                                enterTo="opacity-100 scale-100"
+                                leave="ease-in duration-200"
+                                leaveFrom="opacity-100 scale-100"
+                                leaveTo="opacity-0 scale-95"
+                            >
+                                <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+
+                                    <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
+                                        <form onSubmit={handleEditService} action="" className="space-y-4">
+                                            <div>
+                                                <label className="" htmlFor="name"> Service Name</label>
+                                                <input
+                                                    className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
+                                                    placeholder="ex:Kidney Disease Evaluation and Management"
+                                                    type="text"
+                                                    id="name"
+                                                    name='serviceName'
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className="" htmlFor="phone">Fee</label>
+                                                <input
+                                                    className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
+                                                    placeholder="Consultation Fee"
+                                                    type="number"
+                                                    id="phone"
+                                                    name='consultFee'
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className="" htmlFor="Chamber">Chamber</label>
+                                                <input
+                                                    className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
+                                                    placeholder="e.g: 406 no room , Popular , DhaKa"
+                                                    type="text"
+                                                    name="chamber"
+                                                    defaultChecked={currentDoctor?.profile?.Chamber}
+                                                />
+                                            </div>
+                                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                <div>
+                                                    <label className="" htmlFor="email">Email</label>
+                                                    <input
+                                                        className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
+                                                        placeholder="Email address"
+                                                        type="email"
+                                                        name="email"
+                                                        defaultValue={user?.email}
+                                                        id="email"
+                                                    />
+                                                </div>
+
+                                                <div>
+                                                    <label className="" htmlFor="phone">Doctor ID</label>
+                                                    <input
+                                                        className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
+                                                        placeholder="doctor ID"
+                                                        type="number"
+                                                        name="number"
+                                                        id="id"
+                                                        defaultValue={currentDoctor?.profile?.doctorID}
+                                                    />
+                                                </div>
+
+                                            </div>
+
+
+                                            <div>
+                                                <label className="" htmlFor="phone">Phone</label>
+                                                <input
+                                                    className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
+                                                    placeholder="phone number"
+                                                    type="tel"
+                                                    defaultValue={currentDoctor?.profile?.phone}
+
+                                                    name="phone"
+                                                />
+                                            </div>
+
+
+
+                                            <div>
+                                                <label className="" htmlFor="message">Service Details</label>
+
+                                                <textarea
+                                                    className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
+                                                    placeholder="Write details about Service"
+                                                    rows="8"
+                                                    id="message"
+                                                    name="details"
+                                                ></textarea>
+                                            </div>
+                                            <div>
+                                                <label className="" htmlFor="image">Image</label>
+                                                <input onChange={handleImage} type="file" name="image" className="w-full  rounded-lg border-2 border-gray-200 p-3 text-sm" id="" />
+                                            </div>
+
+                                            <div className="mt-4">
+                                                <button onClick={closeModal}
+                                                    type="submit"
+                                                    className="inline-block w-full rounded-lg bg-green-800 hover:bg-green-700 px-5 py-3 font-medium text-white max-w-full"
+                                                >
+                                                    ADD
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    {/* <div className="mt-4">
+                                        <button
+                                            type="button"
+                                            className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                                            onClick={closeModal}
+                                        >
+                                            Got it, thanks!
+                                        </button>
+                                    </div> */}
+                                </Dialog.Panel>
+                            </Transition.Child>
+                        </div>
+                    </div>
+                </Dialog>
+            </Transition>
+
+
+        </section >
     );
 };
 

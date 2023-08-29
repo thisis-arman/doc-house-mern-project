@@ -12,6 +12,7 @@
   "dependencies": {
     "@editorjs/editorjs": "^2.27.2",
     "@editorjs/header": "^2.7.0",
+    "@headlessui/react": "^1.7.17",
     "@stripe/react-stripe-js": "^2.1.2",
     "@stripe/stripe-js": "^2.1.0",
     "aos": "^2.3.4",
