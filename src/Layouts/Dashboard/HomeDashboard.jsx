@@ -8,8 +8,8 @@ const HomeDashboard = () => {
   console.log(user.email)
 
 
-  const isAdmin = false;
-  const isDoctor = true;
+  const isAdmin = true;
+  const isDoctor = false;
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -49,6 +49,11 @@ const HomeDashboard = () => {
             <Link to='doctor-request'>
               <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                 Doctor Request
+              </a>
+            </Link>
+            <Link to='services-request'>
+              <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
+                Services
               </a>
             </Link>
             <Link>

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -10,9 +11,7 @@ const DoctorRequest = () => {
 
 
 
-    const handleDetails = () => {
 
-    }
 
     const handleStatus = (user) => {
         fetch(`http://localhost:5000/api/doctor/${user._id}`, {
@@ -63,6 +62,7 @@ const DoctorRequest = () => {
 
 
             {/* Active Doctor */}
+
             <div className="overflow-x-auto">
                 <h1 className="font-bold text-2xl py-4">Active Doctor  </h1>
                 <table className="table text-center w-full">
@@ -74,8 +74,9 @@ const DoctorRequest = () => {
                             </th>
                             <th>Profile</th>
                             <th>Name</th>
+                            <th>Email</th>
                             <th>Status</th>
-                            <th>Status</th>
+                            <th>Active Service</th>
                             <th>Details</th>
                         </tr>
                     </thead>
@@ -103,11 +104,14 @@ const DoctorRequest = () => {
 
                                 </td>
                                 <td>{req?.email}</td>
-                                <th>
+                                <td>
                                     <button className="">{req?.status}</button>
-                                </th>
+                                </td>
+                                <td>
+                                    <button className="">{0}</button>
+                                </td>
                                 <th>
-                                    <button onClick={() => handleDetails(req)} className="px-4 bg-green-600 hover:bg-lime-600 rounded text-white">View</button>
+                                    <Link to={``} className="px-4 bg-green-600 hover:bg-lime-600 rounded text-white">View</Link>
                                 </th>
                             </tr>)
                         }

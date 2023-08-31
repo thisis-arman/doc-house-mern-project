@@ -32,6 +32,7 @@ import DoctorPage from "../Pages/DoctorPage/DoctorPage";
 import NewDoctorDetails from "../Pages/NewDoctorDetails.jsx/NewDoctorDetails";
 import AddService from "../Layouts/Dashboard/DoctorDashboard/AddService";
 import MyServices from "../Layouts/Dashboard/DoctorDashboard/MyServices";
+import DoctorServiceDetails from "../Layouts/Dashboard/AdminDashboard/DoctorServiceDetails";
 
 const router = createBrowserRouter([
   {
@@ -121,7 +122,16 @@ const router = createBrowserRouter([
       },
       {
         path: 'doctor-request',
-        element: <DoctorRequest />
+        element: <DoctorRequest />,
+        children: [
+
+
+        ]
+      },
+      {
+        path: 'services-request',
+        element: <DoctorServiceDetails />,
+        // loader: ({ params }) => fetch(`http://localhost:5000/api/services/${params.doctorEmail}`)
       },
 
       // User Routes
