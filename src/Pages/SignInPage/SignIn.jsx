@@ -24,11 +24,21 @@ const SignIn = () => {
     console.log(email, password)
     signIn(email, password)
       .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser)
-        navigate('/')
+        const user = result.user;
+        const loggedUser = {
+          email: user.email
+        }
+        fetch('http://localhost:5000/jwt', {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(loggedUser)
+        })
+          .then(res => res.json())
+          .then(data => console.log('jwt response', data))
         toast.success("Signed In Successfully")
-        navigate(from, { replace: true })
+        // navigate(from, { replace: true })
 
       })
       .catch(err => console.log(err))

@@ -129,9 +129,9 @@ const router = createBrowserRouter([
         ]
       },
       {
-        path: 'services-request',
+        path: '/dashboard/doctor-request/services-request/:doctorEmail',
         element: <DoctorServiceDetails />,
-        // loader: ({ params }) => fetch(`http://localhost:5000/api/services/${params.doctorEmail}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/api/services/${params.doctorEmail}`)
       },
 
       // User Routes

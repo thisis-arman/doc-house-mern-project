@@ -111,7 +111,7 @@ const DoctorRequest = () => {
                                     <button className="">{0}</button>
                                 </td>
                                 <th>
-                                    <Link to={``} className="px-4 bg-green-600 hover:bg-lime-600 rounded text-white">View</Link>
+                                    <Link email={req.email} to={`/dashboard/doctor-request/services-request/${req.email}`} className="px-4 bg-green-600 hover:bg-lime-600 rounded text-white">View</Link>
                                 </th>
                             </tr>)
                         }

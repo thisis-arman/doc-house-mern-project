@@ -1,15 +1,19 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useAdmin from "../../Hooks/useAdmin";
+import useDoctor from "../../Hooks/useDoctor";
 
 const HomeDashboard = () => {
+  const [isAdmin] = useAdmin()
+  const [isDoctor] = useDoctor()
 
   const { user } = useContext(AuthContext)
   console.log(user.email)
 
+  console.log(isDoctor)
 
-  const isAdmin = true;
-  const isDoctor = false;
+
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -51,11 +55,7 @@ const HomeDashboard = () => {
                 Doctor Request
               </a>
             </Link>
-            <Link to='services-request'>
-              <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
-                Services
-              </a>
-            </Link>
+
             <Link>
               <a className="block rounded-lg hover:bg-gray-100 px-4 py-2 text-sm font-medium ">
                 Manage Doctor
