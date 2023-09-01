@@ -31,14 +31,14 @@ const HeroSection = () => {
   }, [])
 
   return (
-    <div className=" overflow-hidden min-h-screen z-0 absolute w-full top-0 ">
+    <div className=" overflow-hidden min-h-screen z-0 absolute w-full top-0  ">
       <PopUp />
       <section className="text-black body-font ">
         <div className="container mx-auto flex px-5 md:pt-24  pt-20  md:flex-row flex-col items-center">
           <div data-aos="fade-left" data-aos-delay="800" className="lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left mb-16 mt-20 md:mb-0 items-center text-center">
             <h1 className="title-font sm:text-4xl lg:text-6xl text-5xl mb-4 font-extrabold ">
               <div className='hidden md:block'>
-                <TextTransition className='  text-lime-400 text-center  text-2xl md:text-5xl ml-7 md:ml-0 ' springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}</TextTransition>
+                <TextTransition className='  text-[#F75005] text-center  text-2xl md:text-5xl ml-7 md:ml-0 ' springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}</TextTransition>
               </div>
               Your Journey to Wellness Begins Here
             </h1>
