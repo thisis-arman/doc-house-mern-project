@@ -7,7 +7,7 @@ const useAdmin = () => {
     const [isAdmin, setIsAdmin] = useState(false)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://doc-house-server-thisis-arman.vercel.app/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 const isAdmin = data.find(data => data.role === 'admin');

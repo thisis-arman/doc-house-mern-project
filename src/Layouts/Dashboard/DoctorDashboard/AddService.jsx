@@ -13,7 +13,7 @@ const AddService = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/doctors/${user.email}`)
+        fetch(`https://doc-house-server-thisis-arman.vercel.app/api/doctors/${user.email}`)
             .then(res => res.json())
             .then(data => setCurrentDoctor(data))
     }, [user])
@@ -57,7 +57,7 @@ const AddService = () => {
 
         console.log({ newService })
 
-        fetch(`http://localhost:5000/api/services`, {
+        fetch(`https://doc-house-server-thisis-arman.vercel.app/api/services`, {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

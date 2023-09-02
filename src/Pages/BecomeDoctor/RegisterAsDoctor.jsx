@@ -36,7 +36,7 @@ const RegisterAsDoctor = () => {
                         toast.success('Request Submitted Successfully')
                     })
 
-                fetch('http://localhost:5000/users', {
+                fetch('https://doc-house-server-thisis-arman.vercel.app/users', {
                     method: "POST",
                     headers: {
                         "Content-type": "application/json"

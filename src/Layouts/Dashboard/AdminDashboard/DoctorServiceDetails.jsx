@@ -14,7 +14,7 @@ const DoctorServiceDetails = ({ email }) => {
     const [activeServices, setActiveServices] = useState([])
     console.log('setPendingServices', pendingServices)
     useEffect(() => {
-        fetch(`http://localhost:5000/api/services/${email}`)
+        fetch(`https://doc-house-server-thisis-arman.vercel.app/api/services/${email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -28,7 +28,7 @@ const DoctorServiceDetails = ({ email }) => {
 
 
     const handleAcceptService = (id) => {
-        fetch(`http://localhost:5000/api/services-by/${id}`, {
+        fetch(`https://doc-house-server-thisis-arman.vercel.app/api/services-by/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -43,7 +43,7 @@ const DoctorServiceDetails = ({ email }) => {
     }
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/api/services-by/${id}`, {
+        fetch(`https://doc-house-server-thisis-arman.vercel.app/api/services-by/${id}`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json"

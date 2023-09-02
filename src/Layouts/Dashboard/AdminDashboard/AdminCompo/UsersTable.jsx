@@ -9,7 +9,7 @@ const UsersTable = ({ users }) => {
 
 
     const makeAdmin = (user) => {
-        fetch(`http://localhost:5000/api/users/${user._id}`, {
+        fetch(`https://doc-house-server-thisis-arman.vercel.app/api/users/${user._id}`, {
             method: 'PATCH',
             headers: {
                 "content-type": "application/json"
@@ -38,7 +38,7 @@ const UsersTable = ({ users }) => {
 
     const handleDeleteUser = (user) => {
         console.log(`Delete`, user)
-        fetch(`http://localhost:5000/users/${user._id}`,
+        fetch(`https://doc-house-server-thisis-arman.vercel.app/users/${user._id}`,
             {
                 method: "DELETE",
                 headers: {

@@ -17,7 +17,7 @@ const MyAppointments = () => {
 
     // console.log(user.doctorID)
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://doc-house-server-thisis-arman.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 const doctor = data.filter(d => d.role == "doctor")
@@ -26,7 +26,7 @@ const MyAppointments = () => {
     }, [])
     useEffect(() => {
 
-        fetch(`http://localhost:5000/api/appointments/${currentUser?.doctorID}`)
+        fetch(`https://doc-house-server-thisis-arman.vercel.app/api/appointments/${currentUser?.doctorID}`)
             .then(res => res.json())
             .then(data => setAppointment(data))
     }, [currentUser])
