@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { AiFillPlayCircle } from 'react-icons/ai'
 
 import TextTransition, { presets } from 'react-text-transition';
-import PopUp from '../../../Components/Popup';
+// import PopUp from '../../../Components/Popup';
 
 const TEXTS = ['Empowering Health,', 'Enriching Lives,', 'Transforming Lives,'];
 
@@ -32,67 +32,30 @@ const HeroSection = () => {
 
   return (
     <div className=" overflow-hidden min-h-screen z-0 absolute w-full top-0  ">
-      <PopUp />
-      <section className="text-black body-font ">
-        <div className="container mx-auto flex px-5 md:pt-24  pt-20  md:flex-row flex-col items-center">
-          <div data-aos="fade-left" data-aos-delay="800" className="lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left mb-16 mt-20 md:mb-0 items-center text-center">
-            <h1 className="title-font sm:text-4xl lg:text-6xl text-5xl mb-4 font-extrabold ">
-              <div className='hidden md:block'>
-                <TextTransition className='  text-[#F75005] text-center  text-2xl md:text-5xl ml-7 md:ml-0 ' springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}</TextTransition>
-              </div>
-              Your Journey to Wellness Begins Here
+      {/* <PopUp /> */}
+      <section className=" text-black ">
+        <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+          <div className="mx-auto min-w-5xl text-center">
+            <h1 className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-5xl font-extrabold text-transparent md:pt-16 md:text-7xl">
+              Understand User Flow.
+              <span className="sm:block"> Increase Conversion. </span>
             </h1>
-
-            <motion.p animate={{}} className="mb-8  md:text-md text-sm ">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag.</motion.p>
-            <div className="md:flex justify-center gap-4">
-              <motion.button whileHover={{ scale: 1.1 }} className="inline-flex text-white bg-[#F75005] border-0 md:py-6 py-3 px-12  focus:outline-none  rounded-full  shadow-md shadow-[#d9a891] md:text-xl text-lg uppercase">All Services</motion.button>
-
-              <motion.button whileHover={{ scale: 1.1 }} className=" text-[#F75005] border-0 py-4 px-12  focus:outline-none  rounded-full text-xl uppercase md:flex hidden items-center gap-2  "><AiFillPlayCircle className='text-red-400 w-10 h-10   border-4 hover:border-8 rounded-full' /> <span>
-                Watch Video</span></motion.button>
-              {/* <button className="ml-4 inline-flex  text-gray-700 bg-gray-100 border-0 py-4 px-12  focus:outline-none hover:bg-gray-200 rounded text-lg"></button> */}
+            <p className="mx-auto mt-4 max-w-xl sm:text-xl/relaxed">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo
+              tenetur fuga ducimus numquam ea!
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <a className="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto" href="/get-started">
+                Get Started
+              </a>
+              <a className="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-black hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto" href="/about">
+                Learn More
+              </a>
             </div>
-            <div className='md:flex gap-4 mt-4 hidden'>
-              <div className='p-10 mt-6 rounded-3xl bg-white border shadow-2xl shadow-[#F5F5F5]'>
-                <h2 className='text-5xl font-extrabold'>120k+ </h2>
-                <p>Satisfied patient</p>
-
-              </div>
-              <div className='p-10 mt-6 rounded-3xl bg-white border shadow-2xl shadow-[#F5F5F5]'>
-                <h2 className='text-5xl font-extrabold'>4.74 </h2>
-                <p>Average rating</p>
-
-              </div>
-            </div>
-          </div>
-
-          <motion.div
-            className="box"
-            animate={{
-              scale: [1, 2, 2, 1, 1],
-              rotate: [0, 0, 180, 180, 0],
-              borderRadius: ["0%", "0%", "50%", "50%", "0%"]
-            }}
-            transition={{
-              duration: 2,
-              ease: "easeInOut",
-              times: [0, 0.2, 0.5, 0.8, 1],
-              repeat: Infinity,
-              repeatDelay: 1
-            }}
-          />
-          <div
-
-
-            data-aos="fade-right" data-aos-delay="1500" className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-
-
-
-
-            <img className="object-cover object-center hidden md:block rounded" alt="hero" src="https://i.ibb.co/VQ1MkTt/hero-image.png" />
           </div>
         </div>
-
       </section>
+
 
 
     </div>

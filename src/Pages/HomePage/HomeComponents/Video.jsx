@@ -7,8 +7,8 @@ import { AiFillPlayCircle } from "react-icons/ai";
 const Video = () => {
     return (
         <section className="container mx-auto px-4">
-            <div className="relative md:top-[650px] top-[400px]">
-                <div className="md:max-w-3xl py-16 pb-12">
+            <div className="relative md:top-[650px] top-[450px]">
+                <div className="md:max-w-3xl pt-20 pb-12">
                     <p className="md:text-2xl text-md text-red-500 font-semibold ">Perfect Life made easy</p>
                     <h2 className="sm:text-6xl text-4xl font-bold md:pt-8 pt-4">Start your journey
                         to healthy & beautiful Life</h2>

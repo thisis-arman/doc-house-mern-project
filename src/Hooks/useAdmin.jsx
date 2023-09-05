@@ -2,19 +2,21 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 
-const useAdmin = () => {
+const useAdmin = ({ email }) => {
     const { user } = useContext(AuthContext)
-    const [isAdmin, setIsAdmin] = useState(false)
+    const [isAdmin, setIsAdmin] = useState()
 
     useEffect(() => {
-        fetch(`https://doc-house-server-thisis-arman.vercel.app/users/${user.email}`)
-            .then(res => res.json())
-            .then(data => {
-                const isAdmin = data.find(data => data.role === 'admin');
-                setIsAdmin(isAdmin);
+        if (email) {
+            fetch(`http://localhost:5000/get-users/admin/${user?.email}`)
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    setIsAdmin(data.isAdmin);
 
-            })
-    }, [user])
+                })
+        }
+    }, [email])
     return [isAdmin]
 
 }

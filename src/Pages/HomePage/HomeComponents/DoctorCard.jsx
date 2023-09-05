@@ -14,9 +14,9 @@ const DoctorCard = ({ brief }) => {
   const { profile, _id } = brief;
   return (
     <div>
-      <div data-aos="fade-up" data-aos-delay="100" className="card w-full md:w-full lg:w-full border rounded-lg bg-base-100 shadow-sm">
-        <figure className="px-4 max-h-60 py-4">
-          <img src={profile.drImage} alt="Shoes" className="rounded-xl w-full " />
+      <div data-aos="fade-up" data-aos-delay="100" className="card w-full  md:w-full lg:w-full border rounded-lg bg-base-100 shadow-sm">
+        <figure className="px-4 max-h-60 py-4 ">
+          <img src={profile.drImage} alt="Shoes" className="rounded-xl w-full  pt-4" />
         </figure>
         <div className="px-4 py-4 ">
           <h2 className="card-title text-2xl py-1 font-bold">{profile?.name}</h2>

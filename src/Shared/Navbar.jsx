@@ -2,16 +2,20 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { motion } from "framer-motion";
+import useAdmin from "../Hooks/useAdmin";
 
 
 
 const Navbar = () => {
   const { user, LogOut } = useContext(AuthContext)
 
-  const isAdmin = true;
+
+  const isAdmin = true
   const isDoctor = false;
 
-  const handlelogOut = () => {
+
+
+  const handleLogOut = () => {
     LogOut()
   }
 
@@ -35,7 +39,7 @@ const Navbar = () => {
     <div className="container md:fixed sticky md:mx-16 mx-auto z-10  ">
 
 
-      <header className="mt-4  bg-base-200 rounded-full  w-full   z-10">
+      <header className="mt-1  bg-base-200 rounded-full  w-full   z-10">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div className="flex  h-16 items-center justify-between">
             <div className="flex-1 md:flex md:items-center md:gap-12">
@@ -130,6 +134,8 @@ const Navbar = () => {
                       Blog
                     </Link>
                   </motion.li>
+
+
                   {user ? <div className="sm:flex sm:gap-4">
 
                     <Link to={
@@ -148,7 +154,7 @@ const Navbar = () => {
 
 
                     <div className="hidden sm:flex">
-                      <Link onClick={handlelogOut}
+                      <Link onClick={handleLogOut}
                         className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
 
                       >
@@ -222,7 +228,7 @@ const Navbar = () => {
 
 
                         <div className="hidden sm:flex">
-                          <Link onClick={handlelogOut}
+                          <Link onClick={handleLogOut}
                             className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
 
                           >

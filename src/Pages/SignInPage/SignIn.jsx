@@ -38,7 +38,7 @@ const SignIn = () => {
           .then(res => res.json())
           .then(data => console.log('jwt response', data))
         toast.success("Signed In Successfully")
-        // navigate(from, { replace: true })
+        navigate(from, { replace: true })
 
       })
       .catch(err => console.log(err))
