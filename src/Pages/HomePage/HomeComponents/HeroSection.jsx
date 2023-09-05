@@ -37,8 +37,8 @@ const HeroSection = () => {
         <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
           <div className="mx-auto min-w-5xl text-center">
             <h1 className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-5xl font-extrabold text-transparent md:pt-16 md:text-7xl">
-              Understand User Flow.
-              <span className="sm:block"> Increase Conversion. </span>
+              Your Journey to Wellness
+              <span className="sm:block"> Begins Here.</span>
             </h1>
             <p className="mx-auto mt-4 max-w-xl sm:text-xl/relaxed">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo
