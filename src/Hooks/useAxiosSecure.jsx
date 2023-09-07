@@ -1,14 +1,15 @@
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import useAuth from './useAuth';
+
+import { AuthContext } from '../Provider/AuthProvider';
 
 const axiosSecure = axios.create({
-    baseURL: '',
+    baseURL: 'http://localhost:5000',
 });
 
 const useAxiosSecure = () => {
-    const { logOut } = useAuth();
+    const { logOut } = useContext(AuthContext);
     const navigate = useNavigate();
 
     useEffect(() => {
