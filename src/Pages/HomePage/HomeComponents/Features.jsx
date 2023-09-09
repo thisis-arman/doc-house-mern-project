@@ -1,4 +1,4 @@
-import { FaHome, FaUsers } from "react-icons/fa";
+import { FaCalendar, FaHome, FaLaptop, FaUsers } from "react-icons/fa";
 
 
 const Features = () => {
@@ -13,15 +13,15 @@ const Features = () => {
                     <div>
                         <div className="md:flex gap-6 py-6 items-center">
                             <FaHome className="min-w-min h-20 rounded-md p-4  bg-red-500 text-white" />
-                            <p className="text-xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, cum!,, amet consectetur adipisicing elit. Quisquam, cum</p>
+                            <p className="text-xl">Get Services from hope,consult with doctor from home</p>
                         </div>
                         <div className="md:flex py-8 gap-6 items-center">
-                            <FaHome className="min-w-min h-20 rounded-md px-2 py-2  bg-red-500 text-white" />
-                            <p className="text-xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, cum!,, amet consectetur adipisicing elit. Quisquam, cum</p>
+                            <FaCalendar className="min-w-min h-20 rounded-md p-4  bg-red-500 text-white" />
+                            <p className="text-xl">Book Appointment and take prescription from your world's best Doctor</p>
                         </div>
                         <div className="md:flex py-6 gap-6 items-center">
-                            <FaHome className="min-w-min h-20 rounded-md p-4  bg-red-500 text-white" />
-                            <p className="text-xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, cum!,, amet consectetur adipisicing elit. Quisquam, cum </p>
+                            <FaLaptop className="min-w-min h-20 rounded-md p-4  bg-red-500 text-white" />
+                            <p className="text-xl">You can get connected with doctor from anywhere and when ever you want </p>
                         </div>
 
                     </div>
