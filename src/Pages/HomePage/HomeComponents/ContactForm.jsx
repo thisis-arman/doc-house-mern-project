@@ -54,7 +54,7 @@ const ContactForm = () => {
 
   return (
     <div className="container overflow-hidden mx-auto relative top-20 md:mb-28 mb-36 px-4">
-      <div className="hero min-h-screen text-white bg-[#F96726] rounded-md py-16 ">
+      <div className="hero min-h-screen text-black bg-white rounded-md py-16 ">
         <div className="md:px-20 px-6 md:flex items-center gap-12 ">
           <div className="text-center  md:w-2/5  lg:text-left">
             <h1 className="text-5xl font-bold">Contact With Us!</h1>

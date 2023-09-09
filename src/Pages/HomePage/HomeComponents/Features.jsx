@@ -13,7 +13,7 @@ const Features = () => {
                     <div>
                         <div className="md:flex gap-6 py-6 items-center">
                             <FaHome className="min-w-min h-20 rounded-md p-4  bg-red-500 text-white" />
-                            <p className="text-xl">Get Services from hope,consult with doctor from home</p>
+                            <p className="text-xl">Get Services from hope,consult with doctor from home.</p>
                         </div>
                         <div className="md:flex py-8 gap-6 items-center">
                             <FaCalendar className="min-w-min h-20 rounded-md p-4  bg-red-500 text-white" />
