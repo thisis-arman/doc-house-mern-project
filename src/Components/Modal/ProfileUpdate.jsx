@@ -18,8 +18,8 @@ export default function ProfileUpdate({ isOpen, setIsOpen }) {
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data) => {
-        const { name, email, consultFee, Chamber, phone, Bio, } = data;
-        const profile = { name, email, consultFee: parseInt(consultFee), Chamber, phone, Bio, doctorID: currentUser.doctorID, drImage: currentUser.image, ratings: 4.7, numberOfReviews: 6, status: currentUser.status }
+        const { name, email, consultFee, Chamber, expertise, phone, Bio, } = data;
+        const profile = { name, email, expertise, consultFee: parseInt(consultFee), Chamber, phone, Bio, doctorID: currentUser.doctorID, drImage: currentUser.image, ratings: 4.7, numberOfReviews: 6, status: currentUser.status }
         console.log({ profile })
         fetch('http://localhost:5000/doctors', {
             method: 'POST',
