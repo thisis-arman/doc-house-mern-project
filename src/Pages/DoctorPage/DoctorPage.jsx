@@ -11,7 +11,7 @@ const DoctorPage = () => {
 
 
     useEffect(() => {
-        fetch('https://doc-house-server-thisis-arman.vercel.app/doctors')
+        fetch('http://localhost:5000/doctors')
             .then(res => res.json())
             .then(data => setDoctors(data))
     }, [])

@@ -3,13 +3,15 @@ import { PiEyeClosedThin } from 'react-icons/pi'
 import { AuthContext } from '../../Provider/AuthProvider';
 import { Toaster, toast } from 'react-hot-toast';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterAsDoctor = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext)
     const [error, setError] = useState('')
-
+    const navigate = useNavigate()
 
     const handleForm = (event) => {
+
         event.preventDefault()
         const form = event.target
         const name = form.name.value;
@@ -34,9 +36,11 @@ const RegisterAsDoctor = () => {
                 updateUserProfile(name, image)
                     .then(() => {
                         toast.success('Request Submitted Successfully')
+                        navigate("/dashboard/doctor-home")
+
                     })
 
-                fetch('https://doc-house-server-thisis-arman.vercel.app/users', {
+                fetch('http://localhost:5000/users', {
                     method: "POST",
                     headers: {
                         "Content-type": "application/json"

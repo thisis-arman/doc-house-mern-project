@@ -17,7 +17,7 @@ import AddDoctor from "../Layouts/Dashboard/AdminDashboard/AddDoctor";
 import Blogs from "../Pages/BlogPage/Blogs";
 // import FitnessArticle from "../Pages/BlogPage/Blogs/FitnessArticle";
 import { CircleIndicator } from "../Components/ScrollProgressBar";
-import UpdateDetails from "../Layouts/Dashboard/DoctorDashboard/UpdateDetails";
+// import UpdateDetails from "../Layouts/Dashboard/DoctorDashboard/UpdateDetails";
 import BecomeDoctor from "../Pages/BecomeDoctor/BecomeDoctor";
 import DoctorHome from "../Layouts/Dashboard/DoctorDashboard/DoctorHome";
 import AboutPage from "../Pages/AboutPage/AboutPage";
@@ -34,6 +34,7 @@ import AddService from "../Layouts/Dashboard/DoctorDashboard/AddService";
 import MyServices from "../Layouts/Dashboard/DoctorDashboard/MyServices";
 import DoctorServiceDetails from "../Layouts/Dashboard/AdminDashboard/DoctorServiceDetails";
 import BookAppointment from "../Pages/BookAppointment/BookAppointment";
+import MyProfile from "../Layouts/Dashboard/DoctorDashboard/MyProfile";
 
 const router = createBrowserRouter([
   {
@@ -166,8 +167,8 @@ const router = createBrowserRouter([
       // Doctor Routes
       {
         path: 'profile/:email',
-        element: <UpdateDetails />,
-        loader: ({ params }) => fetch(`https://doc-house-server-thisis-arman.vercel.app/api/all-info-by/${params.email}`)
+        element: <MyProfile />,
+        loader: ({ params }) => fetch(`http://localhost:5000/api/all-info-by/${params.email}`)
       },
       {
         path: 'doctor-home',
