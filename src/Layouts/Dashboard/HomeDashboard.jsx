@@ -1,19 +1,18 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-// import useAdmin from "../../Hooks/useAdmin";
-// import useDoctor from "../../Hooks/useDoctor";
+import useAdmin from "../../Hooks/useAdmin";
+import useDoctor from "../../Hooks/useDoctor";
 
 const HomeDashboard = () => {
-  // const [isAdmin] = useAdmin()
-  // const [isDoctor] = useDoctor()
+  const [isAdmin] = useAdmin()
+  const [isDoctor] = useDoctor()
 
   const { user } = useContext(AuthContext)
   console.log(user.email)
 
-  // console.log(isDoctor)
-  const isAdmin = true;
-  const isDoctor = false;
+  console.log(isDoctor)
+
 
 
 

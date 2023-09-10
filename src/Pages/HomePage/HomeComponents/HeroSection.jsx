@@ -4,14 +4,19 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { motion } from "framer-motion";
-import { AiFillPlayCircle } from 'react-icons/ai'
+// import { AiFillPlayCircle } from 'react-icons/ai'
 
-import TextTransition, { presets } from 'react-text-transition';
+// import TextTransition, { presets } from 'react-text-transition';
+import useAdmin from '../../../Hooks/useAdmin';
 // import PopUp from '../../../Components/Popup';
 
-const TEXTS = ['Empowering Health,', 'Enriching Lives,', 'Transforming Lives,'];
+// const TEXTS = ['Empowering Health,', 'Enriching Lives,', 'Transforming Lives,'];
 
 const HeroSection = () => {
+
+
+  const [isAdmin] = useAdmin()
+  console.log(isAdmin, 'from Banner')
 
   const [index, setIndex] = useState(0);
 

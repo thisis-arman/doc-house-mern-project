@@ -1,16 +1,20 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import UsersTable from "./AdminCompo/UsersTable";
+// import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import useUsers from "../../../Hooks/useUsers";
 
 
 const AllUsers = () => {
-    const [users, setUsers] = useState([])
 
-    useEffect(() => {
-        fetch('https://doc-house-server-thisis-arman.vercel.app/users')
-            .then(res => res.json())
-            .then(data => setUsers(data))
-    }, [])
+    // const [axiosSecure] = useAxiosSecure()
+    const [users] = useUsers()
+    console.log(users)
+
+
+
+
+
     return (
         <div>
             <h2 className="text-3xl font-bold py-6">All Users</h2>

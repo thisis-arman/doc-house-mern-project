@@ -50,12 +50,13 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
       console.log('logged in User inside the auth state Observer')
       setUser(loggedUser)
-      setLoading(false)
+
       if (loggedUser) {
         axios.post('http://localhost:5000/jwt', { email: loggedUser.email })
           .then(data => {
             localStorage.setItem('access_token', data.data.token)
             console.log(data)
+            setLoading(false)
           })
       }
       else {
