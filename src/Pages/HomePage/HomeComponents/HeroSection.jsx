@@ -31,12 +31,12 @@ const HeroSection = () => {
   }, [])
 
   return (
-    <div className=" overflow-hidden min-h-screen z-0 absolute w-full top-0  ">
+    <div className=" overflow-hidden min-h-screen z-0 absolute w-full top-0   ">
       {/* <PopUp /> */}
       <section className=" text-black ">
         <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
           <div className="mx-auto min-w-5xl text-center">
-            <h1 className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-5xl font-extrabold text-transparent md:pt-16 md:text-7xl">
+            <h1 className="bg-gradient-to-r from-green-300 via-blue-500 to-green-600 bg-clip-text text-5xl font-extrabold text-transparent md:pt-16 md:text-7xl">
               Your Journey to Wellness
               <span className="sm:block"> Begins Here.</span>
             </h1>
@@ -45,10 +45,10 @@ const HeroSection = () => {
               tenetur fuga ducimus numquam ea!
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <a className="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto" href="/get-started">
+              <a className="block w-full rounded border border-green-700 bg-green-700 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-black focus:outline-none focus:ring active:text-opacity-75 sm:w-auto" href="/get-started">
                 Get Started
               </a>
-              <a className="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-black hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto" href="/about">
+              <a className="block w-full rounded border border-green-700 px-12 py-3 text-sm font-medium text-black hover:text-white hover:bg-green-700 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto" href="/about">
                 Learn More
               </a>
             </div>

@@ -70,9 +70,9 @@ const Testimonials = () => {
                   </svg>
                   <p className="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.</p>
                   <a className="inline-flex items-center">
-                    <img alt="testimonial" src="https://dummyimage.com/106x106" className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
+                    <img alt="testimonial" src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=900&t=st=1694282320~exp=1694282920~hmac=19cd2894a3bfc93f70acc1a116c0df765e76cb23262fa8d5029084a0b6ab7699" className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
                     <span className="flex-grow flex flex-col pl-4">
-                      <span className="title-font font-medium text-gray-900">Holden Caulfield</span>
+                      <span className="title-font font-medium text-gray-900">Alex flyed</span>
                       <span className="text-gray-500 text-sm">UI DEVELOPER</span>
                     </span>
                   </a>
@@ -87,10 +87,10 @@ const Testimonials = () => {
                   </svg>
                   <p className="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.</p>
                   <a className="inline-flex items-center">
-                    <img alt="testimonial" src="https://dummyimage.com/106x106" className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
+                    <img alt="testimonial" src="https://img.freepik.com/free-photo/shot-beautiful-young-businesswoman-wearing-blue-chifon-shirt-while-standing-street-with-folded-arms_158595-6595.jpg?t=st=1694282332~exp=1694282932~hmac=ce2028950873863ad5e12e96eda41d7b776bde3830a68538b04de6802535898a" className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
                     <span className="flex-grow flex flex-col pl-4">
-                      <span className="title-font font-medium text-gray-900">Holden Caulfield</span>
-                      <span className="text-gray-500 text-sm">UI DEVELOPER</span>
+                      <span className="title-font font-medium text-gray-900">Taskia Ahmed</span>
+                      <span className="text-gray-500 text-sm">Frontend Developer</span>
                     </span>
                   </a>
                 </div>
@@ -104,7 +104,7 @@ const Testimonials = () => {
                   </svg>
                   <p className="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.</p>
                   <a className="inline-flex items-center">
-                    <img alt="testimonial" src="https://dummyimage.com/106x106" className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
+                    <img alt="testimonial" src="https://img.freepik.com/free-photo/smiling-pretty-woman-posing-camera-park_1262-19062.jpg?w=900&t=st=1694282332~exp=1694282932~hmac=9014c196fc041a28c2e350d3ebe3bb1a933982edef3698a1083619cdde770361" className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
                     <span className="flex-grow flex flex-col pl-4">
                       <span className="title-font font-medium text-gray-900">Holden Caulfield</span>
                       <span className="text-gray-500 text-sm">UI DEVELOPER</span>
