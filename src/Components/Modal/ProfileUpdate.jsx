@@ -5,6 +5,7 @@ import Modal from './Modal';
 import useUsers from '../../Hooks/useUsers';
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { Toaster, toast } from 'react-hot-toast';
 
 export default function ProfileUpdate({ isOpen, setIsOpen }) {
     const { user } = useContext(AuthContext)
@@ -12,9 +13,31 @@ export default function ProfileUpdate({ isOpen, setIsOpen }) {
 
     const [users] = useUsers()
     const currentUser = users.find(u => u.email === user.email)
+    console.log({ currentUser })
 
 
     const { register, handleSubmit, reset } = useForm();
+    const onSubmit = (data) => {
+        const { name, email, consultFee, Chamber, phone, Bio, } = data;
+        const profile = { name, email, consultFee: parseInt(consultFee), Chamber, phone, Bio, doctorID: currentUser.doctorID, drImage: currentUser.image, ratings: 4.7, numberOfReviews: 6, status: currentUser.status }
+        console.log({ profile })
+        fetch('http://localhost:5000/doctors', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            }, body: JSON.stringify({ profile })
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId > 0) {
+                    console.log(data)
+                    toast.success('Profile updated successfully')
+                }
+            })
+
+        console.log({ data })
+        // onCancel();
+    };
 
 
     const onCancel = () => {
@@ -22,15 +45,12 @@ export default function ProfileUpdate({ isOpen, setIsOpen }) {
         setIsOpen(false);
     };
 
-    const onSubmit = (data) => {
 
-        console.log(data)
-        onCancel();
-    };
 
     return (
         <>
             <div>
+                <Toaster />
                 <Modal isOpen={isOpen} setIsOpen={setIsOpen} >
 
                     <form onSubmit={handleSubmit(onSubmit)}>
@@ -71,10 +91,10 @@ export default function ProfileUpdate({ isOpen, setIsOpen }) {
                                 className="w-full border p-1 text-black bg-slate-100 rounded-md "
                                 type="text"
                                 id="chamber"
-                                placeholder='e.g -302 no room ,Epic Hospital, Chattogram'
+                                placeholder='e.g -302 no room ,Epic Hospital, Chattrogram'
 
 
-                                {...register('chamber')}
+                                {...register('Chamber')}
 
                             />
                         </div>
@@ -88,8 +108,8 @@ export default function ProfileUpdate({ isOpen, setIsOpen }) {
                                 id="email"
 
 
-                                {...register('email')}
                                 defaultValue={currentUser?.email}
+                                {...register('email')}
                             />
                         </div>
                         <div className="flex flex-col mb-5">
@@ -100,10 +120,11 @@ export default function ProfileUpdate({ isOpen, setIsOpen }) {
                                 className="w-full rounded-md p-1 text-black bg-slate-100"
                                 type="text"
                                 id="description"
-                                {...register('description')}
+                                placeholder='Tell us something about yourself...'
+                                {...register('Bio')}
                             />
                         </div>
-                        <div className="flex flex-col mb-5">
+                        {/*  <div className="flex flex-col mb-5">
                             <label htmlFor="title" className="mb-2">
                                 Deadline
                             </label>
@@ -113,32 +134,33 @@ export default function ProfileUpdate({ isOpen, setIsOpen }) {
                                 id="date"
                                 {...register('date')}
                             />
-                        </div>
+                        </div> */}
                         <div className="flex flex-col mb-5">
-                            <label htmlFor="title" className="mb-2">
-                                Assign to
+                            <label htmlFor="fee" className="mb-2">
+                                Consult Fee
                             </label>
-                            <select
+                            <input
                                 className="w-full rounded-md p-1 text-black bg-slate-100"
-                                id="assignedTo"
-                                {...register('assignedTo')}
-                            >
-                                <option value="Mir Hussain">Mir Hussain</option>
-                                <option value="Mezba Abedin">Mezba Abedin</option>
-                                <option value="Nahid Hasan">Nahid Hasan</option>
-                                <option value="Mizanur Rahman">Mizanur Rahman</option>
-                                <option value="Tanmoy Parvez">Tanmoy Parvez</option>
-                                <option value="Fahim Ahmed Firoz">Fahim Ahmed Firoz</option>
-                                <option value="Rahatul Islam">Rahatul Islam</option>
-                                <option value="Samin Israr Ravi">Samin Israr Ravi</option>
-                                <option value="Mehedi Anik">Mehedi Anik</option>
-                                <option value="Ehtisam Haq">Ehtisam Haq</option>
-                                <option value="Anisur Rahman">Anisur Rahman</option>
-                                <option value="Muktadir Hasan">Muktadir Hasan</option>
-                                <option value="Masud Alam">Masud Alam</option>
-                            </select>
+                                type="number"
+                                id="fee"
+                                placeholder='Consultation Fee'
+                                {...register('consultFee')}
+                            />
                         </div>
                         <div className="flex flex-col mb-5">
+                            <label htmlFor="number" className="mb-2">
+                                Phone Number
+                            </label>
+                            <input
+                                className="w-full rounded-md p-1 text-black bg-slate-100"
+                                type="number"
+                                id="number"
+                                placeholder='Phone Number'
+                                {...register('phone')}
+                            />
+                        </div>
+
+                        {/* <div className="flex flex-col mb-5">
                             <label htmlFor="title" className="mb-2">
                                 Priority
                             </label>
@@ -153,7 +175,7 @@ export default function ProfileUpdate({ isOpen, setIsOpen }) {
                                 <option value="medium">Medium</option>
                                 <option value="low">Low</option>
                             </select>
-                        </div>
+                        </div> */}
                         <div className="flex gap-3 justify-end">
                             <button
                                 onClick={() => onCancel()}
