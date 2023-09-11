@@ -10,7 +10,7 @@ const ExpertDoctors = () => {
   console.log(doctors)
 
   useEffect(() => {
-    fetch('https://doc-house-server-thisis-arman.vercel.app/api/all-info')
+    fetch('http://localhost:5000/api/all-info')
       .then(res => res.json())
       .then(data => setDoctor(data))
   }, [])

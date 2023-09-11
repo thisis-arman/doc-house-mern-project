@@ -90,12 +90,12 @@ const router = createBrowserRouter([
       {
         path: 'doctor/:id',
         element: <PrivateRoute><DoctorDetails /></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://doc-house-server-thisis-arman.vercel.app/api/all-info/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/api/all-info/${params.id}`)
       },
       {
         path: '/doctors/:doctorID',
         element: <NewDoctorDetails />,
-        loader: ({ params }) => fetch(`https://doc-house-server-thisis-arman.vercel.app/api/all-info-by-id/${params.doctorID}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/api/all-info-by-id/${params.doctorID}`)
       },
 
     ]
@@ -139,7 +139,7 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/doctor-request/services-request/:doctorEmail',
         element: <DoctorServiceDetails />,
-        loader: ({ params }) => fetch(`https://doc-house-server-thisis-arman.vercel.app/api/services/${params.doctorEmail}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/api/services/${params.doctorEmail}`)
       },
 
       // User Routes
@@ -162,7 +162,7 @@ const router = createBrowserRouter([
       {
         path: 'my-appointments/payments/:id',
         element: <Payments />,
-        loader: ({ params }) => fetch(`https://doc-house-server-thisis-arman.vercel.app/api/appointment/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/api/appointment/${params.id}`)
       },
       // Doctor Routes
       {

@@ -19,7 +19,7 @@ const MyServices = () => {
     console.log({ currentDoctor })
 
     useEffect(() => {
-        fetch(`https://doc-house-server-thisis-arman.vercel.app/api/doctors/${user.email}`)
+        fetch(`http://localhost:5000/api/doctors/${user.email}`)
             .then(res => res.json())
             .then(data => setCurrentDoctor(data))
     }, [user])
@@ -35,13 +35,13 @@ const MyServices = () => {
     }
 
     useEffect(() => {
-        fetch(`https://doc-house-server-thisis-arman.vercel.app/api/services/${user.email}`)
+        fetch(`http://localhost:5000/api/services/${user.email}`)
             .then(res => res.json())
             .then(data => setServices(data))
     }, [user])
 
     const showDefaultValue = (id) => {
-        fetch(`https://doc-house-server-thisis-arman.vercel.app/api/services-by/${id}`)
+        fetch(`http://localhost:5000/api/services-by/${id}`)
             .then(res => res.json())
             .then(data => setService(data))
     }
@@ -81,7 +81,7 @@ const MyServices = () => {
 
         console.log({ updatedService })
 
-        fetch(`https://doc-house-server-thisis-arman.vercel.app/api/services/${service._id}`, {
+        fetch(`http://localhost:5000/api/services/${service._id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

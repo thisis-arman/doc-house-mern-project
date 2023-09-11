@@ -5,7 +5,7 @@ const TeethService = () => {
     const [teeths, setTeeths] = useState([])
 
     useEffect(() => {
-        fetch('https://doc-house-server-thisis-arman.vercel.app/get-service-data/Cavity%20Orthodontics')
+        fetch('http://localhost:5000/get-service-data/Cavity%20Orthodontics')
             .then(res => res.json())
             .then(data => setTeeths(data))
 

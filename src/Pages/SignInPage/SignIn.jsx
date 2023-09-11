@@ -28,7 +28,7 @@ const SignIn = () => {
         const loggedUser = {
           email: user.email
         }
-        fetch('https://doc-house-server-thisis-arman.vercel.app/jwt', {
+        fetch('http://localhost:5000/jwt', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

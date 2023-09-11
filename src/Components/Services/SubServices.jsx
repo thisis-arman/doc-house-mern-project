@@ -20,7 +20,7 @@ const SubServices = ({ category }) => {
   };
 
   useEffect(() => {
-    fetch('https://doc-house-server-thisis-arman.vercel.app/users')
+    fetch('http://localhost:5000/users')
       .then(res => res.json())
       .then(data => {
         const doctor = data.filter(d => d.role == "doctor")
@@ -44,7 +44,7 @@ const SubServices = ({ category }) => {
     console.log(doctorID)
 
     const appointmentInfo = { name, email, number, time, date, category, userEmail: user.email, doctorID: parseInt(doctorID) }
-    fetch('https://doc-house-server-thisis-arman.vercel.app/appointments', {
+    fetch('http://localhost:5000/appointments', {
       method: "POST",
       headers: {
         'content-type': 'application/json'
@@ -66,7 +66,7 @@ const SubServices = ({ category }) => {
   }
 
   useEffect(() => {
-    fetch(`https://doc-house-server-thisis-arman.vercel.app/get-service-data/${category}`)
+    fetch(`http://localhost:5000/get-service-data/${category}`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [category]);

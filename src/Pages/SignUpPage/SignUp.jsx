@@ -28,7 +28,7 @@ const SignUp = () => {
         updateUserProfile(name, photo)
           .then(() => {
             const saveUser = { name, email, photo, role: "user" }
-            fetch('https://doc-house-server-thisis-arman.vercel.app/users', {
+            fetch('http://localhost:5000/users', {
               method: "POST",
               headers: {
                 "content-type": "application/json"

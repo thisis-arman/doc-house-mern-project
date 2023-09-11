@@ -6,7 +6,7 @@ const CosmeticService = () => {
     console.log(teeths)
 
     useEffect(() => {
-        fetch('https://doc-house-server-thisis-arman.vercel.app/get-service-data/Cosmetic-Orthodontics')
+        fetch('http://localhost:5000/get-service-data/Cosmetic-Orthodontics')
             .then(res => res.json())
             .then(data => setTeeths(data))
 

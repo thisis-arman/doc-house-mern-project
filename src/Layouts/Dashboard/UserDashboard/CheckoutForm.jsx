@@ -24,7 +24,7 @@ const CheckoutForm = ({ fees }) => {
 
 
     useEffect(() => {
-        fetch('https://doc-house-server-thisis-arman.vercel.app/create-payment-intent', {
+        fetch('http://localhost:5000/create-payment-intent', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -84,7 +84,7 @@ const CheckoutForm = ({ fees }) => {
             console.log(paymentIntent, 'Payment intent')
             setTransactionId(paymentIntent.id)
             const payment = { name, email, userEmail: user.email, category, fee, date: new Date(), transactionId: paymentIntent.id }
-            fetch('https://doc-house-server-thisis-arman.vercel.app/payment', {
+            fetch('http://localhost:5000/payment', {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

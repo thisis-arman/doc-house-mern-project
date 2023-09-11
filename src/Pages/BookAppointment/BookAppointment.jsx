@@ -10,7 +10,7 @@ const BookAppointment = () => {
     const navigate = useNavigate()
 
     const service = useLoaderData()
-    const { consultFee, serviceName, image, doctorEmail, doctorID, details } = service;
+    const { consultFee, serviceName, image, doctorEmail, doctorID, details, number } = service;
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -53,45 +53,50 @@ const BookAppointment = () => {
 
                     <div className="flex items-center w-full gap-4">
 
-                        <div className="form-control w-full ">
+                        <div className="form-control py-2 w-full ">
+                            <label htmlFor="">Patient Name</label>
                             <input
                                 type="text"
                                 name="name"
-                                placeholder="Full Name"
+                                placeholder="Patient Name"
                                 className="input input-bordered w-full "
                             />
                         </div>
-                        <div className="form-control w-full ">
+                        <div className="form-control py-2 w-full ">
+                            <label htmlFor="">Service Name</label>
                             <input
                                 type="text"
                                 name="serviceName"
                                 placeholder="service name"
                                 defaultValue={serviceName}
-                                className="input my-4 input-bordered w-full "
+                                className="input input-bordered w-full "
                             />
                         </div>
                     </div>
-                    <div className="flex items-center gap-4 w-full ">
+                    <div className="flex items-center py-2 gap-4 w-full ">
                         <div className="form-control w-full ">
+                            <label htmlFor="">Appointment Time</label>
                             <input
                                 type="time"
                                 name="time"
                                 placeholder="Select time"
-                                className="input my-4 input-bordered w-full "
+                                className="input  input-bordered w-full "
                             />
                         </div>
-                        <div className="form-control w-full ">
+                        <div className="form-control py-2 w-full ">
+                            <label htmlFor=""> Date</label>
                             <input
                                 type="date"
                                 name="date"
                                 placeholder="Select Date"
-                                className="input my-4 input-bordered w-full "
+                                className="input  input-bordered w-full "
                             />
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-4 w-full">
-                        <div className="form-control w-full  my-4 ">
+                    <div className="flex items-center gap-4 py-2 w-full">
+                        <div className="form-control w-full   ">
+                            <label htmlFor=""> Email</label>
 
                             <input
                                 type="email"
@@ -101,14 +106,17 @@ const BookAppointment = () => {
                                 className="input input-bordered w-full "
                             />
                         </div>
-                        <div className="form-control w-full mb-4 ">
-                            {/* <select placeholder="Doctor ID" className="input input-bordered w-full " id="doctor_name" name='doctorID'>
-{users.map((user, i) => <option key={i} value={user?.doctorID} >{user?.name}</option>)}
-</select> */}
+
+                        <div className="form-control w-full py-2  ">
+                            <label htmlFor=""> Time</label>
+                            <select placeholder="Doctor ID" className="input input-bordered w-full " id="doctor_name" name='doctorID'>
+
+                            </select>
                         </div>
                     </div>
-                    <div className="md:flex items-center gap-4 w-full">
-                        <div className="form-control w-full mb-4 ">
+                    <div className="md:flex items-center gap-4 py-2 w-full">
+                        <div className="form-control w-full  ">
+                            <label htmlFor="">Consult Fee</label>
 
                             <input
                                 type="number"
@@ -118,17 +126,19 @@ const BookAppointment = () => {
                                 className="input input-bordered w-full "
                             />
                         </div>
-                        <div className="form-control w-full mb-4 ">
+                        <div className="form-control w-full py-2  ">
+                            <label htmlFor=""> Phone Number</label>
 
                             <input
-                                type="number"
+                                type="tel"
                                 name="number"
                                 placeholder="Phone Number"
+                                value={number}
                                 className="input input-bordered w-full "
                             />
                         </div>
                     </div>
-                    <button type="submit" className="btn w-full  btn-secondary my-4">
+                    <button type="submit" className="btn w-full bg-green-600 hover:border-2 hover:border-green-600 hover:bg-white hover:text-black  my-4">
                         Submit
                     </button>
                 </form>
