@@ -2,7 +2,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import PageCover from "../../Components/PageCover";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { toast } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 
 
 const BookAppointment = () => {
@@ -10,6 +10,7 @@ const BookAppointment = () => {
     const navigate = useNavigate()
 
     const service = useLoaderData()
+    console.log({ service })
     const { consultFee, serviceName, image, doctorEmail, doctorID, details, number } = service;
 
     const handleSubmit = (event) => {
@@ -18,12 +19,14 @@ const BookAppointment = () => {
         const name = form.name.value;
         const date = form.date.value;
         const time = form.time.value;
-        const number = form.number.value;
+        const age = form.age.value;
+        // const number = form.number.value;
         const email = form.email.value;
 
         console.log(doctorID)
 
-        const appointmentInfo = { name, email, number, time, date, userEmail: user.email, doctorEmail, image, doctorID, details, }
+        const appointmentInfo = { name, email, number, time, date, userEmail: user.email, doctorEmail, image, doctorID, details, consultFee, age }
+        console.log({ appointmentInfo })
         fetch('http://localhost:5000/appointments', {
             method: "POST",
             headers: {
@@ -32,11 +35,11 @@ const BookAppointment = () => {
             body: JSON.stringify(appointmentInfo)
         })
             .then((data) => {
-                if (data.insertedId) {
-                    console.log(data)
+                if (data.insertedId > 0) {
+                    console.log({ data })
                     alert('Successfully')
                     toast.success(" Appointment Booked Successfully")
-                    navigate('/dashboard')
+                    navigate('/dashboard/user-home')
                 }
             })
             .catch((err) => {
@@ -108,32 +111,34 @@ const BookAppointment = () => {
                         </div>
 
                         <div className="form-control w-full py-2  ">
-                            <label htmlFor=""> Time</label>
-                            <select placeholder="Doctor ID" className="input input-bordered w-full " id="doctor_name" name='doctorID'>
+                            <label htmlFor=""> Gender</label>
+                            <select placeholder="Gender" className="input input-bordered w-full " id="gender" name='gender'>
+                                <option value="" name>Male </option>
+                                <option value="" name>Female </option>
 
                             </select>
                         </div>
                     </div>
                     <div className="md:flex items-center gap-4 py-2 w-full">
                         <div className="form-control w-full  ">
-                            <label htmlFor="">Consult Fee</label>
+                            <label htmlFor="">Age</label>
 
                             <input
                                 type="number"
-                                name="consultFee"
-                                placeholder="Consult Fee"
-                                defaultValue={`$${consultFee}`}
+                                name="age"
+                                placeholder="Patient Age"
+
                                 className="input input-bordered w-full "
                             />
                         </div>
                         <div className="form-control w-full py-2  ">
-                            <label htmlFor=""> Phone Number</label>
+                            <label htmlFor="">Phone Number</label>
 
                             <input
                                 type="tel"
                                 name="number"
                                 placeholder="Phone Number"
-                                value={number}
+
                                 className="input input-bordered w-full "
                             />
                         </div>
@@ -143,10 +148,7 @@ const BookAppointment = () => {
                     </button>
                 </form>
             </div>
-            <form action="">
-
-
-            </form>
+            <Toaster />
 
         </section>
     );

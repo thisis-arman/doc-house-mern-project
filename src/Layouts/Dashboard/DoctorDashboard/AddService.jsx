@@ -10,6 +10,7 @@ const AddService = () => {
     const [currentDoctor, setCurrentDoctor] = useState([])
     const [selectedImage, setSelectedImage] = useState("");
 
+    console.log({ currentDoctor })
 
 
     useEffect(() => {
@@ -18,8 +19,8 @@ const AddService = () => {
             .then(data => setCurrentDoctor(data))
     }, [user])
 
-    console.log(currentDoctor)
-
+    console.log({ currentDoctor })
+    console.log(user.email)
 
 
     const handleImage = (event) => {
@@ -54,6 +55,7 @@ const AddService = () => {
         const number = form.phone.value;
 
         const newService = { serviceName, consultFee: parseInt(consultFee), details, number, doctorID: currentDoctor?.profile?.doctorID, doctorEmail: currentDoctor?.profile?.email, status: "pending", image: selectedImage };
+        console.log()
 
         console.log({ newService })
 
