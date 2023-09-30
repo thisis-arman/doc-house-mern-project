@@ -1,5 +1,6 @@
 import Awards from "./HomeComponents/Awards";
 import BlogCTA from "./HomeComponents/BlogCTA";
+import BookSummery from "./HomeComponents/BookSummery";
 import CaseStudies from "./HomeComponents/CaseStudies";
 import ContactForm from "./HomeComponents/ContactForm";
 import Contacts from "./HomeComponents/Contacts";
@@ -21,6 +22,7 @@ const Home = () => {
             <Features />
             <OurServices />
             <Contacts />
+            {/* <BookSummery /> */}
             <ExpertDoctors />
             <CaseStudies />
             <Testimonials />

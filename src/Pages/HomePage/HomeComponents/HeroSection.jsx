@@ -50,10 +50,10 @@ const HeroSection = () => {
               tenetur fuga ducimus numquam ea!
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <a className="block w-full rounded border border-green-700 bg-green-700 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-black focus:outline-none focus:ring active:text-opacity-75 sm:w-auto" href="/get-started">
+              <a className="block  rounded border border-green-700 bg-green-700 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-black focus:outline-none focus:ring active:text-opacity-75 sm:w-auto" href="/get-started">
                 Get Started
               </a>
-              <a className="block w-full rounded border border-green-700 px-12 py-3 text-sm font-medium text-black hover:text-white hover:bg-green-700 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto" href="/about">
+              <a className="block  rounded border border-green-700 px-12 py-3 text-sm font-medium text-black hover:text-white hover:bg-green-700 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto" href="/about">
                 Learn More
               </a>
             </div>
