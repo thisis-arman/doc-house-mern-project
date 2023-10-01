@@ -11,7 +11,6 @@ const MyAppointments = () => {
     const [users, setUsers] = useState([])
     const currentUser = users.find(d => d.name == user.displayName)
     // console.log(data.doctorID, 'checking user--')
-    console.log(appointments, 'appointments')
 
 
 
@@ -24,15 +23,18 @@ const MyAppointments = () => {
                 setUsers(doctor)
             })
     }, [])
+
     useEffect(() => {
 
-        fetch(`http://localhost:5000/api/appointments/${currentUser?.doctorID}`)
+        fetch(`http://localhost:5000/appointments/${currentUser?.email}`)
             .then(res => res.json())
             .then(data => setAppointment(data))
     }, [currentUser])
+    console.log(appointments, 'appointments')
+
     return (
         <div className="p-6">
-            <h2 className="py-6 text-3xl font-bold">My Appointments</h2>
+            <h2 className="py-6 text-3xl font-bold">My Appointments..</h2>
 
             <TableRow data={appointments} />
 

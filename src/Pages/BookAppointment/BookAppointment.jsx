@@ -21,13 +21,13 @@ const BookAppointment = () => {
         const time = form.time.value;
         const age = form.age.value;
         // const number = form.number.value;
-        const email = form.email.value;
+        const patientEmail = form.email.value;
 
         console.log(doctorID)
 
-        const appointmentInfo = { name, email, number, time, date, userEmail: user.email, doctorEmail, image, doctorID, details, consultFee, age }
+        const appointmentInfo = { name, patientEmail, number, time, date, userEmail: user.email, doctorEmail, image, doctorID, details, consultFee, age }
         console.log({ appointmentInfo })
-        fetch('http://localhost:5000/appointments', {
+        fetch('http://localhost:5000/api/appointments', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -36,9 +36,9 @@ const BookAppointment = () => {
         })
             .then((data) => {
                 if (data.insertedId > 0) {
+                    toast.success(" Appointment Booked Successfully")
                     console.log({ data })
                     alert('Successfully')
-                    toast.success(" Appointment Booked Successfully")
                     navigate('/dashboard/user-home')
                 }
             })
@@ -50,6 +50,7 @@ const BookAppointment = () => {
 
     return (
         <section className="">
+            <Toaster />
             <PageCover pageName='Book Appointment' />
             <div className="relative py-24  md:top-[250px] md:mb-[300px]">
                 <form onSubmit={handleSubmit} className="shadow border  max-w-3xl  w-full  p-8 mx-auto rounded ">
@@ -148,7 +149,7 @@ const BookAppointment = () => {
                     </button>
                 </form>
             </div>
-            <Toaster />
+
 
         </section>
     );
