@@ -139,7 +139,7 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/doctor-request/services-request/:doctorEmail',
         element: <DoctorServiceDetails />,
-        loader: ({ params }) => fetch(`http://localhost:5000/api/services/${params.doctorEmail}`)
+        loader: () => fetch(`http://localhost:5000/api/services`)
       },
 
       // User Routes

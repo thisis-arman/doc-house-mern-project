@@ -54,7 +54,7 @@ const AddService = () => {
         const details = form.details.value;
         const number = form.phone.value;
 
-        const newService = { serviceName, consultFee: parseInt(consultFee), details, number, doctorID: currentDoctor?.profile?.doctorID, doctorEmail: currentDoctor?.profile?.email, status: "pending", image: selectedImage };
+        const newService = { doctorName: user?.displayName, serviceName, consultFee: parseInt(consultFee), details, number, doctorID: currentDoctor?.profile?.doctorID, doctorEmail: currentDoctor?.profile?.email, status: "pending", image: selectedImage };
         console.log()
 
         console.log({ newService })

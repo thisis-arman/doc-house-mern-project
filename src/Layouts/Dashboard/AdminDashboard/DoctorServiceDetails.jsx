@@ -11,6 +11,7 @@ const DoctorServiceDetails = ({ email }) => {
     const serviceDetails = useLoaderData()
     console.log({ serviceDetails })
     const [pendingServices, setPendingServices] = useState([])
+    const [Services, setServices] = useState([])
     const [activeServices, setActiveServices] = useState([])
     console.log('setPendingServices', pendingServices)
     useEffect(() => {
@@ -18,13 +19,15 @@ const DoctorServiceDetails = ({ email }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                const services = data.services(service => service)
                 const pendingService = data.filter(d => d.status == 'pending')
                 const activeService = data.filter(data => data.status === 'active')
+                setServices(services)
                 setPendingServices(pendingService)
                 setActiveServices(activeService)
 
             })
-    }, [])
+    }, [email])
 
 
     const handleAcceptService = (id) => {
