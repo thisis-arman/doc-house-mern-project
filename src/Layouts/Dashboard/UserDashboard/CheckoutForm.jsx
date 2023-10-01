@@ -6,6 +6,7 @@ import { ToastBar, Toaster, toast } from "react-hot-toast";
 
 
 const CheckoutForm = ({ fees }) => {
+    console.log(fees)
     const { user } = useContext(AuthContext)
     console.log(user)
     const [clientSecret, setClientSecret] = useState("");

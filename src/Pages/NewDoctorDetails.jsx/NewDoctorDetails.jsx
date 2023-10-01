@@ -9,14 +9,14 @@ import { motion } from 'framer-motion'
 
 const NewDoctorDetails = () => {
     const details = useLoaderData()
-    const [services, setService] = useState([])
-    const { user } = useContext(AuthContext)
-    console.log(details)
-    useEffect(() => {
-        fetch(`http://localhost:5000/api/services/${user.email}`)
-            .then(res => res.json())
-            .then(data => setService(data))
-    }, [user])
+    // const [services, setService] = useState([])
+    // const { user } = useContext(AuthContext)
+    /*  console.log({ details })
+     useEffect(() => {
+         fetch(`http://localhost:5000/services/${user.email}`)
+             .then(res => res.json())
+             .then(data => setService(data))
+     }, [user]) */
 
     // const { profile, overview, education, awards, services } = details;
     return (
@@ -27,7 +27,7 @@ const NewDoctorDetails = () => {
             <div className="container mx-auto  relative py-24  md:top-[250px] md:mb-[300px] ">
                 <div className="grid md:grid-cols-2 gap-10 ">
                     {
-                        services.map((service, i) =>
+                        details.map((service, i) =>
 
                             <motion.div whileHover={{ scale: 1.1 }} key={i}
                                 href="#"

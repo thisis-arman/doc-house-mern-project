@@ -95,7 +95,7 @@ const router = createBrowserRouter([
       {
         path: '/doctors/:doctorID',
         element: <NewDoctorDetails />,
-        loader: ({ params }) => fetch(`http://localhost:5000/api/all-info-by-id/${params.doctorID}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.doctorID}`)
       },
 
     ]

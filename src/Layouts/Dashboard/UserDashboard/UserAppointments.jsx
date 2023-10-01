@@ -11,12 +11,12 @@ const UserAppointments = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/appointments/${user.email}`)
+        fetch(`http://localhost:5000/api/appointments-email/${user.email}`)
             .then(res => res.json())
             .then(data => setAppointments(data))
     }, [user])
 
-    console.log(appointments)
+    console.log({ appointments })
 
     const totalFee = appointments.reduce((sum, item) => sum + parseFloat(item?.fee), 0);
     console.log(totalFee, 'total feeeee')

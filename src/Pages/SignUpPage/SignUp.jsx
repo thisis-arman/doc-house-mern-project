@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast';
@@ -6,8 +6,29 @@ import Swal from "sweetalert2";
 
 const SignUp = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext)
+  const [selectedImage, setSelectedImage] = useState("");
 
   const navigate = useNavigate()
+
+  const handleImage = (event) => {
+    event.preventDefault();
+    const selectedImage = event.target.files[0]
+    console.log(selectedImage)
+    const formData = new FormData()
+    formData.append("file", selectedImage)
+    formData.append("upload_preset", 'vcvltcqx')
+    fetch(`https://api.cloudinary.com/v1_1/dshjcmrd0/image/upload`, {
+      method: "POST",
+      body: formData
+    })
+      .then(res => res.json())
+      .then(data => {
+        setSelectedImage(data.secure_url)
+
+      })
+
+  };
+
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -16,18 +37,17 @@ const SignUp = () => {
 
     const form = event.target;
     const name = form.name.value;
-    const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, photo, email, password)
+    console.log(name, email, password)
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser)
         toast.success("User Created Successfully")
-        updateUserProfile(name, photo)
+        updateUserProfile(name, selectedImage)
           .then(() => {
-            const saveUser = { name, email, photo, role: "user" }
+            const saveUser = { name, email, role: "user", image: selectedImage }
             fetch('http://localhost:5000/users', {
               method: "POST",
               headers: {
@@ -84,15 +104,10 @@ const SignUp = () => {
             />
           </div>
           <div className="form-control w-full max-w-xs">
-            <label className="label">
-              <span className="label-text">Photo URL</span>
-            </label>
-            <input
-              type="text"
-              name="photo"
-              placeholder="Enter your username"
-              className="input input-bordered w-full max-w-xs"
-            />
+            <div>
+              <label className="" htmlFor="image">Image</label>
+              <input onChange={handleImage} type="file" name="image" className="input input-bordered w-full max-w-xs py-2" id="" />
+            </div>
           </div>
           <div className="form-control w-full max-w-xs">
             <label className="label">
