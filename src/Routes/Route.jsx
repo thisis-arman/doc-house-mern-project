@@ -35,6 +35,7 @@ import MyServices from "../Layouts/Dashboard/DoctorDashboard/MyServices";
 import DoctorServiceDetails from "../Layouts/Dashboard/AdminDashboard/DoctorServiceDetails";
 import BookAppointment from "../Pages/BookAppointment/BookAppointment";
 import MyProfile from "../Layouts/Dashboard/DoctorDashboard/MyProfile";
+import AllServices from "../Layouts/Dashboard/AdminDashboard/AllServices";
 
 const router = createBrowserRouter([
   {
@@ -123,6 +124,10 @@ const router = createBrowserRouter([
       {
         path: 'all-users',
         element: <AllUsers />
+      },
+      {
+        path: 'all-services',
+        element: <AllServices />
       },
       {
         path: 'add-doctor',
