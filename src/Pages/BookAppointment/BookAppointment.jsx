@@ -27,7 +27,7 @@ const BookAppointment = () => {
 
         const appointmentInfo = { name, patientEmail, number, time, date, userEmail: user.email, doctorEmail, image, doctorID, details, consultFee, age }
         console.log({ appointmentInfo })
-        fetch('http://localhost:5000/api/appointments', {
+        fetch('https://doc-house-server-thisis-arman.vercel.app/api/appointments', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

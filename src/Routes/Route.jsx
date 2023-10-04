@@ -81,7 +81,7 @@ const router = createBrowserRouter([
       {
         path: '/book-appointment/:id',
         element: <BookAppointment />,
-        loader: ({ params }) => fetch(`http://localhost:5000/api/services-by/${params.id}`)
+        loader: ({ params }) => fetch(`https://doc-house-server-thisis-arman.vercel.app/api/services-by/${params.id}`)
 
       },
       {
@@ -91,12 +91,12 @@ const router = createBrowserRouter([
       {
         path: 'doctor/:id',
         element: <PrivateRoute><DoctorDetails /></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/api/all-info/${params.id}`)
+        loader: ({ params }) => fetch(`https://doc-house-server-thisis-arman.vercel.app/api/all-info/${params.id}`)
       },
       {
         path: '/doctors/:doctorID',
         element: <NewDoctorDetails />,
-        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.doctorID}`)
+        loader: ({ params }) => fetch(`https://doc-house-server-thisis-arman.vercel.app/services/${params.doctorID}`)
       },
 
     ]
@@ -144,7 +144,7 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/doctor-request/services-request/:doctorEmail',
         element: <DoctorServiceDetails />,
-        loader: () => fetch(`http://localhost:5000/api/services`)
+        loader: () => fetch(`https://doc-house-server-thisis-arman.vercel.app/api/services`)
       },
 
       // User Routes
@@ -167,13 +167,13 @@ const router = createBrowserRouter([
       {
         path: 'my-appointments/payments/:id',
         element: <Payments />,
-        loader: ({ params }) => fetch(`http://localhost:5000/api/appointment/${params.id}`)
+        loader: ({ params }) => fetch(`https://doc-house-server-thisis-arman.vercel.app/api/appointment/${params.id}`)
       },
       // Doctor Routes
       {
         path: 'profile/:email',
         element: <MyProfile />,
-        loader: ({ params }) => fetch(`http://localhost:5000/api/all-info-by/${params.email}`)
+        loader: ({ params }) => fetch(`https://doc-house-server-thisis-arman.vercel.app/api/all-info-by/${params.email}`)
       },
       {
         path: 'doctor-home',

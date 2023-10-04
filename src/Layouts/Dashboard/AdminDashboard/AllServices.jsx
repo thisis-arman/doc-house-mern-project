@@ -9,7 +9,7 @@ const AllServices = () => {
     const [services, setServices] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/services')
+        fetch('https://doc-house-server-thisis-arman.vercel.app/api/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
@@ -17,7 +17,7 @@ const AllServices = () => {
 
 
     const handleAcceptService = (id) => {
-        fetch(`http://localhost:5000/api/services-by/${id}`, {
+        fetch(`https://doc-house-server-thisis-arman.vercel.app/api/services-by/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -32,7 +32,7 @@ const AllServices = () => {
     }
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/api/services-by/${id}`, {
+        fetch(`https://doc-house-server-thisis-arman.vercel.app/api/services-by/${id}`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json"

@@ -6,7 +6,7 @@ const ServiceCard = ({ service }) => {
         <div>
             <motion.div whileHover={{ scale: 1.1 }}
                 href="#"
-                className="relative shadow-sm block overflow-hidden rounded-lg border  border-gray-100 p-4 sm:p-6 lg:p-8"
+                className="relative bg-base-100 shadow-sm block overflow-hidden rounded-lg border  border-gray-100 p-4 sm:p-6 lg:p-8"
             >
                 <Link to={`/book-appointment/${service?._id}`}>
 

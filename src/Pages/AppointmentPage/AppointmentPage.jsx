@@ -14,7 +14,7 @@ const AppointmentPage = () => {
   // console.log(value.split(' ').slice(0,4).join(' '))
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/services")
+    fetch("https://doc-house-server-thisis-arman.vercel.app/api/services")
       .then((res) => res.json())
       .then((data) => {
         const services = data.filter(service => service.status == 'active')

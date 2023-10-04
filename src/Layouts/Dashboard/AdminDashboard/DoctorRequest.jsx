@@ -14,7 +14,7 @@ const DoctorRequest = () => {
 
 
     const handleStatus = (user) => {
-        fetch(`http://localhost:5000/api/doctor/${user._id}`, {
+        fetch(`https://doc-house-server-thisis-arman.vercel.app/api/doctor/${user._id}`, {
             method: 'PATCH',
             headers: {
                 "content-type": "application/json"
@@ -39,7 +39,7 @@ const DoctorRequest = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users`)
+        fetch(`https://doc-house-server-thisis-arman.vercel.app/users`)
             .then(res => res.json())
             .then(data => {
 

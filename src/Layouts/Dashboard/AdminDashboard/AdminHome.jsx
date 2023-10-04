@@ -8,7 +8,7 @@ const AdminHome = () => {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/users')
+    fetch('https://doc-house-server-thisis-arman.vercel.app/users')
       .then(res => res.json())
       .then(data => setUsers(data))
   }, [])
@@ -20,14 +20,14 @@ const AdminHome = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/payment`)
+    fetch(`https://doc-house-server-thisis-arman.vercel.app/payment`)
       .then(res => res.json())
       .then(data => setPayment(data))
   }, [])
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/appointments`)
+    fetch(`https://doc-house-server-thisis-arman.vercel.app/api/appointments`)
       .then(res => res.json())
       .then(data => setAppointments(data))
   }, [])

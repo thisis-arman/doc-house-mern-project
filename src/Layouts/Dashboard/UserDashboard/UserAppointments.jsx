@@ -11,7 +11,7 @@ const UserAppointments = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/appointments-email/${user.email}`)
+        fetch(`https://doc-house-server-thisis-arman.vercel.app/api/appointments-email/${user.email}`)
             .then(res => res.json())
             .then(data => setAppointments(data))
     }, [user])

@@ -13,14 +13,14 @@ const UserHome = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/payment/${user.email}`)
+    fetch(`https://doc-house-server-thisis-arman.vercel.app/payment/${user.email}`)
       .then(res => res.json())
       .then(data => setPayment(data))
   }, [user])
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/appointments/${user.email}`)
+    fetch(`https://doc-house-server-thisis-arman.vercel.app/appointments/${user.email}`)
       .then(res => res.json())
       .then(data => setAppointments(data))
   }, [user])

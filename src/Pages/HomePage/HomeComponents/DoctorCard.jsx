@@ -15,8 +15,8 @@ const DoctorCard = ({ brief }) => {
   return (
     <div>
       <div data-aos="fade-up" data-aos-delay="100" className="card w-full  md:w-full lg:w-full border rounded-lg bg-base-100 shadow-sm">
-        <figure className="px-4 max-h-60 py-4 ">
-          <img src={profile.drImage} alt="Shoes" className="rounded-xl w-full  pt-4" />
+        <figure className="px-4 max-h-52 py-4 mt-2 object-cover object-fit ">
+          <img src={profile.drImage} alt="Doctor Image" className="rounded-xl  w-full " />
         </figure>
         <div className="px-4 py-4 ">
           <h2 className="card-title text-2xl py-1 font-bold">{profile?.name}</h2>
@@ -36,7 +36,7 @@ const DoctorCard = ({ brief }) => {
             <p className="text-[#877e7e]"> ${profile.consultFee}</p>
           </div>
           <div className="card-actions py-4">
-            <Link to={`/doctor/${_id}`} className="btn w-full btn-outline text-[#F7A582] hover:bg-[#F7A582] hover:text-white"
+            <Link to={`/doctors/${profile.doctorID}`} className="btn w-full btn-outline text-[#F7A582] hover:bg-[#F7A582] hover:text-white"
             >Book Appointment
             </Link>
           </div>

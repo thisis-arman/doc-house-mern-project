@@ -11,7 +11,7 @@ const NewDoctorDetails = () => {
     // const { user } = useContext(AuthContext)
     /*  console.log({ details })
      useEffect(() => {
-         fetch(`http://localhost:5000/services/${user.email}`)
+         fetch(`https://doc-house-server-thisis-arman.vercel.app/services/${user.email}`)
              .then(res => res.json())
              .then(data => setService(data))
      }, [user]) */
