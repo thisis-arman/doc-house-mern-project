@@ -3,7 +3,7 @@
 const AboutBanner = () => {
     return (
         <div className="border-b">
-            <section className="relative md:top-[300px]  top-6 min-h-screen md:mb-[400px]">
+            <section className="relative md:top-[300px]  top-6 min-h-screen md:mb-[200px]">
                 <div
                     className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 sm:px-6 lg:py-16 lg:px-8"
                 >

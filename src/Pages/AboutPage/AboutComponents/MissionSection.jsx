@@ -3,7 +3,7 @@
 const MissionSection = () => {
     return (
         <div>
-            <section className="bg-pink-100 body-font">
+            <section className=" body-font">
                 <div className="container mx-auto flex px-5 py-4 md:flex-row flex-col justify-center items-center">
                     <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
                         <img className="object-cover object-center w-3/5 mx-auto  rounded" alt="hero" src="https://i.ibb.co/6PS3hv0/wepik-export-20230818153106-SNb-F.png" />

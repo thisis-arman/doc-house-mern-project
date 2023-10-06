@@ -17,7 +17,7 @@ const YearsOfJourney = () => {
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto md:flex items-center gap-6 ">
                     <div className="flex md:w-1/2 mb-20 flex-wrap">
-                        <h1 className="sm:text-5xl text-2xl font-medium title-font text-gray-900  lg:mb-0 mb-4">We've been here <br /> almost 17 Years</h1>
+                        <h1 className="sm:text-5xl text-4xl font-bold title-font text-gray-900  lg:mb-0 mb-4">We've been here <br /> almost 17 Years</h1>
                         <p className="  mx-auto leading-relaxed text-base py-4">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</p>
                     </div>
 
