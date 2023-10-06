@@ -12,7 +12,7 @@ const OurServices = () => {
     });
   }, [])
   return (
-    <div className="container relative md:top-[600px] top-[500px] mb-[400px] md:mb-[500px]  w-full mx-auto grid md:grid-cols-2 gap-4 px-5 pb-24 md:flex-row flex-col items-center">
+    <div className="container relative md:top-[550px] top-[500px] mb-[400px] md:mb-[500px]  w-full mx-auto grid md:grid-cols-2 gap-4 px-5  md:flex-row flex-col items-center">
       <div data-aos="fade-up" data-aos-delay="400" className=" ">
         <img className='' src="https://i.ibb.co/Tc2q8K7/grilwith-Notes.png" alt="" />
       </div>
