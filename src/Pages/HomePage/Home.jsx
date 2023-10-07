@@ -15,7 +15,7 @@ import Video from "./HomeComponents/Video";
 
 const Home = () => {
     return (
-        <div>
+        <div className="">
             <HeroSection />
             <Video />
             <Serve />

@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
       <QueryClientProvider client={queryClient}>
-        <div className='bg-[#E8E9F1]'>
+        <div className='bg-[#E8E9F1] '>
           <ErrorBoundary fallback={<p className='text-center text-4xl  p-10'>Something went wrong.We will Fixed it Soon</p>}>
             <RouterProvider router={router} />
           </ErrorBoundary>
