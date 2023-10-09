@@ -36,12 +36,13 @@ const HeroSection = () => {
   }, [])
 
   return (
-    <div className=" overflow-hidden min-h-screen z-0 absolute w-full top-0   ">
+    <div className=" overflow-hidden min-h-screen z-0 absolute w-full top-0  ">
       {/* <PopUp /> */}
-      <section className=" text-black ">
+      <section className=" text-black relative bg-[url(https://i.ibb.co/DG728bT/wepik-export-20231009170543-GEGL.png)] bg-cover bg-center bg-no-repeat 
+ ">
         <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
           <div className="mx-auto min-w-5xl text-center">
-            <h1 className="bg-gradient-to-r from-green-300 via-blue-500 to-green-600 bg-clip-text text-5xl font-extrabold text-transparent md:pt-16 md:text-7xl">
+            <h1 className="bg-gradient-to-r from-green-600 via-blue-800 to-green-900 bg-clip-text text-5xl font-extrabold text-transparent md:pt-16 md:text-7xl">
               Your Journey to Wellness
               <span className="sm:block"> Begins Here.</span>
             </h1>
@@ -63,7 +64,7 @@ const HeroSection = () => {
 
 
 
-    </div>
+    </div >
   );
 };
 
