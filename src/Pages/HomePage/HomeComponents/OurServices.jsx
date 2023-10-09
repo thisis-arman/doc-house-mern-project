@@ -24,9 +24,9 @@ const OurServices = () => {
         <div>
           <Tabs>
             <TabList className='py-6 md:flex'>
-              <Tab className='bg-orange-300 rounded border p-2 m-2'>Cavity Protection </Tab>
-              <Tab className='bg-orange-300 rounded border p-2 m-2'>Cavity Protection </Tab>
-              <Tab className='bg-orange-300 rounded border p-2 m-2'>Cavity Protection </Tab>
+              <Tab className='secondary-button-outline p-2 m-2'>Cavity Protection </Tab>
+              <Tab className='secondary-button-outline p-2 m-2'>Cavity Protection </Tab>
+              <Tab className='secondary-button-outline m-2'>Cavity Protection </Tab>
 
             </TabList>
 
@@ -35,21 +35,21 @@ const OurServices = () => {
               <h2 className='text-3xl py-4 font-bold'>Electro  Gastrology Therapy</h2>
               <p className='text-left'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
               <p className='py-4 text-left'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              <button className='btn btn-secondary'>More Details</button>
+              <button className='primary-button'>More Details</button>
             </TabPanel>
             <TabPanel>
               <img className='py-4' src="../../../../doc-house Assets/teeth-x.png" alt="" />
               <h2 className='text-4xl py-4'>Electro  Gastrology Therapy</h2>
               <p className='text-left'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> <br />
               <p className='py-4 text-left'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              <button className='btn btn-secondary btn-outline'>More Details</button>
+              <button className='block  rounded border border-green-700 bg-green-700 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-black focus:outline-none focus:ring active:text-opacity-75 sm:w-auto;'>More Details</button>
             </TabPanel>
             <TabPanel>
               <img className='py-4' src="../../../../doc-house Assets/teeth-x.png" alt="" />
               <h2 className='text-4xl py-4'>Electro  Gastrology Therapy</h2>
               <p className=''>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> <br />
               <p className='py-4'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              <button className='btn btn-secondary'>More Details</button>
+              <button className='primary-button'>More Details</button>
             </TabPanel>
 
           </Tabs>

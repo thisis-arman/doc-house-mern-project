@@ -36,7 +36,7 @@ const DoctorCard = ({ brief }) => {
             <p className="text-[#877e7e]"> ${profile.consultFee}</p>
           </div>
           <div className="card-actions py-4">
-            <Link to={`/doctors/${profile.doctorID}`} className="btn w-full btn-outline text-[#F7A582] hover:bg-[#F7A582] hover:text-white"
+            <Link to={`/doctors/${profile.doctorID}`} className="text-center min-w-full secondary-button-outline"
             >Book Appointment
             </Link>
           </div>

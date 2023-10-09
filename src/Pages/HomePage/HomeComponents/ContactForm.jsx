@@ -66,13 +66,13 @@ const ContactForm = () => {
             <div className="flex gap-4 py-2">
               <img
                 className="w-6 h-6"
-                src="../../../../doc-house Assets/phone-alt.png"
+                src="https://i.ibb.co/FzTySMb/telephone.png"
                 alt=""
               />
               <p>+880182745982</p>
             </div>
             <div className="flex gap-4 py-2">
-              <img src="../../../../doc-house Assets/location.png" alt="" />
+              <img src="https://i.ibb.co/zb8HYHH/location.png" alt="" />
               <p>Dhanmondi, Dhaka, Bangladesh</p>
             </div>
           </div>
@@ -165,7 +165,7 @@ const ContactForm = () => {
               <div className="form-control px-4 py-4 ">
                 <button
                   type="submit"
-                  className="btn btn-outline text-black border-[#6c3f2b]  hover:bg-[#F7A582] hover:text-white"
+                  className="secondary-button-outline"
                 >
                   Submit
                 </button>

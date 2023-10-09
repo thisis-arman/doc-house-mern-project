@@ -15,6 +15,18 @@
     padding: 0 60px;
     
 }
+
+
+
+  .primary-button {
+    @apply block  rounded border border-green-700 bg-green-700 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-black focus:outline-none focus:ring active:text-opacity-75 sm:w-auto;
+  }
+  .secondary-button-outline{
+    @apply block  rounded border border-green-700 px-12 py-3 text-sm font-medium text-black hover:text-white hover:bg-green-700 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto;
+  }
+
+
+
 .box {
     width: 6rem;
     height: 6rem;
@@ -26,5 +38,5 @@
 .heart{
 background-image: url('https://i.ibb.co/YDk3kSS/91tb-rdaj-220113-removebg-preview.png');
 background-position: center;
-background-repeat: ;
+background-repeat: no-repeat;
   }
