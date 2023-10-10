@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { motion } from "framer-motion";
@@ -7,10 +7,32 @@ import { motion } from "framer-motion";
 
 
 const Navbar = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const { user, LogOut } = useContext(AuthContext)
   const isAdmin = true
   const isDoctor = false;
 
+
+
+  useEffect(() => {
+    // Function to check if the user prefers dark mode
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Set the initial theme based on user preference
+    setIsDarkMode(prefersDarkMode);
+
+    // Listen for changes in theme preference
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e) => setIsDarkMode(e.matches);
+    mediaQuery.addListener(handleChange);
+
+    // Clean up the listener when the component unmounts
+    return () => {
+      mediaQuery.removeListener(handleChange);
+    };
+  }, []);
+
+  console.log({ isDarkMode })
 
 
   const handleLogOut = () => {
@@ -34,7 +56,7 @@ const Navbar = () => {
     }
   };
   return (
-    <div className="container md:fixed sticky md:mx-16 mx-auto z-10  ">
+    <div className="container md:fixed sticky md:mx-16 mx-auto z-10">
 
 
       <header className="bg-sky-200 rounded-lg ">
@@ -49,6 +71,7 @@ const Navbar = () => {
                 </Link>
               </a>
             </div>
+
 
             <div className="md:flex md:items-center md:gap-12">
               <nav aria-label="Global" className="hidden md:block">

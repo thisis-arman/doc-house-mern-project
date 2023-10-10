@@ -72,7 +72,7 @@ const ContactForm = () => {
               <p>+880182745982</p>
             </div>
             <div className="flex gap-4 py-2">
-              <img src="https://i.ibb.co/zb8HYHH/location.png" alt="" />
+              <img className="w-6 h-6" src="https://i.ibb.co/zb8HYHH/location.png" alt="" />
               <p>Dhanmondi, Dhaka, Bangladesh</p>
             </div>
           </div>
