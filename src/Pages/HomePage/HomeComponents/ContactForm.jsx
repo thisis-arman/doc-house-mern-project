@@ -53,8 +53,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="container overflow-hidden mx-auto relative top-20 md:mb-28 mb-36 px-4">
-      <div className="hero min-h-screen text-black bg-white rounded-md py-16 ">
+    <div className="container overflow-hidden mx-auto relative top-20 md:mb-28 shadow-lg rounded-md shadow-slate-300 mb-36 px-4">
+      <div className="hero min-h-screen  rounded-md py-16 ">
         <div className="md:px-20 px-6 md:flex items-center gap-12 ">
           <div className="text-center  md:w-2/5  lg:text-left">
             <h1 className="text-5xl font-bold">Contact With Us!</h1>
@@ -90,7 +90,7 @@ const ContactForm = () => {
                     name="Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="input input-bordered text-black "
+                    className="input input-bordered   "
                   />
                 </div>
                 <div className="form-control">
@@ -103,7 +103,7 @@ const ContactForm = () => {
                     name="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="input input-bordered text-black "
+                    className="input input-bordered   "
                   />
                 </div>
 
@@ -117,7 +117,7 @@ const ContactForm = () => {
                     name="Mobile"
                     value={mobile}
                     onChange={(e) => setMobile(e.target.value)}
-                    className="input input-bordered  text-black"
+                    className="input input-bordered   "
                   />
                 </div>
 
@@ -131,7 +131,7 @@ const ContactForm = () => {
                     name="Doctor"
                     value={doctor}
                     onChange={(e) => setDoctor(e.target.value)}
-                    className="input input-bordered text-black "
+                    className="input input-bordered   "
                   />
                 </div>
                 <div className="form-control">
@@ -144,7 +144,7 @@ const ContactForm = () => {
                     name="Date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="input input-bordered text-black "
+                    className="input input-bordered   "
                   />
                 </div>
 
@@ -158,7 +158,7 @@ const ContactForm = () => {
                     name="Time"
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
-                    className="input input-bordered text-black  "
+                    className="input input-bordered    "
                   />
                 </div>
               </div>
