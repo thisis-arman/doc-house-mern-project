@@ -12,7 +12,7 @@ export default {
         'dark': '#333', // Dark mode background color
       },
       textColor: {
-        'dark': '#fff', // Dark mode text color
+        'dark': '#ffff', // Dark mode text color
       },
     },
   },

@@ -2,15 +2,19 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { motion } from "framer-motion";
+import { BiMoon, BiSun } from 'react-icons/bi'
 // import useAdmin from "../Hooks/useAdmin";
 
 
 
 const Navbar = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
   const { user, LogOut } = useContext(AuthContext)
   const isAdmin = true
   const isDoctor = false;
+
 
 
 
@@ -31,6 +35,27 @@ const Navbar = () => {
       mediaQuery.removeListener(handleChange);
     };
   }, []);
+
+
+
+  // update state on toggle
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+      console.log('Dark clicked')
+    } else {
+      setTheme("light");
+      console.log('light clicked')
+    }
+  };
+
+  // set theme state in localstorage on mount & also update localstorage on state change
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    // add custom data-theme attribute to html tag required to update theme using DaisyUI
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
 
   console.log({ isDarkMode })
 
@@ -59,7 +84,7 @@ const Navbar = () => {
     <div className="container md:fixed sticky md:mx-16 mx-auto z-10">
 
 
-      <header className="bg-sky-200 rounded-lg ">
+      <header className="bg-sky-200 rounded-lg dark:text-black ">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div className="flex-1 md:flex md:items-center md:gap-12">
@@ -148,11 +173,11 @@ const Navbar = () => {
                     whileHover={{ scale: 1.3 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Link to='/blog'
+                    <Link to='/be-doctor'
                       className=" transition  hover:border-b-2  hover:text-yellow-500"
 
                     >
-                      Blog
+                      Be Doctor
                     </Link>
                   </motion.li>
 
@@ -202,6 +227,22 @@ const Navbar = () => {
                       </div>
                     </div>
                   }
+                  <motion.li
+                    variants={variants}
+                    whileHover={{ scale: 1.3 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <label className="swap swap-rotate w-12 h-12">
+                      <input type="checkbox"
+
+                        onChange={handleToggle}
+                      />
+                      {/* light theme sun image */}
+                      <BiSun className="w-8 h-8 swap-off" />
+                      {/* dark theme moon image */}
+                      <BiMoon className='h-8 w-8 swap-on' />
+                    </label>
+                  </motion.li>
                 </ul>
 
 
