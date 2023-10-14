@@ -135,12 +135,12 @@ const Navbar = () => {
                     whileHover={{ scale: 1.3 }}
                     whileTap={{ scale: 0.95 }}>
 
-                    <Link to='contact'>
+                    <Link to='guides'>
                       <a
                         className=" transition  hover:border-b-2  hover:text-yellow-500"
 
                       >
-                        Contact
+                        Guides
                       </a>
                     </Link>
                   </motion.li>
