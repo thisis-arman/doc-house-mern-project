@@ -16,11 +16,11 @@ const ServiceCard = ({ service }) => {
 
                     <div className="sm:flex sm:justify-between sm:gap-4">
                         <div>
-                            <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
+                            <h3 className="text-lg font-bold  sm:text-xl">
                                 {service?.serviceName}
                             </h3>
 
-                            <p className="mt-1 text-sm font-medium text-gray-600">By {service?.doctorName || ''}</p>
+                            <p className="mt-1 text-sm font-medium ">By {service?.doctorName || ''}</p>
                         </div>
 
                         <div className="hidden sm:block sm:shrink-0">
@@ -33,20 +33,20 @@ const ServiceCard = ({ service }) => {
                     </div>
 
                     <div className="mt-4">
-                        <p className="max-w-[40ch] text-sm text-gray-500">
+                        <p className="max-w-[40ch] text-sm ">
                             {service?.details}
                         </p>
                     </div>
 
                     <dl className="mt-6 flex gap-4 sm:gap-6">
                         <div className="flex flex-col-reverse">
-                            <dt className="text-sm font-medium text-gray-600">${service?.consultFee}</dt>
-                            <dd className="text-xs text-gray-500">Fee</dd>
+                            <dt className="text-sm font-medium ">${service?.consultFee}</dt>
+                            <dd className="text-xs ">Fee</dd>
                         </div>
 
                         <div className="flex flex-col-reverse">
-                            <dt className="text-sm font-medium text-gray-600">{service?.doctorEmail}</dt>
-                            <dd className="text-xs text-gray-500">Email</dd>
+                            <dt className="text-sm font-medium ">{service?.doctorEmail}</dt>
+                            <dd className="text-xs ">Email</dd>
                         </div>
                     </dl>
                 </Link>

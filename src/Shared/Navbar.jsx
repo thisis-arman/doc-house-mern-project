@@ -3,17 +3,20 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { motion } from "framer-motion";
 import { BiMoon, BiSun } from 'react-icons/bi'
-// import useAdmin from "../Hooks/useAdmin";
+import useAdmin from "../Hooks/useAdmin";
+import useDoctor from "../Hooks/useDoctor";
+
 
 
 
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isAdmin] = useAdmin()
+  const [isDoctor] = useDoctor()
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
   const { user, LogOut } = useContext(AuthContext)
-  const isAdmin = true
-  const isDoctor = false;
+
 
 
 
@@ -185,11 +188,8 @@ const Navbar = () => {
                   {user ? <div className="sm:flex sm:gap-4">
 
                     <Link to={
-                      isAdmin
-                        ? "/dashboard/admin"
-                        : isDoctor
-                          ? "/dashboard/doctor-home"
-                          : "/dashboard/user-home"
+
+                      isAdmin ? "/dashboard/admin" : isDoctor ? "/dashboard/doctor-home" : "/dashboard/user-home"
                     }
                       className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
 

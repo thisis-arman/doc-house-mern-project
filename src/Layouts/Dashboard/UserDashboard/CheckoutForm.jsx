@@ -19,9 +19,9 @@ const CheckoutForm = ({ fees }) => {
     // const payAmount = fees.map(p => p.fee)
 
     // // const fee = payAmount[0]
-    const { name, email, fee, category, number
+    const { name, patientEmail, consultFee, date, number
     } = fees[0]
-    console.log(name, email, fee, category)
+    console.log(name, patientEmail, consultFee, date)
 
 
     useEffect(() => {
@@ -31,11 +31,11 @@ const CheckoutForm = ({ fees }) => {
                 'Content-Type': 'application/json'
             },
 
-            body: JSON.stringify({ fee })
+            body: JSON.stringify({ consultFee })
         })
             .then((res) => res.json())
             .then((data) => setClientSecret(data.clientSecret));
-    }, [fee])
+    }, [consultFee])
 
     const handleSubmit = async (event) => {
         event.preventDefault()

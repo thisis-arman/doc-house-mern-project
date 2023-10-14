@@ -34,7 +34,7 @@ const MyAppointments = () => {
 
     return (
         <div className="p-6">
-            <h2 className="py-6 text-3xl font-bold">My Appointments..</h2>
+            <h2 className="py-6 text-3xl font-bold">My Appointments...</h2>
 
             <TableRow data={appointments} />
 

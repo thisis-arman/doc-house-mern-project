@@ -29,33 +29,37 @@ const UserAppointments = () => {
 
             <div className="overflow-x-auto ">
                 <table className="min-w-full border divide-y-2 text-center divide-gray-200 bg-white text-sm">
-                    <thead className="ltr:text-left rtl:text-right">
+                    <thead className="text-left ">
                         <tr>
+                            <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                                Date
+                            </th>
                             <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                                 Name
                             </th>
                             <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                Doctor ID
+                                Fee
                             </th>
                             <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                Number
+                                Doctor Email
                             </th>
                             <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                Date
+                                Age
                             </th>
                             <th className="px-4 py-2"></th>
                         </tr>
                     </thead>
 
-                    <tbody className="divide-y divide-gray-200">
+                    <tbody className="divide-y divide-gray-200 text-left">
                         {
                             appointments.map((app, i) => <tr key={i}>
                                 <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                    {app.name}
+                                    {app?.date}
                                 </td>
-                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app.doctorID}</td>
-                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app.number}</td>
-                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app?.date}</td>
+                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app.name}</td>
+                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">${app.consultFee}</td>
+                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app?.doctorEmail}</td>
+                                <td className="whitespace-nowrap px-4 py-2 text-gray-700">{app?.age}</td>
                                 <td className="whitespace-nowrap px-4 py-2">
                                     <Link to={`payments/${app._id}`}
                                         href="#"

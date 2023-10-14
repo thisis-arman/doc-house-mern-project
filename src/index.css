@@ -19,10 +19,10 @@
 
 
   .primary-button {
-    @apply block  rounded border border-green-700 bg-green-700 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-black focus:outline-none focus:ring active:text-opacity-75 sm:w-auto;
+    @apply block  rounded border border-green-700 bg-green-700 px-12 py-3 text-sm font-medium text-white hover:bg-green-500 hover:text-black focus:outline-none focus:ring active:text-opacity-75 sm:w-auto;
   }
   .secondary-button-outline{
-    @apply block  rounded border border-green-700 px-12 py-3 text-sm font-medium text-black hover:text-white hover:bg-green-700 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto;
+    @apply   rounded border border-green-700 px-12 py-3 text-sm font-medium  hover:text-white hover:bg-green-700 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto;
   }
 
 

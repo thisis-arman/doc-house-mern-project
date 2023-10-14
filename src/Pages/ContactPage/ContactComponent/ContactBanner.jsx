@@ -3,7 +3,7 @@
 const ContactBanner = () => {
     return (
         <div>
-            <section className="bg-[#FEFEFE] body-font relative md:top-56 md:mb-44 ">
+            <section className=" body-font relative md:top-56 md:mb-44 ">
                 <div className="container mx-auto flex px-5  md:px-24 py-24 md:flex-row flex-col items-center justify-center">
                     <div className="lg:flex-grow md:w-1/2  flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                         <h1 className="title-font sm:text-5xl text-3xl mb-4 font-bold text-gray-900">Contact With Us

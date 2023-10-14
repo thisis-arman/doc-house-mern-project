@@ -35,10 +35,10 @@ const BookAppointment = () => {
             body: JSON.stringify(appointmentInfo)
         })
             .then((data) => {
-                if (data.insertedId > 0) {
+                if (data.acknowledgement == true) {
+                    alert('Successfully')
                     toast.success(" Appointment Booked Successfully")
                     console.log({ data })
-                    alert('Successfully')
                     navigate('/dashboard/user-home')
                 }
             })
@@ -50,7 +50,7 @@ const BookAppointment = () => {
 
     return (
         <section className="">
-            <Toaster />
+
             <PageCover pageName='Book Appointment' />
             <div className="relative py-24  md:top-[250px] md:mb-[300px]">
                 <form onSubmit={handleSubmit} className="shadow border  max-w-3xl  w-full  p-8 mx-auto rounded ">
@@ -148,6 +148,7 @@ const BookAppointment = () => {
                         Submit
                     </button>
                 </form>
+                <Toaster />
             </div>
 
 

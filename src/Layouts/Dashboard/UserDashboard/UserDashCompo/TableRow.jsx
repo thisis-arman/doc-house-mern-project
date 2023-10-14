@@ -39,10 +39,10 @@ const TableRow = ({ data }) => {
                   <td className="whitespace-nowrap px-4 py-3 font-medium text-gray-900">
                     {data?.name}
                   </td>
-                  <td className="whitespace-nowrap px-4 py-3 text-gray-700">{data.time}</td>
-                  <td className="whitespace-nowrap px-4 py-3 text-gray-700">{data.date}</td>
-                  <td className="whitespace-nowrap px-4 py-3 text-gray-700">{data.number}</td>
-                  <td className="whitespace-nowrap px-4 py-3 text-gray-700">${data.consultFee}</td>
+                  <td className="whitespace-nowrap px-4 py-3 text-gray-700">{data?.time}</td>
+                  <td className="whitespace-nowrap px-4 py-3 text-gray-700">{data?.date}</td>
+                  <td className="whitespace-nowrap px-4 py-3 text-gray-700">{data?.number}</td>
+                  <td className="whitespace-nowrap px-4 py-3 text-gray-700">${data?.consultFee}</td>
                   <td className="whitespace-nowrap px-4 py-3 text-gray-700">Pending</td>
                   {/*  <td className="whitespace-nowrap px-4 py-3">
                     <a
