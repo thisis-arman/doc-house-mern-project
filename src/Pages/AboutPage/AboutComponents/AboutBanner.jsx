@@ -23,7 +23,7 @@ const AboutBanner = () => {
                         <div className="lg:py-24">
                             <h2 className="text-3xl font-bold sm:text-5xl">Your Health, Our Priority.</h2>
 
-                            <p className="mt-4 ">
+                            <p className="mt-4 mb-6">
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui hic
                                 atque tenetur quis eius quos ea neque sunt, accusantium soluta minus
                                 veniam tempora deserunt? Molestiae eius quidem quam repellat.
@@ -31,7 +31,7 @@ const AboutBanner = () => {
 
                             <a
                                 href="#"
-                                className="mt-8 secondary-button-outline w-1/2"
+                                className=" mt-16  secondary-button-outline w-1/2"
                             >
                                 Get Started Today
                             </a>

@@ -37,6 +37,7 @@ import BookAppointment from "../Pages/BookAppointment/BookAppointment";
 import MyProfile from "../Layouts/Dashboard/DoctorDashboard/MyProfile";
 import AllServices from "../Layouts/Dashboard/AdminDashboard/AllServices";
 import GuidePage from "../Pages/GuidePage/Guides/GuidePage";
+import Kidney from "../Pages/GuidePage/Guides/Kidney";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: 'guides',
         element: <GuidePage />
+      },
+      {
+        path: '/guides/kidney-guideline',
+        element: <Kidney />
       },
       {
         path: 'about',
