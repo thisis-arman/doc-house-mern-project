@@ -25,7 +25,7 @@ const AppointmentPage = () => {
   return (
     <div>
       <PageCover pageName={"Appointment"} />
-      <section className="container mx-auto relative md:top-[320px] px-10  top-6 min-h-screen md:mb-[400px]">
+      <section className="container mx-auto relative md:top-[320px] px-10  top-6 pb-16 min-h-screen md:mb-[400px]">
         <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-6 grid-cols-1 ">
           {
             services.map((service, i) => <ServiceCard key={i} service={service}></ServiceCard>)

@@ -2,12 +2,12 @@
 
 const AboutBanner = () => {
     return (
-        <div className="border-b">
+        <div className="">
             <section className="relative md:top-[300px]  top-6 min-h-screen md:mb-[200px]">
                 <div
                     className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 sm:px-6 lg:py-16 lg:px-8"
                 >
-                    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+                    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 items-center lg:gap-16">
                         <div
                             className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full"
                         >
@@ -21,12 +21,12 @@ const AboutBanner = () => {
                         </div>
 
                         <div className="lg:py-24">
-                            <h2 className="text-3xl font-bold sm:text-5xl">Your Health, Our Priority.</h2>
+                            <h2 className="text-3xl font-bold pb-6 sm:text-5xl">Your Health, Our Priority.</h2>
 
                             <p className="mt-4 mb-6">
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui hic
                                 atque tenetur quis eius quos ea neque sunt, accusantium soluta minus
-                                veniam tempora deserunt? Molestiae eius quidem quam repellat.
+                                veniam tempora deserunt? Molestiae eius quidem quam repellat. Lorem ipsum dolor sit amet consectetur adipisicing elit.x
                             </p>
 
                             <a

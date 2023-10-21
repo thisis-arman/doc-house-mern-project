@@ -84,7 +84,7 @@ const Navbar = () => {
     }
   };
   return (
-    <div className="container md:fixed sticky md:mx-16 mx-auto z-10">
+    <div className="container  sticky  mx-auto z-10">
 
 
       <header className="bg-sky-200 rounded-lg text-black ">
@@ -272,10 +272,10 @@ const Navbar = () => {
 
                     <ul tabIndex={0} className="menu menu-sm dropdown-content right-0 mt-3 z-[1] p-2 shadow bg-black bg-opacity-40  rounded-box ">
 
-                      <Link to='/' className="mr-4 hover:bg-red-300">Home</Link>
-                      <Link to='/' className="mr-4 hover:bg-red-300">About</Link>
-                      <Link to='/appointment' className="mr-4 hover:bg-red-300">Appointment</Link>
-                      <Link to='/' className="mr-4 hover:bg-red-300">Login</Link>
+                      <Link to='/' className="mr-4 p-1 rounded-lg hover:bg-red-200">Home</Link>
+                      <Link to='/about' className="mr-4 p-1 rounded-lg hover:bg-red-200">About</Link>
+                      <Link to='/appointment' className="mr-4 p-1 rounded-lg hover:bg-red-200">Appointment</Link>
+                      <Link to='/sign-in' className="mr-4 hover:bg-red-200">Login</Link>
                       {user ? <div className="sm:flex sm:gap-4">
 
                         <Link to='dashboard'
