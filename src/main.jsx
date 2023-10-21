@@ -13,6 +13,7 @@ import { ErrorBoundary } from './Components/ErrorBoundary'
 
 const theme = localStorage.getItem("theme")
 console.log({ theme })
+window.scrollTo(0, 0);
 
 const queryClient = new QueryClient()
 
@@ -22,7 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <QueryClientProvider client={queryClient}>
         <div >
           <ErrorBoundary fallback={<p className='text-center text-4xl  p-10'>Something went wrong.We will Fixed it Soon</p>}>
-            <RouterProvider router={router} />
+            <RouterProvider scrollRestoration="manual" router={router} />
           </ErrorBoundary>
 
         </div>

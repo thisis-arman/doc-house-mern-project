@@ -12,7 +12,7 @@ const CaseStudies = () => {
                 <section className="container mx-auto my-16 p-4">
                     <div>
                         <header className="text-left py-6">
-                            <h2 className="text-3xl font-bold text-gray-900 sm:text-5xl">
+                            <h2 className="text-3xl font-bold  sm:text-5xl">
                                 <TypeAnimation
                                     sequence={[
                                         // Same substring at the start will only be typed once, initially
@@ -28,7 +28,7 @@ const CaseStudies = () => {
                                 />
                             </h2>
 
-                            <p className="max-w-md  mt-4 text-gray-500">
+                            <p className="max-w-md  mt-4 ">
                                 Gather Knowledge From real-life experiments, and researchers
                             </p>
                         </header>

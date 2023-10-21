@@ -27,9 +27,9 @@ const ExpertDoctors = () => {
 
 
   return (
-    <section className="container mx-auto">
+    <section className="container relative top-64 md:top-0 pb-52 md:pb-0 mx-auto">
       <div className="text-center py-10 px-8">
-        <h1 className="text-3xl sm:text-5xl font-bold py-4">Our Expert Doctors</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold py-4">Our Expert Doctors</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique <br /> cumque vero perferendis quibusdam vitae vel unde ut deserunt quia ipsum!</p>
       </div>
       <div data-aos="fade-up" data-aos-delay="300" className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 px-4 gap-4 md:gap-4">

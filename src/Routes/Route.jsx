@@ -90,7 +90,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/book-appointment/:id',
-        element: <BookAppointment />,
+        element: <PrivateRoute><BookAppointment /></PrivateRoute>,
         loader: ({ params }) => fetch(`https://doc-house-server-thisis-arman.vercel.app/api/services-by/${params.id}`)
 
       },

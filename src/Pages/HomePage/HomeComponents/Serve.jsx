@@ -29,7 +29,7 @@ const Serve = () => {
                     <p>Skinive Apps are CE-Marked medical software trusted by dermatologists and being used by people at home and by professionals in primary care all around the world.</p>
                 </div>
             </div>
-            <div className="grid overflow-hidden md:grid-cols-3 gap-10 grid-cols-1">
+            <div className="grid overflow-hidden lg:grid-cols-3 md:grid-cols-2 gap-10 grid-cols-1">
                 <div data-aos="fade-left" data-aos-delay="100" className="rounded-3xl shadow-xl px-8 pt-10 pb-20 bg-gradient-to-t from-[#F96320] to-[#fa8e5c]">
                     {/* <img className="w-24  p-6 text-yellow-500 rounded-md bg-white" src="https://i.ibb.co/R3L2HJz/home-1.png" alt="" /> */}
                     <FaHome className="w-24 h-20  p-4 mb-4 text-[#F96320] rounded-xl bg-white" />

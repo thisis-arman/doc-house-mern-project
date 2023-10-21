@@ -11,7 +11,7 @@ const BlogCTA = () => {
   }, [])
   return (
     <div>
-      <section className='overflow-hidden'>
+      <section className='overflow-hidden hidden lg:block'>
         <div
           className="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8"
         >
@@ -30,7 +30,7 @@ const BlogCTA = () => {
             <div data-aos="fade-right" data-aos-delay="600" className="lg:py-24">
               <h2 className="text-3xl font-bold sm:text-4xl">Learn and Explore About your Health</h2>
 
-              <p className="mt-4 text-gray-600">
+              <p className="mt-4 ">
                 Discover a wealth of information to enhance your well-being. Explore tips for maintaining physical fitness through exercise and balanced nutrition. Learn strategies for nurturing your mental health, from mindfulness to stress management.  <br /> <br /> Stay informed about the importance of preventive screenings, vaccinations, and fostering positive social connections. Our articles cover heart and cancer health, along with advice on avoiding harmful habits. Trust us for expert insights on your journey to a healthier life."
               </p>
 

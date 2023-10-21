@@ -4,14 +4,15 @@ import { Navigate, useLocation } from "react-router-dom";
 
 
 const PrivateRoute = ({ children }) => {
-    const { user, loading } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext)
     const location = useLocation()
-
+    console.log(children, loading)
 
     if (loading) {
         return <>
-            <div className="flex items-center justify-center">
-                <p className="text-4xl font-semibold">Loading...</p>
+            <div className="flex justify-center h-screen  items-center">
+
+                <p className="text-2xl font-semibold font-serif"> wait for a moment</p>
             </div>
         </>
     }
@@ -22,10 +23,7 @@ const PrivateRoute = ({ children }) => {
 
 
     return (
-        <div>
-            <Navigate to='/sign-in' state={{ from: location }} replace></Navigate>
-
-        </div>
+        <Navigate to="/sign-in" state={{ from: location }} replace></Navigate>
     );
 };
 
